@@ -52,7 +52,7 @@ else if(isset($text) && $text == '/recursos' ){
 }
 //EJERCICIO1
 
-if (isset($text) && $text == '/ejercicio1' ){
+else if (isset($text) && $text == '/ejercicio1' ){
     $sticker="CAACAgIAAxkBAAIBf2KR1nd5imaOmP_hbP1LbpgyElfTAAIoAANOXNIpuNOsexIyTdQkBA";
     sendSticker($id,$sticker,$token);
 
