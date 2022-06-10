@@ -10,6 +10,8 @@ class Mensajes
 
     public function __construct($token, $chatID, $url)
     {
+        
+        
         $this->token = $token;
         $this->chatID = $chatID;
         $this->url = $url;

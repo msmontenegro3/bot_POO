@@ -11,7 +11,7 @@ $id = $message["from"]["id"];
 $name = $message["from"]["first_name"];
 $text = $message["text"];
 
-$mensaje = new Mensajes($token, $id, "https://api.telegram.org/");
+$message = new Mensajes($token, $id, "https://api.telegram.org/");
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
