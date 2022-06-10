@@ -269,7 +269,7 @@ else if (isset($text) && $text == '/ejercicio2' ){
 
     $sticker="CAACAgIAAxkBAAEBIO9iosv7uq5nWggqvPWn5z6ZcNmglgAC3gAD9HsZAAG9he9u98XOPSQE";
     sendSticker($id,$sticker,$token);
-    $respuesta = "Iniciemos programando la clase Perro. De las siguientes declaraciones ¿Cuál es un atributo de la clase Perro corresponder a esta clase?";
+    $respuesta = "Iniciemos programando la clase Perro. De las siguientes declaraciones ¿Cuál es un atributo de la clase Perro corresponde a esta clase?";
 
     $keyboard= [
         ['private String Ladrar;', 'private Stirng Jugar;'],
@@ -282,7 +282,7 @@ else if (isset($text) && $text == '/ejercicio2' ){
     sendMessage($id,$respuesta,$token,$k);
 } 
 //RESPUESTA 2.1
-else if (isset($text) && $text == 'private String Raza' ){
+else if (isset($text) && $text == 'private String Raza;' ){
 
     $sticker="CAACAgEAAxkBAAEBG4xikkhecv_h6ogW4Kuaya68DiML2AACowQAAp-NkETEJoys9tiH2SQE";
 
