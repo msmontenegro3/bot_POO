@@ -332,11 +332,28 @@ else if(isset($text) && $text == 'Gato gato = new Gato();' ){
 
     sendMessage($id,$respuesta,$token);
     
+    $respuesta = "Entonces ¿Cuál de los siguientes diagramas UML es el correcto para la relación entre animal, gato y perro?";
+
     $photo = "https://oop.rocketpym.com/E2.1.png";
     sendPhoto($id,$photo,$token);
+    $keyboard= [
+        ['UML 1'],
+        ['UML 2'],
+        ['UML 3']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);  
 }
 
+//RESPUESTA 2.4
+else if(isset($text) && $text == 'UML 1' ){
+    $respuesta = "✅ Enhorabuena! La clase gato y perro van a heredar atributos y métodos de la clase animal. Evidentemente se cumple la regla de “es un” para identificar si existe herencia.";
 
+    sendMessage($id,$respuesta,$token);
+}
 //RESPUESTA POR DEFECTO
 else if(isset($text)){
     $respuesta = "Te equivocaste, intenta de nuevo 😅. Si tienes problemas puedes usar el comando /help";
