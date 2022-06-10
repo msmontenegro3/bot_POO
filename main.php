@@ -353,7 +353,81 @@ else if(isset($text) && $text == 'UML 1' ){
     $respuesta = "✅ Enhorabuena! La clase gato y perro van a heredar atributos y métodos de la clase animal. Evidentemente se cumple la regla de “es un” para identificar si existe herencia.";
 
     sendMessage($id,$respuesta,$token);
+
+    $respuesta = "¿Cómo debe declararse en Java la clase Gato, considerando que hereda de animal?";
+
+    $keyboard= [
+        ['public class Gato extends Animal{ … }'],
+        ['public class Animal extends Pato{ … }'],
+        ['public class Gato super Animal{ … }']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k); 
 }
+
+//RESPUESTA 2.5
+else if(isset($text) && $text == 'public class Gato extends Animal{ … }' ){
+    $respuesta = "✅ Muy bien! En Java la palabra extends se utiliza para declarar la herencia existente entre las clases";
+
+    sendMessage($id,$respuesta,$token);
+    $respuesta = "¿Cómo se llama al constructor de la clase padre, desde el constructor de la clase Gato?";
+
+    $keyboard= [
+        ['public Gato(){extends();}'],
+        ['public Gato(){this();}'],
+        ['public Gato(){super();}']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k); 
+}
+
+//RESPUESTA 2.6
+else if(isset($text) && $text == 'public Gato(){super();}' ){
+    $respuesta = "✅ Súper! La palabra reservada super, invoca al constructor de la clase padre (en este caso invoca al constructor de animal).";
+
+    sendMessage($id,$respuesta,$token);
+    $respuesta = "Y si la clase padre recibe como parámetros nombre y raza ¿Cómo debe declararse el constructor de la clase hija Perro?";
+
+    $keyboard= [
+        ['public Perro(){super(nombre, raza);}'],
+        ['public Perro(String nombre, String raza){super();}'],
+        ['public Perro(String nombre, String raza){super(nombre, raza);}']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+}
+
+//RESPUESTA 2.6
+else if(isset($text) && $text == 'public Perro(String nombre, String raza){super(nombre, raza);}' ){
+    $respuesta = "✅ Estás en lo correcto! Si la clase padre tiene un constructor, que recibe parámetros, la clase hija también debe recibir los mismos parámetros.";
+
+    sendMessage($id,$respuesta,$token);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //RESPUESTA POR DEFECTO
 else if(isset($text)){
     $respuesta = "Te equivocaste, intenta de nuevo 😅. Si tienes problemas puedes usar el comando /help";
