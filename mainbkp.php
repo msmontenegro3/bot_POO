@@ -1,5 +1,5 @@
 <?php
-require_once 'Mensajes.php';
+
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= "bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4";
 
@@ -11,7 +11,7 @@ $id = $message["from"]["id"];
 $name = $message["from"]["first_name"];
 $text = $message["text"];
 
-$mensaje = new Mensajes($token, $id, "https://api.telegram.org/");
+
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
@@ -23,22 +23,20 @@ if(isset($text) && $text == '/start' ){
     \n /indice
     \n /recursos";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 } 
 else if (isset($text) && $text == '/help' ){
     $respuesta = "Este bot se encarga de generar ejercicios y guiarte en el proceso de abstracción, de acuerdo a los pilares de la programación orientada a objetos (POO) 😁.\n\nSabemos que puede ser un camino difícil, por lo que vas a iniciar con ejercicios sencillos, y asociarlos a su solución en diagrama UML. Una vez realizado el proceso de abstracción, recomendamos que desarrolles estos ejercicios en el lenguaje de programación Java.\n\n FAQ \n\n<b>¿Qué hago si no encuentro el teclado 😓?</b>\nPuedes abrir el teclado nuevamente con el botón que está en el cuadro de ingreso de texto, al lado derecho, antes del clip de adjuntar archivos\n\n¿<b>Cómo regreso a la pregunta anterior 🥴?</b>\nSólo copia el mensaje anterior a la pregunta que deseas ver y listo 🤩";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 } 
 
 else if(isset($text) && $text == '/indice' ){
     $respuesta = "LISTA DE EJERCICIOS:\n
-    /ejercicio1";
+    /ejercicio1
+    /ejercicio2";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 }
 
 else if(isset($text) && $text == '/recursos' ){
@@ -51,15 +49,13 @@ else if(isset($text) && $text == '/recursos' ){
     \nCheatsheets:
     \nhttps://introcs.cs.princeton.edu/java/11cheatsheet/";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 }
 //EJERCICIO1
 
 else if (isset($text) && $text == '/ejercicio1' ){
     $sticker="CAACAgIAAxkBAAIBf2KR1nd5imaOmP_hbP1LbpgyElfTAAIoAANOXNIpuNOsexIyTdQkBA";
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
 
     $respuesta = "<b>Ejercicio número 1:</b> \n\n La compañía “acer” ha iniciado su trayecto dentro del mercado de la telefonía celular 📱. Con ese objetivo, se ha planteado el lanzamiento de diferentes modelos de celulares con su respectiva memoria, espacio y color. El programa que va a diseñar debe contemplar las principales características y acciones que puede realizar un celular como encenderse y hacer llamadas. Realice su solución en un diagrama de clases, o en código en Java. A continuación, va a recibir una serie de preguntas y respuestas que le van a servir de guía para su proceso de abstracción.\n\n En la parte inferior va a aparecer un teclado con opciones para que respondas la siguiente pregunta ¿Cuál <b>NO</b> corresponde a un atributo de la clase celular?";
 
@@ -71,16 +67,14 @@ else if (isset($text) && $text == '/ejercicio1' ){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 } 
 
 //PRIMERA RESPUESTA
 else if (isset($text) && $text == 'Conectarse a internet'){
     $sticker = "CAACAgEAAxkBAAEBG4xikkhecv_h6ogW4Kuaya68DiML2AACowQAAp-NkETEJoys9tiH2SQE";
 
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
 
     $respuesta = "Exacto!🤩 Recuerda que los atributos son características o propiedades de los objetos. Ahora selecciona cuál es un método de la clase celular.";
     $keyboard= [
@@ -91,23 +85,18 @@ else if (isset($text) && $text == 'Conectarse a internet'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 
 }
-
-
 //SEGUNDA RESPUESTA
 else if(isset($text) && $text == 'Encender'){
 
     $sticker = "CAACAgEAAxkBAAEBG5BikktWuHVV2pEAAWGt313-SdSuqYgAAt4CAAIpT5FEIAABzG5eGoJTJAQ";
 
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
 
     $respuesta = "Correcto!🤩 Recuerda que los métodos son las operaciones, funciones o acciones que puede hacer una clase.Para el estudio de POO te recomendamos realizar diagramas UML de las clases que vas creando.";
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 
     $photo = "https://bot-poo.000webhostapp.com/E1.1.png";
 
@@ -119,10 +108,8 @@ else if(isset($text) && $text == 'Encender'){
 
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
-    $message->sendPhoto($photo);
-    //sendPhoto($id,$photo,$token);
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendPhoto($id,$photo,$token);
+    sendMessage($id,$respuesta,$token,$k);
     
 
 }
@@ -131,8 +118,7 @@ else if(isset($text) && $text == 'Encender'){
 else if (isset($text) && $text == 'Diagrama 1'){
     $sticker = "https://media.giphy.com/media/fwbZnTftCXVocKzfxR/giphy.gif";
 
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
     $respuesta = "✅ Vas súper bien ".$name." 🥳. Ahora es momento de abrir tu editor de código (netbeans, eclipse, o cualquiera que te guste) y responde: \n Cómo declararías la clase celular en Java:
     \n\n <b>Opciones</b>
     \n Celular{ … }
@@ -148,8 +134,7 @@ else if (isset($text) && $text == 'Diagrama 1'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 
 //CUARTA RESPUESTA
@@ -168,8 +153,7 @@ else if (isset($text) && $text == 'public class Celular{ … }'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 
 }
 
@@ -178,8 +162,7 @@ else if (isset($text) && $text == 'public Celular(String color, int memoria, flo
 
     $sticker = "https://media.giphy.com/media/6G48V62YlbZj1W6fso/giphy.gif";
 
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
 
 
     $respuesta = "✅ Muy bien! Recuerda que el constructor 👷 permite darle un valor inicial a una instancia de clase. En Java el constructor debe recibir el mismo nombre de la clase.
@@ -197,8 +180,7 @@ else if (isset($text) && $text == 'public Celular(String color, int memoria, flo
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 
 //SEXTA RESPUESTA
@@ -217,8 +199,7 @@ else if (isset($text) && $text == 'private String color'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 
 //SEXTA RESPUESTA
@@ -233,8 +214,7 @@ else if (isset($text) && $text == 'public void setColor(String color) { … }'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 
 //SÉPTIMA RESPUESTA
@@ -257,8 +237,7 @@ else if (isset($text) && $text == 'public int getMemoria( ) { … }'){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    $message->sendMessage($respuesta, $k);
-    //sendMessage($id,$respuesta,$token,$k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 
 //OCTAVA RESPUESTA
@@ -266,49 +245,139 @@ else if (isset($text) && $text == 'Opción 1'){
 
     $respuesta = "Súper! 🥳🥳🥳 No cometas el error de imprimir por consola, en lugar de retornar los datos que necesites.
     \n¿Qué sigue? Intenta ahora programar el método llamar, recuerda que debe recibir un parámetro (la persona a la que deseas llamar)";
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 
     $sticker = "https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif";
 
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    sendSticker($id,$sticker,$token);
 
     $respuesta = "🎉 Has resuelto el primer estudio de caso 🎉. Instancia la clase celular en la clase main y prueba los métodos que has utilizado. 
     \nAquí tienes un repositorio con el ejercicio resuelto a nuestra manera para que te sirva de guía 🙈: \nhttps://github.com/msmontenegro3/estudioCaso1.git";
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 
 }
 
 
 //EJERCICIO 2
 else if (isset($text) && $text == '/ejercicio2' ){
-    $sticker="CAACAgEAAxkBAAEBG5hiklWpKaycPq7ngVycKBcgcagywgAC7AADOA6CEWJyDgUYkJqXJAQ";
-    $message->sendSticker($sticker);
-    //sendSticker($id,$sticker,$token);
+    $sticker="https://media.giphy.com/media/I0V9yJDaRYJbX6JeQO/giphy.gif";
+    sendSticker($id,$sticker,$token);
 
-    $respuesta = "Este ejercicio todavía está en desarrollo 😅 pronto lo tendremos para ti 🤓";
+    $respuesta = "La escuela “ABC” desea utilizar un programa que les ayude a sus estudiantes de niveles iniciales a reconocer los sonidos que hacen los animales. Los primeros animales que observan son los más cercanos a ellos, es decir, las mascotas. Por lo tanto, el programa debe reproducir el sonido (onomatopeya) que producen los siguientes animales: perro 🐕 y gato 🐈.";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
+
+    $sticker="CAACAgIAAxkBAAEBIO9iosv7uq5nWggqvPWn5z6ZcNmglgAC3gAD9HsZAAG9he9u98XOPSQE";
+    sendSticker($id,$sticker,$token);
+    $respuesta = "Iniciemos programando la clase Perro. De las siguientes declaraciones ¿Cuál es un atributo de la clase Perro corresponde a esta clase?";
+
+    $keyboard= [
+        ['private String Ladrar;', 'private Stirng Jugar;'],
+        ['private String Raza;', 'private String Comer;']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
 } 
+//RESPUESTA 2.1
+else if (isset($text) && $text == 'private String Raza;' ){
+
+    $sticker="CAACAgEAAxkBAAEBG4xikkhecv_h6ogW4Kuaya68DiML2AACowQAAp-NkETEJoys9tiH2SQE";
+
+    sendSticker($id,$sticker,$token);
+    $respuesta = "✅ Exacto! Como ya te habíamos dicho, un atributo es una característica o un estado de la clase.";
+    sendMessage($id,$respuesta,$token);
+
+    $respuesta = "De la siguiente lista, ¿Qué método no corresponde a la clase Perro?";
+
+    $keyboard= [
+        ['Jugar', 'Ladrar'],
+        ['Volar', 'Nadar']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+}
+
+//RESPUESTA 2.2
+else if(isset($text) && $text == 'Volar' ){
+    $respuesta = "✅ Correcto! El método volar no es una acción que pueda realizar un perro. Es importante identificar que los métodos dentro de una clase deben ser funciones u operaciones concernientes a la clase.\n\n
+    Ahora pensemos en la clase Gato";
+
+    sendMessage($id,$respuesta,$token);
+
+    $sticker="CAACAgIAAxkBAAEBIPNiotTDEPnNQbc5KOzqwH_yTJ9e3QAC-AAD9HsZAAELURd6t1046SQE";
+    sendSticker($id,$sticker,$token);
+
+    $respuesta = "¿De qué manera debería instanciarse esa clase en Java?";
+
+    $keyboard= [
+        ['Gato gato = new Gato;', 'Gato gato = class Gato'],
+        ['Gato gato = new Gato();', 'Gato gato = extends Gato();']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+} 
+
+//RESPUESTA 2.3
+else if(isset($text) && $text == 'Gato gato = new Gato();' ){
+    $respuesta = "✅ Buen trabajo! En Java para instanciar una clase se utiliza la palabra reservada new.\n\nBien, ahora imagina que este sistema va a crecer, y va a contener a todas las mascotas, y por qué no, a todos los seres vivos. Entonces existe la necesidad de utilizar herencia.";
+
+    sendMessage($id,$respuesta,$token);
+    
+    $respuesta = "Entonces ¿Cuál de los siguientes diagramas UML es el correcto para la relación entre animal, gato y perro?";
+
+    $photo = "https://oop.rocketpym.com/E2.1.png";
+    sendPhoto($id,$photo,$token);
+    $keyboard= [
+        ['UML 1'],
+        ['UML 2'],
+        ['UML 3']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);  
+}
+
+//RESPUESTA 2.4
+else if(isset($text) && $text == 'UML 1' ){
+    $respuesta = "✅ Enhorabuena! La clase gato y perro van a heredar atributos y métodos de la clase animal. Evidentemente se cumple la regla de “es un” para identificar si existe herencia.";
+
+    sendMessage($id,$respuesta,$token);
+
+    
+    $keyboard= [
+        ['UML 1'],
+        ['UML 2'],
+        ['UML 3']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);  
+}
 
 //RESPUESTA POR DEFECTO
 else if(isset($text)){
     $respuesta = "Te equivocaste, intenta de nuevo 😅. Si tienes problemas puedes usar el comando /help";
 
-    $message->sendMessage($respuesta);
-    //sendMessage($id,$respuesta,$token);
+    sendMessage($id,$respuesta,$token);
 } 
-
-
-
 
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
 
 //Función para enviar menssajes
-/* function sendMessage($chatID, $messaggio, $token,&$k = ''){
+function sendMessage($chatID, $messaggio, $token,&$k = ''){
     $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
 
 	if(isset($k)) {
@@ -326,9 +395,9 @@ else if(isset($text)){
     $result = curl_exec($ch);
     curl_close($ch);
 }
- */
+
 //Función para enviar fotos
-/* function sendPhoto($chatID, $photo, $token){
+function sendPhoto($chatID, $photo, $token){
     $url = "https://api.telegram.org/" . $token . "/sendPhoto?photo=".$photo."&chat_id=" . $chatID;
 
     $url = $url."&text=" . urlencode($messaggio);
@@ -340,10 +409,10 @@ else if(isset($text)){
     curl_setopt_array($ch, $optArray);
     $result = curl_exec($ch);
     curl_close($ch);
-} */
+}
 
 //Aquí puede mandar stickers al menos desde la web
-/* function sendSticker($chatID, $sticker, $token){
+function sendSticker($chatID, $sticker, $token){
     $url = "https://api.telegram.org/" . $token . "/sendSticker?sticker=".$sticker."&chat_id=" . $chatID;
 
     $url = $url."&text=" . urlencode($sticker);
@@ -355,5 +424,7 @@ else if(isset($text)){
     curl_setopt_array($ch, $optArray);
     $result = curl_exec($ch);
     curl_close($ch);
-} */
+}
 ?>
+
+
