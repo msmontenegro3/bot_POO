@@ -317,7 +317,7 @@ else if(isset($text) && $text == 'Volar' ){
 
     $keyboard= [
         ['Gato gato = new Gato;', 'Gato gato = class Gato'],
-        ['Gato gato = new Gato();', '•	Gato gato = extends Gato();']
+        ['Gato gato = new Gato();', 'Gato gato = extends Gato();']
     ];
 
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
@@ -328,11 +328,11 @@ else if(isset($text) && $text == 'Volar' ){
 
 //RESPUESTA 2.3
 else if(isset($text) && $text == 'Gato gato = new Gato();' ){
-    $respuesta = "✅ Buen trabajo! En Java para instanciar una clase se utiliza la palabra reservada new.\n\nBien, ahora imagina que este sistema va a crecer, y va a contener a todas las mascotas, y por qué no, a todos los seres vivos. Entonces existe la necesidad de utilizar herencia. Aquí nace la necesidad nuevamente.";
+    $respuesta = "✅ Buen trabajo! En Java para instanciar una clase se utiliza la palabra reservada new.\n\nBien, ahora imagina que este sistema va a crecer, y va a contener a todas las mascotas, y por qué no, a todos los seres vivos. Entonces existe la necesidad de utilizar herencia.";
 
     sendMessage($id,$respuesta,$token);
     
-    $photo = "AgACAgEAAxkBAAEBIPdiotfm2_6RR_XJ_9UwGVfh-iXpNwACoaoxG6HzGEWeAbrVm9QQLwEAAwIAA20AAyQE";
+    $photo = "";
     sendPhoto($id,$photo,$token);
 }
 
