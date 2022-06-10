@@ -259,12 +259,27 @@ else if (isset($text) && $text == 'Opción 1'){
 
 //EJERCICIO 2
 else if (isset($text) && $text == '/ejercicio2' ){
-    $sticker="CAACAgEAAxkBAAEBG5hiklWpKaycPq7ngVycKBcgcagywgAC7AADOA6CEWJyDgUYkJqXJAQ";
+    $sticker="https://media.giphy.com/media/I0V9yJDaRYJbX6JeQO/giphy.gif";
     sendSticker($id,$sticker,$token);
 
-    $respuesta = "Este ejercicio todavía está en desarrollo 😅 pronto lo tendremos para ti 🤓";
+    $respuesta = "La escuela “ABC” desea utilizar un programa que les ayude a sus estudiantes de niveles iniciales a reconocer los sonidos que hacen los animales. Los primeros animales que observan son los más cercanos a ellos, es decir, las mascotas. Por lo tanto, el programa debe reproducir el sonido (onomatopeya) que producen los siguientes animales: perro 🐕 y gato 🐈.";
 
     sendMessage($id,$respuesta,$token);
+
+    $sticker="CAACAgIAAxkBAAEBIO9iosv7uq5nWggqvPWn5z6ZcNmglgAC3gAD9HsZAAG9he9u98XOPSQE";
+    sendSticker($id,$sticker,$token);
+    $respuesta = "Iniciemos programando la clase Perro. De las siguientes declaraciones ¿Cuál es un atributo de la clase Perro corresponder a esta clase?";
+
+    $keyboard= [
+        ['private String Ladrar;', 'private Stirng Jugar;'],
+        ['•	private String Raza;', 'private String Comer;']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+
 } 
 
 //RESPUESTA POR DEFECTO
