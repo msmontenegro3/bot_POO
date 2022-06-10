@@ -290,7 +290,7 @@ else if (isset($text) && $text == 'private String Raza;' ){
     $respuesta = "✅ Exacto! Como ya te habíamos dicho, un atributo es una característica o un estado de la clase.";
     sendMessage($id,$respuesta,$token);
 
-    $respuesta = "De la siguiente lista, ¿Qué método no corresponde a la clase Perro";
+    $respuesta = "De la siguiente lista, ¿Qué método no corresponde a la clase Perro?";
 
     $keyboard= [
         ['Jugar', 'Ladrar'],
