@@ -33,7 +33,8 @@ else if (isset($text) && $text == '/help' ){
 
 else if(isset($text) && $text == '/indice' ){
     $respuesta = "LISTA DE EJERCICIOS:\n
-    /ejercicio1";
+    /ejercicio1
+    /ejercicio2";
 
     sendMessage($id,$respuesta,$token);
 }
@@ -272,15 +273,69 @@ else if (isset($text) && $text == '/ejercicio2' ){
 
     $keyboard= [
         ['private String Ladrar;', 'private Stirng Jugar;'],
-        ['•	private String Raza;', 'private String Comer;']
+        ['private String Raza;', 'private String Comer;']
     ];
 
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
     sendMessage($id,$respuesta,$token,$k);
-
 } 
+//RESPUESTA 2.1
+else if (isset($text) && $text == 'private String Raza' ){
+
+    $sticker="CAACAgEAAxkBAAEBG4xikkhecv_h6ogW4Kuaya68DiML2AACowQAAp-NkETEJoys9tiH2SQE";
+
+    sendSticker($id,$sticker,$token);
+    $respuesta = "✅ Exacto! Como ya te habíamos dicho, un atributo es una característica o un estado de la clase.";
+    sendMessage($id,$respuesta,$token);
+
+    $respuesta = "De la siguiente lista, ¿Qué método no corresponde a la clase Perro";
+
+    $keyboard= [
+        ['Jugar', 'Ladrar'],
+        ['Volar', 'Nadar']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+}
+
+//RESPUESTA 2.2
+else if(isset($text) && $text == 'Volar' ){
+    $respuesta = "✅ Correcto! El método volar no es una acción que pueda realizar un perro. Es importante identificar que los métodos dentro de una clase deben ser funciones u operaciones concernientes a la clase.\n\n
+    Ahora pensemos en la clase Gato";
+
+    sendMessage($id,$respuesta,$token);
+
+    $sticker="CAACAgIAAxkBAAEBIPNiotTDEPnNQbc5KOzqwH_yTJ9e3QAC-AAD9HsZAAELURd6t1046SQE";
+    sendSticker($id,$sticker,$token);
+
+    $respuesta = "¿De qué manera debería instanciarse esa clase en Java?";
+
+    $keyboard= [
+        ['Gato gato = new Gato;', 'Gato gato = class Gato'],
+        ['Gato gato = new Gato();', '•	Gato gato = extends Gato();']
+    ];
+
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+
+    sendMessage($id,$respuesta,$token,$k);
+} 
+
+//RESPUESTA 2.3
+else if(isset($text) && $text == 'Gato gato = new Gato();' ){
+    $respuesta = "✅ Buen trabajo! En Java para instanciar una clase se utiliza la palabra reservada new.\n\nBien, ahora imagina que este sistema va a crecer, y va a contener a todas las mascotas, y por qué no, a todos los seres vivos. Entonces existe la necesidad de utilizar herencia. Aquí nace la necesidad nuevamente.";
+
+    sendMessage($id,$respuesta,$token);
+    
+    $photo = "AgACAgEAAxkBAAEBIPdiotfm2_6RR_XJ_9UwGVfh-iXpNwACoaoxG6HzGEWeAbrVm9QQLwEAAwIAA20AAyQE";
+    sendPhoto($id,$photo,$token);
+}
+
 
 //RESPUESTA POR DEFECTO
 else if(isset($text)){
