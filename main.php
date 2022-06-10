@@ -332,7 +332,7 @@ else if(isset($text) && $text == 'Gato gato = new Gato();' ){
 
     sendMessage($id,$respuesta,$token);
     
-    $photo = "";
+    $photo = "https://oop.rocketpym.com/E2.1.png";
     sendPhoto($id,$photo,$token);
 }
 
