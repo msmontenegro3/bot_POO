@@ -1,5 +1,6 @@
 <?php
 require_once 'Mensajes.php';
+
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= "bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4";
 
