@@ -26,7 +26,7 @@ if(isset($text) && $text == '/start' ){
     \n /indice
     \n /recursos";
     echo ":(";
-    $bot->sendMessage($id, $respuesta, token);
+    $bot->sendMessage($id, $respuesta, $token);
     
     //sendMessage($id,$respuesta,$token);
 } 
