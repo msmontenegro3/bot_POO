@@ -14,7 +14,7 @@ $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
 $text = $message["text"]; //mensaje del usuario
 
-file_put_contents("archivo", $text, $name, $id);
+
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
