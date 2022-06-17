@@ -2,17 +2,18 @@
 require_once 'Mensajes.php';
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
-$token= "bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4";
+
 
 $data = file_get_contents("php://input");
 $update = json_decode($data,true);
-$message = $update['message'];
+$message = $update['message']; //filtra el json con la información del usuario
 
-$id = $message["from"]["id"];
-$name = $message["from"]["first_name"];
-$text = $message["text"];
 
-$message = new Mensajes($token, $id, "https://api.telegram.org/");
+$id = $message["from"]["id"]; //id del chat
+$name = $message["from"]["first_name"]; //nombre del usuario
+$text = $message["text"]; //mensaje del usuario
+
+$bot = new Bot();
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
@@ -24,7 +25,7 @@ if(isset($text) && $text == '/start' ){
     \n /indice
     \n /recursos";
 
-    $message->sendMessage($respuesta);
+    $bot->sendMessage($id, $respuesta);
     //sendMessage($id,$respuesta,$token);
 } 
 
