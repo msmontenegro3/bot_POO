@@ -7,7 +7,7 @@ require_once 'Bot.php';
 $data = file_get_contents("php://input");
 $update = json_decode($data,true);
 $message = $update['message']; //filtra el json con la información del usuario
-
+echo $update;
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario

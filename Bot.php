@@ -24,6 +24,7 @@ class Bot{
 
     public function sendMessage($chatID, $respuesta, &$k = ''){
         $metodo = "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID . "&text=" . urldecode($respuesta);
+        echo "llega aquí";
         return APICall($metodo);
 
     }
