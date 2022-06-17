@@ -27,6 +27,7 @@ if(isset($text) && $text == '/start' ){
     \n /recursos";
 
     $bot->sendMessage($id, $respuesta);
+    echo ":(";
     //sendMessage($id,$respuesta,$token);
 } 
 
