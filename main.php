@@ -3,17 +3,18 @@ require_once 'Bot.php';
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 
+$bot = new Bot();
 
 $data = file_get_contents("php://input");
 $update = json_decode($data,true);
 $message = $update['message']; //filtra el json con la información del usuario
-echo "hola";
+file_put_contents("archivo", $data);
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
 $text = $message["text"]; //mensaje del usuario
 
-$bot = new Bot();
+
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
