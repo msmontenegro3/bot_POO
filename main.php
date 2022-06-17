@@ -8,13 +8,13 @@ $bot = new Bot();
 $data = file_get_contents("php://input");
 $update = json_decode($data,true);
 $message = $update['message']; //filtra el json con la información del usuario
-file_put_contents("archivo", $data);
+
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
 $text = $message["text"]; //mensaje del usuario
 
-
+file_put_contents("archivo", $text, $name, $id);
 
 //ASIGNACIÓN COMANDO EN FORMATO /----
 
