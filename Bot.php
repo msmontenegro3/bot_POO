@@ -9,7 +9,7 @@ class Bot{
 
 
 
-    public function APICall(string $metodo){
+    public function APICall(string $metodo, string $token){
         $url = 'https://api.telegram.org/bot'. $token .$metodo;
         $ch = curl_init();
         $optArray = array(
