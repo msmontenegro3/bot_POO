@@ -27,8 +27,8 @@ class Bot{
         curl_close($ch);
     }
 
-    public function sendMessage($chatID, $respuesta, &$k = ''){
-        $metodo = "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID . "&text=" . urldecode($respuesta);
+    public function sendMessage($chatID, $messaggio, &$k = ''){
+        $metodo = "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID . "&text=" . urldecode($messaggio);
         echo "llega aquí";
         return Bot::APICall($metodo);
 
