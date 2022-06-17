@@ -7,8 +7,9 @@
         $pass="";
         $server="localhost";
         $db= "oop_bot";
-        $con=mysql_connect($server, $user, $pass) or die("Error al conectar a la base de datos" .mysql_error());
-        mysql_select_db($db, $con);
+
+        $con = new mysqli($server, $user, $db);
+        $con->set_charset("utf8");
     
         return $con;
     }
