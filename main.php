@@ -1,5 +1,5 @@
 <?php
-require_once 'Mensajes.php';
+require_once 'Bot.php';
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 
