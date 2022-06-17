@@ -3,12 +3,14 @@
 //token y métodos
 class Bot{
 
+    public string $metodo;
     public string $token ='5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
     private string $url;
     
 
     public function APICall(string $metodo){
         $url = 'https://api.telegram.org/bot'. $token .$metodo;
+        echo $url;
         $ch = curl_init();
         $optArray = array(
             CURLOPT_URL => $url,
