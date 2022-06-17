@@ -1,5 +1,5 @@
 <?php
-define('token', 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4');
+
 
 class Bot{
 

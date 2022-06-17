@@ -2,7 +2,7 @@
 require_once 'Bot.php';
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
-
+$token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
 $bot = new Bot();
 
 $data = file_get_contents("php://input");
@@ -26,7 +26,7 @@ if(isset($text) && $text == '/start' ){
     \n /indice
     \n /recursos";
     echo ":(";
-    $bot->sendMessage($id, $respuesta);
+    $bot->sendMessage($id, $respuesta, token);
     
     //sendMessage($id,$respuesta,$token);
 } 
