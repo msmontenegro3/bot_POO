@@ -9,9 +9,11 @@ $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
 $bot = new Bot();
 
 $data = file_get_contents("php://input");
+
 $update = json_decode($data,true);
 $message = $update['message']; //filtra el json con la información del usuario
 
+file_put_contents('archivo',$data);
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
