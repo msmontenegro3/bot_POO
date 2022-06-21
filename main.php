@@ -68,7 +68,7 @@ if(isset($text) && $text == '/ejercicio' ){
 }
 if(isset($text) && $text == '1'){
 
-    $enunciado = new ejercicio($text);
+    $enunciado = new ejercicio(1);
 
     $bot->sendMessage($id, $enunciado, $token);
 
