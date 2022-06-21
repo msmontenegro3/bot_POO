@@ -1,6 +1,7 @@
 <?php
 include("conexion.php");
 require_once 'Bot.php';
+require_once 'ejercicio.php';
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
@@ -27,7 +28,8 @@ if(isset($text) && $text == '/start' ){
     \n /help
     \n /indice
     \n /recursos
-    \n RECUERDA QUE PARA EMPEZAR DEBES ESCRIBIR LA PALABRA EJERCICIO";
+    \n /ejercicio
+    \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando ejercicio";
 
     $bot->sendMessage($id, $respuesta, $token);
     
@@ -61,7 +63,8 @@ if(isset($text) && $text == '/recursos' ){
 
 //Llamada a ejercicios
 if(isset($text) && $text == '/ejercicio' ){
-    
+    $respuesta = "Escriba el número de ejercicio que desee (en números)";
+    $bot->sendMessage($id, $respuesta, $token);
 }
 
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
