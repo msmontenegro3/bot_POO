@@ -2,18 +2,15 @@
 require_once 'Modelo.php';
 class Ejercicio
 {
-
+    private $ejercicio;
     public function __construct ($ejercicio_id)
     {
         $ejercicio_data = new Modelo();
-        $ejercicio = $ejercicio_data->getEjercicioFull($ejercicio_id);
-        return $ejercicio[0]['enunciado'];
+        $this->ejercicio = $ejercicio_data->getEjercicioFull($ejercicio_id);
     }
 
-    public function getEjercicio($ejercicio_id)
+    public function getEnunciado()
     {
-        return 'ejercicio'. $ejercicio_id;
+        return $this->ejercicio[0]['enunciado'];
     }
 }
-
-$ej = new Ejercicio(1);

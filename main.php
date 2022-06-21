@@ -1,7 +1,8 @@
 <?php
-include("conexion.php");
+
 require_once 'Bot.php';
 require_once 'ejercicio.php';
+
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
@@ -68,9 +69,9 @@ if(isset($text) && $text == '/ejercicio' ){
 }
 if(isset($text) && $text == '1'){
 
-    $enunciado = new ejercicio(1);
-
-    $bot->sendMessage($id, $enunciado, $token);
+    $enunciado = new Ejercicio(1);
+    
+    $bot->sendMessage($id, $enunciado->getEnunciado(), $token);
 
 }
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
