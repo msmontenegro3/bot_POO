@@ -26,8 +26,9 @@ if(isset($text) && $text == '/start' ){
     A continuación tienes los comandos que puedes utilizar:
     \n /help
     \n /indice
-    \n /recursos";
-    echo ":(";
+    \n /recursos
+    \n RECUERDA QUE PARA EMPEZAR DEBES ESCRIBIR LA PALABRA EJERCICIO";
+
     $bot->sendMessage($id, $respuesta, $token);
     
     //sendMessage($id,$respuesta,$token);
@@ -39,13 +40,12 @@ if (isset($text) && $text == '/help' ){
 }
 if(isset($text) && $text == '/indice' ){
     $respuesta = "LISTA DE EJERCICIOS:
-    \nSi desea acceder a un ejercicio determinado escriba la palabra ejercicio seguida del número correspondiente sin espacios (ejemplo: ejercicio1)
+    \nSi desea acceder a un ejercicio determinado seleccione el comando /ejercicio
     \nejercicio1 - Abstracción celular
     \nejercicio2 - Sistema estudiantes de escuela";
 
     $bot->sendMessage($id, $respuesta, $token);
 }
-
 if(isset($text) && $text == '/recursos' ){
     $respuesta = "LISTA DE ENLACES QUE PUEDEN INTERESARTE PARA ESTUDIAR:";
     $bot->sendMessage($id, $respuesta, $token);
@@ -57,6 +57,11 @@ if(isset($text) && $text == '/recursos' ){
     \nhttps://introcs.cs.princeton.edu/java/11cheatsheet/";
 
     $bot->sendMessage($id, $respuesta, $token);
+}
+
+//Llamada a ejercicios
+if(isset($text) && $text == '/ejercicio' ){
+    
 }
 
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
