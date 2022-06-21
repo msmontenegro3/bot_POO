@@ -66,7 +66,13 @@ if(isset($text) && $text == '/ejercicio' ){
     $respuesta = "Escriba el número de ejercicio que desee (en números)";
     $bot->sendMessage($id, $respuesta, $token);
 }
+if(isset($text) && $text == '1'){
 
+    $enunciado = new ejercicio($text);
+
+    $bot->sendMessage($id, $enunciado, $token);
+
+}
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
 
 //Función para enviar menssajes

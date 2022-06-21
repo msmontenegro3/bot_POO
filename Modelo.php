@@ -15,6 +15,13 @@ class Modelo{
         $this->conexion->set_charset("utf8");
     }
 
+    public function getEjercicioFull($ejercicio_id){
+
+        $data = $this->conexion->query('SELECT * FROM ejercicios_view WHERE id_ejercicio = ' . $ejercicio_id);
+        return $data->fetch_all(MYSQLI_ASSOC);
+    
+    }
+
     public function getUsuarios(){
         $equis = $this->conexion->query('
         SELECT * FROM usuarios');
@@ -23,8 +30,5 @@ class Modelo{
     }
 
 }
-
-$cn = new Modelo();
-print_r($cn->getUsuarios()[1]['apellido_us']);
 
 ?>
