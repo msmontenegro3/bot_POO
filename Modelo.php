@@ -2,7 +2,7 @@
 
 class Modelo{
 
-    private $conexion;
+    public $conexion;
 
 
     public function __construct(){
@@ -34,6 +34,7 @@ class Modelo{
         return $dt->fetch_all(MYSQLI_ASSOC);
     
     }
+    
 
 }
 
