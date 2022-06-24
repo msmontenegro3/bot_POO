@@ -20,6 +20,7 @@ $message = $update['message']; //filtra el json con la información del usuario
 
 $update_id = $update['update_id'];
 print_r($update_id);
+file_put_contents('archivo', $update_id);
 
 
 $id = $message["from"]["id"]; //id del chat
