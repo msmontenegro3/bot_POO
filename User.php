@@ -19,7 +19,7 @@ class User{
     {
         $dt = $this->data_user->getUserData();
         foreach ($dt as $key => $value) {
-            $id[] = $value; 
+            $id[] = $value['codigo_usuario_tel']; 
         }
         return $id;
     }
