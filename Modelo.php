@@ -25,8 +25,8 @@ class Modelo{
     public function setUsuarios($chatID, $nombre, $apellido, $fecha=''){
 
 
-        $dt = $this->conexion->query('');
-        print_r($nombre);
+        /*$dt = $this->conexion->query('');
+        print_r($nombre);*/
 
     }
 
