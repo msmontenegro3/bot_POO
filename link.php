@@ -1,9 +1,7 @@
 <?php
 
-require_once 'Talker.php';
 
-$data = file_get_contents("php://input");
-$decode_data = json_decode($data,true);
+$decode_data = json_decode('{"update_id":678050301,
+    "message":{"message_id":1876,"from":{"id":1073553770,"is_bot":false,"first_name":"Mirta","last_name":"Montenegro","language_code":"es"},"chat":{"id":1073553770,"first_name":"Mirta","last_name":"Montenegro","type":"private"},"date":1656050732,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}',true);
 
-$t = new Talker($decode_data);
-//$t->sendMessage('hola');
+print_r($decode_data);
