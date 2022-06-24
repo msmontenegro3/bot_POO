@@ -4,6 +4,8 @@ require_once 'Bot.php';
 require_once 'User.php';
 require_once 'ejercicio.php';
 
+$usu = new User();
+
 
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
@@ -22,8 +24,10 @@ $text = $message["text"]; //mensaje del usuario
 $date = $message["date"];//fecha
 
 
-$usu = new User();
-$usu->setUser($id, $name, $last_name, $date);
+if (!in_array($id, $usu->getIdArray())) {
+    $usu->setUser($id, $name, $last_name, $date);
+}
+
 
 
 //ASIGNACIÓN COMANDO EN FORMATO /----

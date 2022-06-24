@@ -27,6 +27,13 @@ class Modelo{
         VALUES (' . $chatID  . ' , \'' .  $nombre . '\', \'' .  $apellido . '\', \'' .  $fecha  . '\')');
     }
 
+    public function getUserData(){
+
+        $dt = $this->conexion->query('SELECT codigo_usuario_tel FROM usuarios');
+        return $dt->fetch_all(MYSQLI_ASSOC);
+    
+    }
+
 }
 
 //$m = new Modelo();
