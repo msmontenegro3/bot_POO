@@ -23,7 +23,7 @@ $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
 $last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
-$date = $message["date"];//fecha
+$date = localtime($message["date"]);//fecha
 
 
 if (!in_array($id, $usu->getIdArray())) {
