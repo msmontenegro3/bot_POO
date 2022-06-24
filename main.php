@@ -42,7 +42,7 @@ if(isset($text) && $text == '/start' ){
     \n /indice
     \n /recursos
     \n /ejercicio
-    \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando ejercicio";
+    \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /ejercicio";
 
     $bot->sendMessage($id, $respuesta, $token);
     
