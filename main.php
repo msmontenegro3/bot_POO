@@ -18,6 +18,9 @@ $data = file_get_contents("php://input");
 $update = json_decode($data,true);
 $message = $update['message']; //filtra el json con la información del usuario
 
+$update_id = $update['update_id'];
+print_r($update_id);
+
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
