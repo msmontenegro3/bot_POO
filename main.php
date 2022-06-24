@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Bot.php';
+require_once 'User.php';
 require_once 'ejercicio.php';
 
 
@@ -16,8 +17,12 @@ $message = $update['message']; //filtra el json con la información del usuario
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
+$last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
+$date = $message["date"];//fecha
 
+$usu = new User();
+$usu->setUser($id, $name, $last_name, $date);
 
 
 //ASIGNACIÓN COMANDO EN FORMATO /----

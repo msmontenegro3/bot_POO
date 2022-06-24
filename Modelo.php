@@ -7,7 +7,7 @@ class Modelo{
 
     public function __construct(){
         $user="pelon196_chichi";
-        $pass="Chichorito1999.";
+        $pass="CHICHORITO1999.";
         $server="mysql1007.mochahost.com";
         $db= "pelon196_bot_tel";
 
@@ -17,18 +17,22 @@ class Modelo{
 
     public function getEjercicioFull($ejercicio_id){
 
-        $data = $this->conexion->query('SELECT * FROM ejercicios_view WHERE id_ejercicio = ' . $ejercicio_id);
-        return $data->fetch_all(MYSQLI_ASSOC);
+        $dt = $this->conexion->query('SELECT * FROM ejercicios_view WHERE id_ejercicio = ' . $ejercicio_id);
+        return $dt->fetch_all(MYSQLI_ASSOC);
     
     }
 
-    public function getUsuarios(){
-        $equis = $this->conexion->query('
-        SELECT * FROM usuarios');
+    public function setUsuarios($chatID, $nombre, $apellido, $fecha=''){
 
-        return $equis->fetch_all(MYSQLI_ASSOC);
+
+        $dt = $this->conexion->query('');
+        print_r($nombre);
+
     }
 
 }
+
+$m = new Modelo();
+print_r($m->getEjercicioFull(1));
 
 ?>
