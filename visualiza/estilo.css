@@ -1,0 +1,51 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: century gothic;
+	color: #444
+}
+
+/* .tabla {
+    width: 100%;
+    border: 1px solid;
+}
+
+th, td{
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid;
+
+}
+caption {
+    padding: 8px;
+    background-color:rgb(19, 4, 75);
+ }
+
+ caption b{
+    color: white;
+ } */
+ 
+ table {
+    width: 100%;
+    margin: 0 auto;
+ }
+
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-collapse: collapse;
+    padding: 8px;
+    caption-side: bottom;
+ }
+ caption {
+    padding: 8px;
+    color: #fff;
+     background: #000;
+     font-weight: 700;
+ }
+ th {
+    background: #eee;
+ }
