@@ -12,7 +12,8 @@ class Modelo{
         $db= "pelon196_bot_tel";
 
         $this->conexion = new mysqli($server, $user, $pass, $db);
-        $this->conexion->set_charset("utf8");
+        $this->conexion->set_charset("utf8mb4");
+        /* $this->conexion->set_charset("utf8"); */
     }
 
     public function getEjercicioFull($ejercicio_id){
