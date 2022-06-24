@@ -85,6 +85,14 @@ if(isset($text) && $text == '1'){
     
     $bot->sendMessage($id, $enunciado->getEnunciado(), $token);
 }
+
+if(isset($text) && $text == '2'){
+
+    $enunciado = new Ejercicio(2);
+    
+    $bot->sendMessage($id, $enunciado->getEnunciado(), $token);
+}
+
 //ENVÍO Y CONEXIÓN API DE TELEGRAM
 
 //Función para enviar menssajes
