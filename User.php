@@ -14,4 +14,4 @@ class User{
 }
 
 $us = new User();
-$us->setUser('23216546', 'Ernie', 'Manosalvas');
+$us->setUser(23216546, 'Ernie', 'Manosalvas');

@@ -21,9 +21,9 @@ $last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
 $date = $message["date"];//fecha
 
-/*
+
 $usu = new User();
-$usu->setUser($id, $name, $last_name, $date);*/
+$usu->setUser($id, $name, $last_name, $date);
 
 
 //ASIGNACIÓN COMANDO EN FORMATO /----

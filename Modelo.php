@@ -23,16 +23,13 @@ class Modelo{
     }
 
     public function setUsuarios($chatID, $nombre, $apellido, $fecha=''){
-
-
-        /*$dt = $this->conexion->query('');
-        print_r($nombre);*/
-
+        $this->conexion->query('INSERT INTO usuarios (codigo_usuario_tel, nombre_us, apellido_us, fecha)
+        VALUES (' . $chatID  . ' , \'' .  $nombre . '\', \'' .  $apellido . '\', \'' .  $fecha  . '\')');
     }
 
 }
 
-$m = new Modelo();
-print_r($m->getEjercicioFull(1));
+//$m = new Modelo();
+//print_r($m->getEjercicioFull(1));
 
 ?>
