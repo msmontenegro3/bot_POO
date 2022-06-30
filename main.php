@@ -116,7 +116,7 @@ if(isset($text) && $text == '1'){
             [
                 [
                     "text" => "Memoria",
-                    "callback_data" => "yes"
+                    "callback_data" => "Memoria"
                 ],
                 [
                     "text" => "Conectarse a internet",
