@@ -83,27 +83,13 @@ if(isset($text) && $text == '/recursos' ){
 //Llamada a ejercicios
 if(isset($text) && $text == '/ejercicio' ){
     $respuesta = "Escriba el número de ejercicio que desee (en números)";
+    $keyboard= [
+        ['1','2']
+    ];
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
 
-    $k = json_encode([
-        "inline_keyboard" => [
-            [
-                [
-                    "text" => "Yes",
-                    "callback_data" => "yes"
-                ],
-                [
-                    "text" => "No",
-                    "callback_data" => "no"
-                ],
-                [
-                    "text" => "Stop",
-                    "callback_data" => "stop"
-                ]
-            ]
-        ]
-    ]);
-
-    $bot->sendMessage($id, $respuesta, $token, $k);
+    sendMessage($id,$respuesta,$token,$k);
 }
 if(isset($text) && $text == '1'){
 
@@ -111,13 +97,28 @@ if(isset($text) && $text == '1'){
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
     
-    $keyboard= [
-        ['Memoria','Conectarse a internet'],
-        ['Tamaño (pulgadas)','Espacio (GB)']
-    ];
-    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
-	$k=json_encode($key);
-
+    $k = json_encode([
+        "inline_keyboard" => [
+            [
+                [
+                    "text" => "Memoria",
+                    "callback_data" => "stop"
+                ],
+                [
+                    "text" => "Conectarse a internet",
+                    "callback_data" => "true"
+                ],
+                [
+                    "text" => "Tamaño (pulgadas)",
+                    "callback_data" => "stop"
+                ],
+                [
+                    "text" => "Espacio (GB)",
+                    "callback_data" => "stop"
+                ]
+            ]
+        ]
+    ]);
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
 
