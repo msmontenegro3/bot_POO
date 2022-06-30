@@ -19,9 +19,6 @@ $update_id = $update['update_id']; //número de actualización
 
 //file_put_contents('archivo', $update_id);
 
-$output = json_decode(file_get_contents('php://input'), TRUE);
-
-print_r($output);
 
 $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
