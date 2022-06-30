@@ -131,7 +131,7 @@ if(isset($text) && $text == '1'){
 
 }
 
-if (isset($boton_pressed) && $boton_pressed == 'no') {
+if (isset($callback_query) && $boton_pressed == 'no') {
 
     $respuesta = "Upssss te equivocaste";
     $bot->sendMessage($id,$respuesta,$token);
