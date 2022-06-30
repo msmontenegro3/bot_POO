@@ -134,6 +134,6 @@ if(isset($text) && $text == '1'){
 if (isset($boton_pressed) && $boton_pressed == 'no') {
 
     $respuesta = "Upssss te equivocaste";
-    sendMessage($id,$respuesta,$token);
+    $bot->sendMessage($id,$respuesta,$token);
 }
 
