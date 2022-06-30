@@ -20,14 +20,26 @@ $update_id = $update['update_id']; //número de actualización
 //PARA EL INLINEKEYBOARD 
 $callback_query = $update['callback_query'];
 
+if (isset($message)) {
+    $id = $message["from"]["id"]; //id del chat
+    $name = $message["from"]["first_name"]; //nombre del usuario
+    $last_name = $message["from"]["last_name"]; //apellido del usuario
+    $text = $message["text"]; //mensaje del usuario
+    $date = date("d F Y H:i:s", $message["date"]);//fecha
+}else{
+    $id = $callback_query["from"]["id"]; //id del chat
+    $name = $callback_query["from"]["first_name"]; //nombre del usuario
+    $last_name = $callback_query["from"]["last_name"]; //apellido del usuario
+    $date = date("d F Y H:i:s", $callback_query["date"]);//fecha
+    $boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
+}
 
-
-$id = $message["from"]["id"]; //id del chat
+/* $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
 $last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
-$date = date("d F Y H:i:s", $message["date"]);//fecha
-$boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
+$date = date("d F Y H:i:s", $message["date"]);//fecha */
+
 
 file_put_contents('archivo', $data);
 
