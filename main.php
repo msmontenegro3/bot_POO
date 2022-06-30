@@ -95,6 +95,13 @@ if(isset($text) && $text == '1'){
     $enunciado = new Ejercicio();
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
-    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token);
+    
+    $keyboard= [
+        ['respuesta1', 'respuesta2'],
+    ];
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+	$k=json_encode($key);
+    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
+
 }
 
