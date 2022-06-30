@@ -21,7 +21,7 @@ $update_id = $update['update_id']; //número de actualización
 //$callback_query = $message['callback_query'];
 
 
-file_put_contents('archivo', $message);
+file_put_contents('archivo', json_decode($message,true));
 
 
 $id = $message["from"]["id"]; //id del chat
