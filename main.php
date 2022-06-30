@@ -29,7 +29,7 @@ $text = $message["text"]; //mensaje del usuario
 $date = date("d F Y H:i:s", $message["date"]);//fecha
 $boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
 
-file_put_contents('archivo', $boton_pressed);
+file_put_contents('archivo', $data);
 
 if (!in_array($id, $usu->getIdArray())) {
     $usu->setUser($id, $name, $last_name, $date);
