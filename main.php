@@ -19,9 +19,9 @@ $update_id = $update['update_id']; //número de actualización
 
 //PARA EL INLINEKEYBOARD 
 $callback_query = $update['callback_query'];
-$data = $update['data'];
+$boton_pressed = $callback_query['data'];
 
-//file_put_contents('archivo', $update_id);
+file_put_contents('archivo', $callback_query);
 
 
 $id = $message["from"]["id"]; //id del chat
