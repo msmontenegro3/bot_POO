@@ -116,19 +116,19 @@ if(isset($text) && $text == '1'){
             [
                 [
                     "text" => "Memoria",
-                    "callback_data" => "Memoria"
-                ],
-                [
-                    "text" => "Conectarse a internet",
                     "callback_data" => "no"
                 ],
                 [
+                    "text" => "Conectarse a internet",
+                    "callback_data" => "bien"
+                ],
+                [
                     "text" => "Tamaño (pulgadas)",
-                    "callback_data" => "stop"
+                    "callback_data" => "no"
                 ],
                 [
                     "text" => "Espacio (GB)",
-                    "callback_data" => "stop"
+                    "callback_data" => "no"
                 ]
             ]
         ]
