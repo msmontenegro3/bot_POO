@@ -115,15 +115,19 @@ if(isset($text) && $text == '1'){
         "inline_keyboard" => [
             [
                 [
-                    "text" => "Yes",
+                    "text" => "Memoria",
                     "callback_data" => "yes"
                 ],
                 [
-                    "text" => "No",
+                    "text" => "Conectarse a internet",
                     "callback_data" => "no"
                 ],
                 [
-                    "text" => "Stop",
+                    "text" => "Tamaño (pulgadas)",
+                    "callback_data" => "stop"
+                ],
+                [
+                    "text" => "Espacio (GB)",
                     "callback_data" => "stop"
                 ]
             ]
