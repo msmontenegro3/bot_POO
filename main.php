@@ -27,7 +27,7 @@ $name = $message["from"]["first_name"]; //nombre del usuario
 $last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
 $date = date("d F Y H:i:s", $message["date"]);//fecha
-$boton_pressed = $callback_query['data'];
+$boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
 
 file_put_contents('archivo', $boton_pressed);
 
@@ -128,7 +128,12 @@ if(isset($text) && $text == '1'){
     ]);
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
-    
 
+}
+
+if (isset($boton_pressed) && $boton_pressed == 'no') {
+
+    $respuesta = "Upssss te equivocaste";
+    sendMessage($id,$respuesta,$token);
 }
 
