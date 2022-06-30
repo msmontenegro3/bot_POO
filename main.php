@@ -6,9 +6,6 @@ require_once 'controller/ejercicio.php';
 
 $usu = new User();
 
-/* print_r($usu->getIdArray());
-return ; */
-
 //DATOS PARA LA CONEXIÓN CON TELEGRAM Y RECONOCIMIENTO DEL MENSAJE
 $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
 $bot = new Bot();
@@ -97,10 +94,13 @@ if(isset($text) && $text == '1'){
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
     
     $keyboard= [
-        ['respuesta1', 'respuesta2'],
+        ['Memoria','Conectarse a internet'],
+        ['Tamaño (pulgadas)','Espacio (GB)']
     ];
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
+
+
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
 
 }
