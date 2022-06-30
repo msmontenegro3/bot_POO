@@ -17,6 +17,10 @@ $message = $update['message']; //filtra el json con la información del usuario
 
 $update_id = $update['update_id']; //número de actualización
 
+//PARA EL INLINEKEYBOARD 
+$callback_query = $update['callback_query'];
+$data = $update['data'];
+
 //file_put_contents('archivo', $update_id);
 
 
