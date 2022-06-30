@@ -94,7 +94,7 @@ if(isset($text) && $text == '/ejercicio' ){
     $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
-    sendMessage($id,$respuesta,$token,$k);
+    $bot->sendMessage($id,$respuesta,$token,$k);
 }
 
 
