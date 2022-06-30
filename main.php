@@ -88,5 +88,6 @@ if(isset($text) && $text == '1'){
     $enunciado = new Ejercicio();
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
+    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'], $token);
 }
 
