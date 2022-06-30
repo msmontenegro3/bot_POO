@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Bot.php';
-require_once 'User.php';
-require_once 'ejercicio.php';
+require_once 'controller/Bot.php';
+require_once 'controller/User.php';
+require_once 'controller/ejercicio.php';
 
 $usu = new User();
 
@@ -60,8 +60,8 @@ if (isset($text) && $text == '/help' ){
 if(isset($text) && $text == '/indice' ){
     $respuesta = "LISTA DE EJERCICIOS:
     \nSi desea acceder a un ejercicio determinado seleccione el comando /ejercicio
-    \nejercicio1 - Abstracción celular
-    \nejercicio2 - Sistema estudiantes de escuela";
+    \n /ejercicio1 - Abstracción celular
+    \n /ejercicio2 - Sistema estudiantes de escuela";
 
     $bot->sendMessage($id, $respuesta, $token);
 }
@@ -85,15 +85,8 @@ if(isset($text) && $text == '/ejercicio' ){
 }
 if(isset($text) && $text == '1'){
 
-    $enunciado = new Ejercicio(1);
+    $enunciado = new Ejercicio();
     
-    $bot->sendMessage($id, $enunciado->getEnunciado(), $token);
-}
-
-if(isset($text) && $text == '2'){
-
-    $enunciado = new Ejercicio(2);
-    
-    $bot->sendMessage($id, $enunciado->getEnunciado(), $token);
+    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
 }
 
