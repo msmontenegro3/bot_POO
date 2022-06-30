@@ -27,7 +27,7 @@ class EjerciciosModel{
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getRespuestasPorId($pregunta_id)
+    public function getRespuestasPorPregunta($pregunta_id)
     {
         $dt = $this->conexion->query('SELECT * FROM respuestas WHERE pregunta_id = ' . $pregunta_id);
         return $dt->fetch_all(MYSQLI_ASSOC);
