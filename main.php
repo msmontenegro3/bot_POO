@@ -84,7 +84,7 @@ if(isset($text) && $text == '/recursos' ){
 if(isset($text) && $text == '/ejercicio' ){
     $respuesta = "Escriba el número de ejercicio que desee (en números)";
 
-    $keyboard = json_encode([
+    $k = json_encode([
         "inline_keyboard" => [
             [
                 [
@@ -103,7 +103,6 @@ if(isset($text) && $text == '/ejercicio' ){
         ]
     ]);
 
-	$k=json_encode($keyboard);
     $bot->sendMessage($id, $respuesta, $token, $k);
 }
 if(isset($text) && $text == '1'){
