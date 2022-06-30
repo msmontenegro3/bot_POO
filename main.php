@@ -97,7 +97,7 @@ if(isset($text) && $text == '1'){
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
     
-    $k = json_encode([
+    /* $k = json_encode([
         "inline_keyboard" => [
             [
                 [
@@ -118,7 +118,7 @@ if(isset($text) && $text == '1'){
                 ]
             ]
         ]
-    ]);
+    ]); */
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
 
