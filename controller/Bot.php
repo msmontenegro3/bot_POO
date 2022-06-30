@@ -38,6 +38,8 @@ class Bot{
         curl_close($ch);
     }
 
+   
+
 
     //ENVÍA FOTOS
     function sendPhoto($chatID, $photo, $token){
