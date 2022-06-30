@@ -97,7 +97,7 @@ if(isset($text) && $text == '1'){
         ['Memoria','Conectarse a internet'],
         ['Tamaño (pulgadas)','Espacio (GB)']
     ];
-    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'inline_keyboard' => $keyboard);
+    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
 	$k=json_encode($key);
 
 
