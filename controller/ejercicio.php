@@ -2,7 +2,7 @@
 
 /* require_once 'model/EjerciciosModel.php'; */
 
-require_once '../model/EjerciciosModel.php';
+require_once 'model/EjerciciosModel.php';
 
 class Ejercicio
 {
@@ -32,16 +32,16 @@ class Ejercicio
         return $ejercicio_array;
     }
 
-    public function armarRespuestas($pregunta_id)
+    /* public function armarRespuestas($pregunta_id)
     {
         $respuestas_array = array(
             'respuesta' => $this->ejercicio->getRespuestasPorPregunta($pregunta_id)
         );
 
         return $respuestas_array;
-    }
+    } */
 
 }
 
-$ej = new Ejercicio();
-print_r($ej->armarRespuestas(3));
+/* $ej = new Ejercicio();
+print_r($ej->armarRespuestas(3)); */
