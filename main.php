@@ -18,10 +18,10 @@ $message = $update['message']; //filtra el json con la información del usuario
 $update_id = $update['update_id']; //número de actualización
 
 //PARA EL INLINEKEYBOARD 
-$callback_query = $message['callback_query'];
-$boton_pressed = $callback_query['data'];
+//$callback_query = $message['callback_query'];
 
-file_put_contents('archivo', $boton_pressed);
+
+file_put_contents('archivo', $message);
 
 
 $id = $message["from"]["id"]; //id del chat
@@ -29,6 +29,7 @@ $name = $message["from"]["first_name"]; //nombre del usuario
 $last_name = $message["from"]["last_name"]; //apellido del usuario
 $text = $message["text"]; //mensaje del usuario
 $date = date("d F Y H:i:s", $message["date"]);//fecha
+//$boton_pressed = $callback_query['data'];
 
 
 
