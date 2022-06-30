@@ -110,16 +110,28 @@ if(isset($text) && $text == '1'){
     $enunciado = new Ejercicio();
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
-    
-    $keyboard= [
-        ['Memoria','Conectarse a internet'],
-        ['Tamaño (pulgadas)','Espacio (GB)']
-    ];
-    $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
-	$k=json_encode($key);
 
+    $k = json_encode([
+        "inline_keyboard" => [
+            [
+                [
+                    "text" => "Yes",
+                    "callback_data" => "yes"
+                ],
+                [
+                    "text" => "No",
+                    "callback_data" => "no"
+                ],
+                [
+                    "text" => "Stop",
+                    "callback_data" => "stop"
+                ]
+            ]
+        ]
+    ]);
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
+    
 
 }
 
