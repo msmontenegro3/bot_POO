@@ -118,7 +118,7 @@ if(isset($text) && $text == '1'){
 
     $respuestas = $enunciado->armarRespuestas(1);
 
-    $respuestas_de_pregunta = '[
+    /* $respuestas_de_pregunta = '[
         "inline_keyboard" => [
             [';
 
@@ -144,7 +144,7 @@ if(isset($text) && $text == '1'){
             "callback_data" => '.  $value['id']  . '
         ],';
     
-    }
+    } */
 
     $k = json_encode([
         "inline_keyboard" => [
