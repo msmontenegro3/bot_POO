@@ -153,7 +153,7 @@ if(isset($text) && $text == '1'){
         "inline_keyboard" => [
             [
                 [
-                    "text" => "\'. $memoria . \'",
+                    "text" => "$memoria",
                     "callback_data" => 1
                 ],
                 [
