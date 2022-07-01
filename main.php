@@ -35,7 +35,7 @@ if (isset($message)) {
     $id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
 }
 
-call_user_func($boton_pressed, '');
+call_user_func('enviar_mensaje', '');
 
 function enviar_mensaje()
 {

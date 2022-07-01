@@ -1,6 +1,14 @@
 <?php
 
 
+call_user_func('test', '');
+
+function test()
+{
+    echo 'jhgjghj';
+}
+
+
 $k = [
     "inline_keyboard" => [
         [
@@ -33,9 +41,10 @@ $k2['inline_keyboard'] =array(
 )) ;
 
 
-
+/* 
 print_r($k['inline_keyboard']);
 print_r('<br>');
 print_r('<br>');
 print_r('<br>');
 print_r(json_encode($k2['inline_keyboard']));
+ */
