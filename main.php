@@ -137,12 +137,15 @@ if(isset($text) && $text == '1'){
 $rep[] = '';
 
 foreach ($enunciado->armarRespuestas(3) as $key => $value) {
-    $rep['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
-    $rep['callback_data'] = $enunciado->armarRespuestas(3)[$key]['id'];
+    $json_array['inline_keyboard'][0][0] =array(
 
+        'text' =>  $enunciado->armarRespuestas(3)[$key]['respuesta'],
+        'callback_data' => $enunciado->armarRespuestas(3)[$key]['id']
+
+    );
 }
 
-$json_array['inline_keyboard'] =array(
+/* $json_array['inline_keyboard'] =array(
     array(
     array(
 
@@ -152,7 +155,7 @@ $json_array['inline_keyboard'] =array(
 
 
     )
-)) ;
+)) */ 
 
 /* $k = '{"inline_keyboard":[[{"text":"' .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '}]]}';
  */
