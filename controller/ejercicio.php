@@ -41,8 +41,10 @@ class Ejercicio
 
     public function enviar_mensaje()
     {
-        $respuesta = 'hola';
-        $bot->sendMessage($id, $respuesta, $token);
+
+        return 'hola';
+/*         $respuesta = 'hola';
+        $bot->sendMessage($id, $respuesta, $token); */
     
     }
 

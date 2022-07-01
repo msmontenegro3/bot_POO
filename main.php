@@ -145,10 +145,10 @@ if(isset($text) && $text == '1'){
 if (isset($boton_pressed)) {
     $enunciado = new Ejercicio();
     
-    $enunciado->enviar_mensaje();
+    $respuesta = $enunciado->enviar_mensaje();
     //call_user_func('enviar_mensaje');
 
-
+    $bot->sendMessage($id,$respuesta,$token);
 
 
 /*     $respuesta = "Upssss te equivocaste";
