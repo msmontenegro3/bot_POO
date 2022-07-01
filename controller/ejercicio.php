@@ -1,8 +1,8 @@
 <?php
-/* 
-require_once '../model/EjerciciosModel.php'; */
 
-require_once 'model/EjerciciosModel.php';
+require_once '../model/EjerciciosModel.php';
+
+/* require_once 'model/EjerciciosModel.php'; */
 
 class Ejercicio
 {
@@ -42,6 +42,8 @@ class Ejercicio
 }
 
 $ej = new Ejercicio();
+
+print_r($ej->armarRespuestas(3)[0]);
 
 //print_r($ej->armarEjercicio(1)['datos'][0][1]);
 
