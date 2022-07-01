@@ -118,7 +118,7 @@ if(isset($text) && $text == '1'){
 
     $respuestas = $enunciado->armarRespuestas(1);
 
-    $respuestas_de_pregunta = 'json_encode([
+    $respuestas_de_pregunta = '[
         "inline_keyboard" => [
             [';
 
@@ -134,9 +134,9 @@ if(isset($text) && $text == '1'){
 
     $respuestas_de_pregunta = $respuestas_de_pregunta . ']
     ]
-])';
+]';
 
-    $k =  $respuestas_de_pregunta;
+    $k =  json_encode($respuestas_de_pregunta);
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][1], $token, $k);
 
