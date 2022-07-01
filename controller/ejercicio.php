@@ -1,8 +1,8 @@
 <?php
 
-/* require_once '../model/EjerciciosModel.php'; */
+require_once '../model/EjerciciosModel.php';
 
-require_once 'model/EjerciciosModel.php';
+/* require_once 'model/EjerciciosModel.php'; */
 
 class Ejercicio
 {
@@ -34,15 +34,7 @@ class Ejercicio
 
     public function armarRespuestas($pregunta_id)
     {
-        $respuestas_array = array(
-            'respuesta' => $this->ejercicio->getRespuestasPorPregunta($pregunta_id)
-        );
-
-        foreach ($respuestas_array as $key => $value) {
-    
-            $data_respuestas[] = array($value['id'] ,$value['pregunta'], $value['id_respuesta_correcta'] );
-        
-        }
+        $respuestas_array = $this->ejercicio->getRespuestasPorPregunta($pregunta_id);
 
         return $respuestas_array;
     }
@@ -53,4 +45,16 @@ $ej = new Ejercicio();
 
 //print_r($ej->armarEjercicio(1)['datos'][0][1]);
 
-print_r($ej->armarRespuestas(3)['respuesta'][0]['respuesta']);
+//print_r($ej->armarRespuestas(3));
+
+foreach ($ej->armarRespuestas(3) as $key => $value) {
+    //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
+    echo 
+    '[
+        "text" => "' .  $value['respuesta'] . '",
+        "callback_data" => '.  $value['id']  . '
+    ],';
+
+}
+
+//print_r($arreglo_respuesta);

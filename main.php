@@ -115,25 +115,25 @@ if(isset($text) && $text == '1'){
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
 
+
+    $respuestas = $enunciado->armarRespuestas(1);
+
+    $respuestas_de_pregunta = '';
+
+    foreach ($ej->armarRespuestas(3) as $key => $value) {
+        //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
+        $respuestas_de_pregunta =  $respuestas_de_pregunta . 
+        '[
+            "text" => "' .  $value['respuesta'] . '",
+            "callback_data" => '.  $value['id']  . '
+        ],';
+    
+    }
+
     $k = json_encode([
         "inline_keyboard" => [
             [
-                [
-                    "text" => "Memoria",
-                    "callback_data" => 1
-                ],
-                [
-                    "text" => "Conectarse a internet",
-                    "callback_data" => 2
-                ],
-                [
-                    "text" => "Tamaño (pulgadas)",
-                    "callback_data" => 3
-                ],
-                [
-                    "text" => "Espacio (GB)",
-                    "callback_data" => 4
-                ]
+                $respuestas_de_pregunta
             ]
         ]
     ]);
