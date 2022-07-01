@@ -32,7 +32,14 @@ if (isset($message)) {
     $last_name = $callback_query["from"]["last_name"]; //apellido del usuario
     $date = date("d F Y H:i:s", $callback_query["date"]);//fecha
     $boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
-    $boton_pressed = $callback_query['id']; //reconoce el callbackdata del teclado
+    $id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
+}
+
+function enviar_mensaje()
+{
+    $respuesta = 'hola';
+    $bot->sendMessage($id, $respuesta, $token);
+
 }
 
 /* $id = $message["from"]["id"]; //id del chat
@@ -89,6 +96,10 @@ if(isset($text) && $text == '/recursos' ){
     \nhttps://introcs.cs.princeton.edu/java/11cheatsheet/";
 
     $bot->sendMessage($id, $respuesta, $token);
+
+   /*  $question = "Qué pex";
+
+    $bot->sendPoll($id, $question, $options, $token); */
 }
 
 
@@ -115,80 +126,26 @@ if(isset($text) && $text == '1'){
     
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
 
+    foreach ($enunciado->armarRespuestas(3) as $key => $value) {
+        $json_array['inline_keyboard'][0][$key]['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
+        $json_array['inline_keyboard'][0][$key]['callback_data'] = "enviar_mensaje()";
+    
+        }
 
 
-
-
-
-
-
-/*     $respuestas_de_pregunta = [
-        "inline_keyboard" => [
-            [
-
-                $recorrido
-
-            ]
-                ]
-            ]; */
-
-
-/* $k = json_encode($respuestas_de_pregunta); */
-$rep[] = '';
-
-foreach ($enunciado->armarRespuestas(3) as $key => $value) {
+/*     foreach ($enunciado->armarRespuestas(3) as $key => $value) {
     $json_array['inline_keyboard'][0][$key]['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
     $json_array['inline_keyboard'][0][$key]['callback_data'] = $enunciado->armarRespuestas(3)[$key]['id'];
 
+    } */
 
-    ;
-}
-
-/* $json_array['inline_keyboard'] =array(
-    array(
-    array(
-
-        $rep,
-        'text' =>  $enunciado->armarRespuestas(3)[0]['respuesta'],
-        'callback_data' => $enunciado->armarRespuestas(3)[0]['id'],
-
-
-    )
-)) */ 
-
-/* $k = '{"inline_keyboard":[[{"text":"' .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '}]]}';
- */
-
-$k = json_encode($json_array);
-
-/*     $k = json_encode([
-        "inline_keyboard" => [
-            [
-                [
-                    "text" => "$memoria",
-                    "callback_data" => 1
-                ],
-                [
-                    "text" => "Conectarse a internet",
-                    "callback_data" => 2
-                ],
-                [
-                    "text" => "Tamaño (pulgadas)",
-                    "callback_data" => 3
-                ],
-                [
-                    "text" => "Espacio (GB)",
-                    "callback_data" => 4
-                ],
-            ]
-        ]
-    ]); */
+    $k = json_encode($json_array);
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][1], $token, $k);
 
 }
 
-if (isset($callback_query) && $boton_pressed == 1) {
+if (isset($callback_query) && $boton_pressed == "1") {
 
     $respuesta = "Upssss te equivocaste";
     $bot->sendMessage($id,$respuesta,$token);

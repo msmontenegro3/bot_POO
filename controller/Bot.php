@@ -70,4 +70,23 @@ class Bot{
         $result = curl_exec($ch);
         curl_close($ch);
     }
+
+    //ENVÍA POLLS
+   /*  public function sendPoll($chatID, $question, $options, $token){
+        $url = "https://api.telegram.org/" . $token . "/sendPoll?question=" . $question;
+        
+            $url = $url."&options=" . urlencode($options);
+            $ch = curl_init();
+            $optArray = array(
+                    CURLOPT_URL => $url,
+                    CURLOPT_RETURNTRANSFER => true
+        );
+        curl_setopt_array($ch, $optArray);
+        $result = curl_exec($ch);
+        curl_close($ch);
+    } */
+
+
+
+
 }
