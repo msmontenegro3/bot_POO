@@ -118,11 +118,11 @@ if(isset($text) && $text == '1'){
 
     $respuestas = $enunciado->armarRespuestas(1);
 
-    /* $respuestas_de_pregunta = '[
+   /*  $respuestas_de_pregunta = '[
         "inline_keyboard" => [
             [';
 
-    foreach ($ej->armarRespuestas(3) as $key => $value) {
+    foreach ($enunciado->armarRespuestas(3) as $key => $value) {
         //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
         $respuestas_de_pregunta =  $respuestas_de_pregunta . 
         '[
@@ -136,7 +136,7 @@ if(isset($text) && $text == '1'){
     ]
 ]';
 
-    foreach ($ej->armarRespuestas(3) as $key => $value) {
+    foreach ($enunciado->armarRespuestas(3) as $key => $value) {
         //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
         $respuestas_de_pregunta =  $respuestas_de_pregunta
         '[
@@ -146,11 +146,14 @@ if(isset($text) && $text == '1'){
     
     } */
 
+    $memoria = $enunciado->armarRespuestas(3)[0]['respuesta'];
+
+
     $k = json_encode([
         "inline_keyboard" => [
             [
                 [
-                    "text" => "Memoria",
+                    "text" => "\'. $memoria . \'",
                     "callback_data" => 1
                 ],
                 [
