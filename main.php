@@ -143,10 +143,18 @@ if(isset($text) && $text == '1'){
 
 /* $k = json_encode($respuestas_de_pregunta); */
 
-$k = '{"inline_keyboard":[[{"text":"' .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '}]]}';
+$json_array['inline_keyboard'] =array(
+    array(
+    array(
+        'text' =>  $enunciado->armarRespuestas(3)[0]['respuesta'],
+        'callback_data' => $enunciado->armarRespuestas(3)[0]['id'],
+    )
+)) ;
 
+/* $k = '{"inline_keyboard":[[{"text":"' .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '}]]}';
+ */
 
-
+$k = json_encode($json_array);
 
 /*     $k = json_encode([
         "inline_keyboard" => [

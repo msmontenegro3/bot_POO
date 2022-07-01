@@ -1,6 +1,7 @@
 <?php
 
-print_r (json_encode([
+
+$k = [
     "inline_keyboard" => [
         [
             [
@@ -21,4 +22,20 @@ print_r (json_encode([
             ],
         ]
     ]
-]));
+];
+
+$k2['inline_keyboard'] =array(
+    array(
+    array(
+        'text' =>  'dfgd',
+        'callback_data' => 'dfgdf',
+    )
+)) ;
+
+
+
+print_r($k['inline_keyboard']);
+print_r('<br>');
+print_r('<br>');
+print_r('<br>');
+print_r(json_encode($k2['inline_keyboard']));
