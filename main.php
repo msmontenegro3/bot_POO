@@ -144,9 +144,9 @@ if(isset($text) && $text == '1'){
 
 if (isset($boton_pressed)) {
 
-    $bot->sendMessage($id, $boton_pressed, $token);
     
-
+    enviar_mensaje();
+    //call_user_func('enviar_mensaje');
 
 function enviar_mensaje()
 {
@@ -155,7 +155,7 @@ function enviar_mensaje()
 
 }
 
-call_user_func('enviar_mensaje');
+
 /*     $respuesta = "Upssss te equivocaste";
     $bot->sendMessage($id,$respuesta,$token); */
 }

@@ -1,13 +1,14 @@
 <?php
 
 
-call_user_func('test', '');
+call_user_func('test');
 
 function test()
 {
-    echo 'jhgjghj';
+    echo 'GHGJDHGDHD';
 }
 
+return;
 
 $k = [
     "inline_keyboard" => [
