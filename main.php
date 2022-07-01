@@ -145,7 +145,7 @@ if(isset($text) && $text == '1'){
 
 $k = '{"inline_keyboard":[[{"text":"';
     
-$k = $k .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '},]]}';
+$k = $k .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":"' . $enunciado->armarRespuestas(3)[0]['id']  . '"},]]}';
 
 
 
