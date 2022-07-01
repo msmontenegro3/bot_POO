@@ -143,9 +143,7 @@ if(isset($text) && $text == '1'){
 
 /* $k = json_encode($respuestas_de_pregunta); */
 
-$k = '{"inline_keyboard":[[{"text":"';
-    
-$k = $k .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":"' . $enunciado->armarRespuestas(3)[0]['id']  . '"},]]}';
+$k = '{"inline_keyboard":[[{"text":"' .  $enunciado->armarRespuestas(3)[0]['respuesta'] . '","callback_data":' . $enunciado->armarRespuestas(3)[0]['id']  . '},{"text":"Conectarse a internet","callback_data":2},{"text":"Tama\u00f1o (pulgadas)","callback_data":3},{"text":"Espacio (GB)","callback_data":4}]]}';
 
 
 
