@@ -1,11 +1,19 @@
 <?php
 
 
-call_user_func('test');
 
-function test()
+$rr = 'fdds("ur")';
+
+$metodo = explode('(', $rr);
+
+$argumento = trim($metodo[1], ')');
+
+
+call_user_func($metodo[0], $argumento);
+
+function fdds($arg)
 {
-    echo 'GHGJDHGDHD';
+    print_r($arg);
 }
 
 return;

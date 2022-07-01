@@ -39,7 +39,7 @@ class Ejercicio
         return $respuestas_array;
     }
 
-    public function enviar_mensaje()
+    public function metodoHola()
     {
 
         return 'hola';

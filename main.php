@@ -125,7 +125,7 @@ if(isset($text) && $text == '1'){
 
     foreach ($enunciado->armarRespuestas(3) as $key => $value) {
         $json_array['inline_keyboard'][0][$key]['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
-        $json_array['inline_keyboard'][0][$key]['callback_data'] = "enviar_mensaje";
+        $json_array['inline_keyboard'][0][$key]['callback_data'] = 'metodoHola(' .  $enunciado->armarRespuestas(3)[$key]['id'] . ')';
     
         }
 
@@ -143,16 +143,16 @@ if(isset($text) && $text == '1'){
 }
 
 if (isset($boton_pressed)) {
-/*     $enunciado = new Ejercicio();
+    $enunciado = new Ejercicio();
     
-    $respuesta = $enunciado->$boton_pressed(); */
-    return call_user_func('enviar_mensaje');
-    function enviar_mensaje()
-    {
-        $respuesta = "Upssss te equivocaste";
-        $bot->sendMessage($id,$respuesta,$token);
-    }
-   // $bot->sendMessage($id,$respuesta,$token);
+
+
+    $bot->sendMessage($id,$boton_pressed,$token);
+
+
+    //$respuesta = $enunciado->$boton_pressed();
+    /* return call_user_func('enviar_mensaje');
+ */
 
 
 /*     $respuesta = "Upssss te equivocaste";
