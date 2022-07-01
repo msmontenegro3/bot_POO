@@ -116,28 +116,28 @@ if(isset($text) && $text == '1'){
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
 
 
-    /* $respuestas = $enunciado->armarRespuestas(1);
+    $respuestas = $enunciado->armarRespuestas(1);
 
     $respuestas_de_pregunta = '[
         "inline_keyboard" => [
             [';
 
     foreach ($enunciado->armarRespuestas(3) as $key => $value) {
-        //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
+
         $respuestas_de_pregunta =  $respuestas_de_pregunta . 
         '[
-            "text" => "' .  $value['respuesta'] . '",
-            "callback_data" => "'.  $value['id']  . '"
+            "text" => "Memorira",
+            "callback_data" => "skdjfnksdnfsd"
         ],';
     
     }
 
     $respuestas_de_pregunta = $respuestas_de_pregunta . ']
     ]
-]'; */
+]';
 
 
-    $k = json_encode([
+  /*   $k = json_encode([
         "inline_keyboard" => [
             [
                 [
@@ -158,7 +158,7 @@ if(isset($text) && $text == '1'){
                 ],
             ]
         ]
-    ]);
+    ]); */
 
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][1], $token, $k);
 
