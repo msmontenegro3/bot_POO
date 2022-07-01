@@ -116,19 +116,11 @@ if(isset($text) && $text == '1'){
     $bot->sendMessage($id, $enunciado->armarEjercicio(1)['enunciado'], $token);
 
 
-    $respuestas = $enunciado->armarRespuestas(1);
 
-    $recorrido = '';
 
-    foreach ($enunciado->armarRespuestas(3) as $key => $value) {
 
-        $recorrido =  $recorrido . 
-        '[
-            "text" => "ksfjdhkjfds",
-            "callback_data" => "xfgfgdffgd"
-        ],';
-    
-    }
+
+
 
 /*     $respuestas_de_pregunta = [
         "inline_keyboard" => [
@@ -142,12 +134,23 @@ if(isset($text) && $text == '1'){
 
 
 /* $k = json_encode($respuestas_de_pregunta); */
+$rep = '';
+
+foreach ($enunciado->armarRespuestas(3) as $key => $value) {
+    $rep['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
+    $rep['callback_data'] = $enunciado->armarRespuestas(3)[$key]['id'];
+
+}
 
 $json_array['inline_keyboard'] =array(
     array(
     array(
+
+
         'text' =>  $enunciado->armarRespuestas(3)[0]['respuesta'],
         'callback_data' => $enunciado->armarRespuestas(3)[0]['id'],
+
+$rep
     )
 )) ;
 
