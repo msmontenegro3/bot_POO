@@ -143,12 +143,16 @@ if(isset($text) && $text == '1'){
 }
 
 if (isset($boton_pressed)) {
-    $enunciado = new Ejercicio();
+/*     $enunciado = new Ejercicio();
     
-    $respuesta = $enunciado->$boton_pressed();
-    //call_user_func('enviar_mensaje');
-
-    $bot->sendMessage($id,$respuesta,$token);
+    $respuesta = $enunciado->$boton_pressed(); */
+    return call_user_func('enviar_mensaje');
+    function enviar_mensaje()
+    {
+        $respuesta = "Upssss te equivocaste";
+        $bot->sendMessage($id,$respuesta,$token);
+    }
+   // $bot->sendMessage($id,$respuesta,$token);
 
 
 /*     $respuesta = "Upssss te equivocaste";
