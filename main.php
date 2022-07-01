@@ -126,8 +126,8 @@ if(isset($text) && $text == '1'){
 
         $respuestas_de_pregunta =  $respuestas_de_pregunta . 
         '[
-            "text" => "Memorira",
-            "callback_data" => "skdjfnksdnfsd"
+            "text" => "ksfjdhkjfds",
+            "callback_data" => "xfgfgdffgd"
         ],';
     
     }
@@ -136,6 +136,8 @@ if(isset($text) && $text == '1'){
     ]
 ]';
 
+
+$k = json_encode($respuestas_de_pregunta);
 
   /*   $k = json_encode([
         "inline_keyboard" => [
