@@ -35,14 +35,9 @@ if (isset($message)) {
     $id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
 }
 
-call_user_func('enviar_mensaje', '');
 
-function enviar_mensaje()
-{
-    $respuesta = 'hola';
-    $bot->sendMessage($id, $respuesta, $token);
 
-}
+
 
 /* $id = $message["from"]["id"]; //id del chat
 $name = $message["from"]["first_name"]; //nombre del usuario
@@ -147,9 +142,18 @@ if(isset($text) && $text == '1'){
 
 }
 
-if (isset($callback_query) && $boton_pressed == "1") {
+if (isset($callback_query)) {
 
-    $respuesta = "Upssss te equivocaste";
-    $bot->sendMessage($id,$respuesta,$token);
+    call_user_func('enviar_mensaje', '');
+
+    function enviar_mensaje()
+    {
+        $respuesta = 'hola';
+        $bot->sendMessage($id, $respuesta, $token);
+    
+    }
+
+/*     $respuesta = "Upssss te equivocaste";
+    $bot->sendMessage($id,$respuesta,$token); */
 }
 
