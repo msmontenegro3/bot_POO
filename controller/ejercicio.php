@@ -1,8 +1,8 @@
 <?php
 
-require_once '../model/EjerciciosModel.php';
+/* require_once '../model/EjerciciosModel.php'; */
 
-/* require_once 'model/EjerciciosModel.php'; */
+require_once 'model/EjerciciosModel.php';
 
 class Ejercicio
 {
@@ -37,6 +37,12 @@ class Ejercicio
         $respuestas_array = array(
             'respuesta' => $this->ejercicio->getRespuestasPorPregunta($pregunta_id)
         );
+
+        foreach ($respuestas_array as $key => $value) {
+    
+            $data_respuestas[] = array($value['id'] ,$value['pregunta'], $value['id_respuesta_correcta'] );
+        
+        }
 
         return $respuestas_array;
     }
