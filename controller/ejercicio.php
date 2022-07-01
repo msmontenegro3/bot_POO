@@ -1,8 +1,8 @@
 <?php
 
-/* require_once '../model/EjerciciosModel.php'; */
+require_once '../model/EjerciciosModel.php';
 
-require_once 'model/EjerciciosModel.php';
+/* require_once 'model/EjerciciosModel.php'; */
 
 class Ejercicio
 {
@@ -46,7 +46,7 @@ $ej = new Ejercicio();
 //print_r($ej->armarEjercicio(1)['datos'][0][1]);
 
 //print_r($ej->armarRespuestas(3));
-
+/* 
 foreach ($ej->armarRespuestas(3) as $key => $value) {
     //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
     echo 
@@ -55,6 +55,28 @@ foreach ($ej->armarRespuestas(3) as $key => $value) {
         "callback_data" => '.  $value['id']  . '
     ],';
 
-}
+} */
 
 //print_r($arreglo_respuesta);
+
+  $respuestas_de_pregunta = '[
+        "inline_keyboard" => [
+            [';
+    
+
+            foreach ($ej->armarRespuestas(3) as $key => $value) {
+                //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
+                $respuestas_de_pregunta = $respuestas_de_pregunta . 
+                '[
+                    "text" => "' .  $value['respuesta'] . '",
+                    "callback_data" => '.  $value['id']  . '
+                ],';
+            
+            }
+        
+
+            $respuestas_de_pregunta = $respuestas_de_pregunta . ']
+            ]
+        ]';
+        
+        print_r($respuestas_de_pregunta);
