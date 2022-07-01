@@ -32,6 +32,7 @@ if (isset($message)) {
     $last_name = $callback_query["from"]["last_name"]; //apellido del usuario
     $date = date("d F Y H:i:s", $callback_query["date"]);//fecha
     $boton_pressed = $callback_query['data']; //reconoce el callbackdata del teclado
+    $boton_pressed = $callback_query['id']; //reconoce el callbackdata del teclado
 }
 
 /* $id = $message["from"]["id"]; //id del chat
@@ -93,8 +94,6 @@ if(isset($text) && $text == '/recursos' ){
 
 
 
-
-
 //Llamada a ejercicios
 if(isset($text) && $text == '/ejercicio' ){
     $respuesta = "Escriba el número de ejercicio que desee (en números)";
@@ -121,29 +120,29 @@ if(isset($text) && $text == '1'){
             [
                 [
                     "text" => "Memoria",
-                    "callback_data" => "no"
+                    "callback_data" => 1
                 ],
                 [
                     "text" => "Conectarse a internet",
-                    "callback_data" => "bien"
+                    "callback_data" => 2
                 ],
                 [
                     "text" => "Tamaño (pulgadas)",
-                    "callback_data" => "no"
+                    "callback_data" => 3
                 ],
                 [
                     "text" => "Espacio (GB)",
-                    "callback_data" => "no"
+                    "callback_data" => 4
                 ]
             ]
         ]
     ]);
 
-    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][0], $token, $k);
+    $bot->sendMessage($id, $enunciado->armarEjercicio(1)['datos'][0][1], $token, $k);
 
 }
 
-if (isset($callback_query) && $boton_pressed == 'no') {
+if (isset($callback_query) && $boton_pressed == 1) {
 
     $respuesta = "Upssss te equivocaste";
     $bot->sendMessage($id,$respuesta,$token);
