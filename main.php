@@ -134,7 +134,7 @@ if(isset($text) && $text == '1'){
 
 
 /* $k = json_encode($respuestas_de_pregunta); */
-$rep = '';
+$rep[] = '';
 
 foreach ($enunciado->armarRespuestas(3) as $key => $value) {
     $rep['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
@@ -146,11 +146,11 @@ $json_array['inline_keyboard'] =array(
     array(
     array(
 
-
+        $rep,
         'text' =>  $enunciado->armarRespuestas(3)[0]['respuesta'],
         'callback_data' => $enunciado->armarRespuestas(3)[0]['id'],
 
-$rep
+
     )
 )) ;
 
