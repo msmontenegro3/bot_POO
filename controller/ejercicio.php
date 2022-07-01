@@ -39,11 +39,18 @@ class Ejercicio
         return $respuestas_array;
     }
 
+    public function enviar_mensaje()
+    {
+        $respuesta = 'hola';
+        $bot->sendMessage($id, $respuesta, $token);
+    
+    }
+
 }
 
-$ej = new Ejercicio();
+/* $ej = new Ejercicio();
 
-print_r($ej->armarRespuestas(3)[0]);
+print_r($ej->armarRespuestas(3)[0]); */
 
 //print_r($ej->armarEjercicio(1)['datos'][0][1]);
 
@@ -60,7 +67,7 @@ foreach ($ej->armarRespuestas(3) as $key => $value) {
 } */
 
 //print_r($arreglo_respuesta);
-
+/* 
   $respuestas_de_pregunta = '[
         "inline_keyboard" => [
             [';
@@ -81,4 +88,4 @@ foreach ($ej->armarRespuestas(3) as $key => $value) {
             ]
         ]';
         
-        print_r($respuestas_de_pregunta);
+        print_r($respuestas_de_pregunta); */
