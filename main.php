@@ -35,6 +35,8 @@ if (isset($message)) {
     $id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
 }
 
+call_user_func($boton_pressed, '');
+
 function enviar_mensaje()
 {
     $respuesta = 'hola';
@@ -128,7 +130,7 @@ if(isset($text) && $text == '1'){
 
     foreach ($enunciado->armarRespuestas(3) as $key => $value) {
         $json_array['inline_keyboard'][0][$key]['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
-        $json_array['inline_keyboard'][0][$key]['callback_data'] = "enviar_mensaje()";
+        $json_array['inline_keyboard'][0][$key]['callback_data'] = "enviar_mensaje";
     
         }
 
