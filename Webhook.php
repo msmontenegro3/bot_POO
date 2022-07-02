@@ -1,8 +1,15 @@
 <?php
 
-if (condition) {
-    # code...
-}
+$token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
+file_get_contents("php://input");
+
+$file = fopen("log.txt", file_get_contents("php://input"));
+
+
+fclose($file);
+
+
+return;
 
 
 require_once 'controller/Bot.php';
