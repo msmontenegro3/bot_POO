@@ -19,12 +19,12 @@ class Webhook{
     private $text; //mensaje del usuario
 
     
-    public function __construct($data_telegram)
+    public function __construct()
     {
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-        $update = json_decode($data_telegram,true);
+        $update = json_decode(file_get_contents("php://input"),true);
         $this->message = $update['message'];
         $this->update_id = $update['update_id'];
         $this->callback_query = $update['callback_query'];
@@ -51,7 +51,8 @@ class Webhook{
 
 }
 
-new Webhook(file_get_contents("php://input"));
+$wb = new Webhook();
+$wb->enviarMensaje('asdfsa');
 
 
 
