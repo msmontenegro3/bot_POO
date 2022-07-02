@@ -20,11 +20,13 @@ $update_id = $update['update_id']; //número de actualización
 //PARA EL INLINEKEYBOARD 
 $callback_query = $update['callback_query'];
 
+
+$id = $message["from"]["id"]; //id del chat
 $respuesta = 'que uvas';
 $bot->sendMessage($id, $respuesta, $token);
 
 
-$id = $message["from"]["id"]; //id del chat
+
 
 if(isset($message)){
     function start()
