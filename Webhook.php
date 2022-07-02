@@ -1,4 +1,10 @@
 <?php
+
+if (condition) {
+    # code...
+}
+
+
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
@@ -30,7 +36,11 @@ class Webhook{
         $this->id = $message["from"]["id"];
         $this->text = $message["text"];
 
-        $bot->sendMessage($this->id, $update, $this->token);
+        if ($this->text == "/start") {
+            $bot->sendMessage($this->id, 'asdfajk', $this->token);
+        }
+
+        
     }
 
     public function enviarMensaje($respuesta)
@@ -41,13 +51,13 @@ class Webhook{
 
 }
 
-
+new Webhook(file_get_contents("php://input"));
 /* $mensaje->enviarMensaje('hala');
 */
 
-if($text == '/start' ){
+/* if($text == '/start' ){
 
     new Webhook(file_get_contents("php://input"));
     $mensaje->enviarMensaje('hala');
 
-} 
+}  */
