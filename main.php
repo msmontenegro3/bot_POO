@@ -19,7 +19,10 @@ $update_id = $update['update_id']; //número de actualización
 
 //PARA EL INLINEKEYBOARD 
 $callback_query = $update['callback_query'];
+
+
 $id = $message["from"]["id"]; //id del chat
+$text = $message["text"]; //mensaje del usuario
 
 if(isset($text) && $text == '/start' ){
 
