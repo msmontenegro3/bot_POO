@@ -1,14 +1,5 @@
 <?php
 
-$token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-$data = file_get_contents("php://input");
-
-file_put_contents('archivo', $data);
-
-
-return;
-
-
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
@@ -40,10 +31,15 @@ class Webhook{
         $this->id = $message["from"]["id"];
         $this->text = $message["text"];
 
-        if ($this->text == "/start") {
+        $data = file_get_contents("php://input");
+
+        file_put_contents('archivo', $data);
+
+      /*   if ($this->text == "/start") {
+            
             $bot->sendMessage($this->id, 'asdfajk', $this->token);
         }
-
+ */
         
     }
 
