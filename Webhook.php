@@ -49,7 +49,7 @@ class Webhook{
 
 }
 
-new Webhook(file_get_contents("php://input")->enviarMensaje('kaslñdf'));
+new Webhook(file_get_contents("php://input"));
 /* $mensaje->enviarMensaje('hala');
 */
 
