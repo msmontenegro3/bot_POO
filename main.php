@@ -34,8 +34,8 @@ if(isset($text) && $text == '/start' ){
             $respuesta = 'EQUIS';
             return $bot->sendMessage($id, $respuesta, $token);
         }
-        
-        start();
+
+    $this->start();
 }
 
 return ;
