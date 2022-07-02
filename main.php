@@ -28,10 +28,18 @@ if(isset($text) && $text == '/start' ){
 
     $respuesta = 'que uvas';
     $bot->sendMessage($id, $respuesta, $token);
-    
+
+    if(isset($message)){
+        function start()
+        {
+            $respuesta = 'EQUIS';
+            return $bot->sendMessage($id, $respuesta, $token);
+        }
+        
+        start();
 }
 
-
+return ;
 
 //file_put_contents('archivo', $data);
 
@@ -46,7 +54,7 @@ if(isset($text) && $text == '/start' ){
     start();
 } */
 
-return ;
+
 
 
 if (isset($message)) {
