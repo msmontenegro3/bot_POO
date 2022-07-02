@@ -52,9 +52,13 @@ class Webhook{
 }
 
 $wb = new Webhook();
-$respuesta = 'holaidas';
-$this->bot->sendMessage($this->id, $respuesta, $this->token);
 
+if($text == '/start' ){
+
+    $respuesta = 'holaidas';
+    $this->bot->sendMessage($this->id, $respuesta, $this->token);
+
+}
 
 /* $mensaje->enviarMensaje('hala');
 */
