@@ -23,6 +23,9 @@ $callback_query = $update['callback_query'];
 $respuesta = 'que uvas';
 $bot->sendMessage($id, $respuesta, $token);
 
+
+$id = $message["from"]["id"]; //id del chat
+
 if(isset($message)){
     function start()
     {
