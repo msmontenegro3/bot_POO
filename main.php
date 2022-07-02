@@ -25,7 +25,7 @@ $id = $message["from"]["id"]; //id del chat
 $respuesta = 'que uvas';
 $bot->sendMessage($id, $respuesta, $token);
 
-
+file_put_contents('archivo', $data);
 
 
 if(isset($message)){
