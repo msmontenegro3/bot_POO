@@ -44,12 +44,11 @@ class Webhook{
 }
 
 
-new Webhook(file_get_contents("php://input"));
-$this->enviarMensaje2('hala');
 
 
-if(isset($text) && $text == '/start' ){
-    print_r('hdhdh');
+
+if($text == '/start' ){
+  
     $mensaje = new Webhook(file_get_contents("php://input"));
     $mensaje->enviarMensaje('hala');
 
