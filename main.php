@@ -27,9 +27,9 @@ $text = $message["text"]; //mensaje del usuario
 if(isset($text) && $text == '/start' ){
 
     $respuesta = 'que uvas';
-    /* $bot->sendMessage($id, $respuesta, $token);
+    $bot->sendMessage($id, $respuesta, $token);
 
-         function start()
+         /* function start()
         {
             $respuesta = 'EQUIS';
             return $bot->sendMessage($id, $respuesta, $token);
