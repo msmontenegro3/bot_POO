@@ -23,8 +23,7 @@ $callback_query = $update['callback_query'];
 
 function start()
 {
-    
-    $bot->sendMessage($id, 'que uvas', $token);
+    return $bot->sendMessage($id, 'que uvas', $token);
 }
 
 start();
