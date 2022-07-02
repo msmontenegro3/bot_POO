@@ -22,8 +22,8 @@ $callback_query = $update['callback_query'];
 
 
 $id = $message["from"]["id"]; //id del chat
-$respuesta = 'que uvas';
-$bot->sendMessage($id, $respuesta, $token);
+/* $respuesta = 'que uvas';
+$bot->sendMessage($id, $respuesta, $token); */
 
 file_put_contents('archivo', $data);
 
@@ -31,8 +31,8 @@ file_put_contents('archivo', $data);
 if(isset($message)){
     function start()
     {
-        $respuesta = 'que uvas';
-        $bot->sendMessage($id, $respuesta, $token);
+        $respuesta = 'EQUIS';
+        return $bot->sendMessage($id, $respuesta, $token);
     }
     
     start();
