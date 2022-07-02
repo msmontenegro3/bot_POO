@@ -28,7 +28,7 @@ $bot->sendMessage($id, $respuesta, $token);
 //file_put_contents('archivo', $data);
 
 
-if(isset($message)){
+/* if(isset($message)){
     function start()
     {
         $respuesta = 'EQUIS';
@@ -36,7 +36,7 @@ if(isset($message)){
     }
     
     start();
-}
+} */
 
 return ;
 
