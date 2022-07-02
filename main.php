@@ -23,7 +23,7 @@ $callback_query = $update['callback_query'];
 $respuesta = 'que uvas';
 $bot->sendMessage($id, $respuesta, $token);
 
-if(isset($update)){
+if(isset($message)){
     function start()
     {
         $respuesta = 'que uvas';
