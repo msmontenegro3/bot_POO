@@ -32,7 +32,7 @@ if(isset($message)){
     function start()
     {
         $respuesta = 'EQUIS';
-        $bot->sendMessage($id, $respuesta, $token);
+        return $bot->sendMessage($id, $respuesta, $token);
     }
     
     start();
