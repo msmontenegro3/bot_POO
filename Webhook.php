@@ -31,9 +31,7 @@ class Webhook{
         $this->id = $message["from"]["id"];
         $this->text = $message["text"];
 
-        $data = file_get_contents("php://input");
-
-        file_put_contents('archivo', $data);
+        file_put_contents('archivo', $data_telegram);
 
       /*   if ($this->text == "/start") {
             
@@ -51,7 +49,7 @@ class Webhook{
 
 }
 
-new Webhook(file_get_contents("php://input"));
+new Webhook(file_get_contents("php://input")->enviarMensaje('kaslñdf'));
 /* $mensaje->enviarMensaje('hala');
 */
 
