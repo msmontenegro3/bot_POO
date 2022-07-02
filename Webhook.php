@@ -1,12 +1,9 @@
 <?php
 
 $token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-file_get_contents("php://input");
+$data = file_get_contents("php://input");
 
-$file = fopen("log.txt", file_get_contents("php://input"));
-
-
-fclose($file);
+file_put_contents('archivo', $data);
 
 
 return;
