@@ -52,8 +52,8 @@ class Webhook{
 }
 
 $wb = new Webhook();
-$wb->enviarMensaje('asdfsa');
-
+$respuesta = 'holaidas';
+$this->bot->sendMessage($this->id, $respuesta, $this->token);
 
 
 /* $mensaje->enviarMensaje('hala');
