@@ -41,13 +41,13 @@ class Webhook{
 
 }
 
-new Webhook(file_get_contents("php://input"));
-/* $mensaje->enviarMensaje('hala');
 
+/* $mensaje->enviarMensaje('hala');
+*/
 
 if($text == '/start' ){
-  
-    $mensaje = new Webhook(file_get_contents("php://input"));
+
+    new Webhook(file_get_contents("php://input"));
     $mensaje->enviarMensaje('hala');
 
-} */
+} 
