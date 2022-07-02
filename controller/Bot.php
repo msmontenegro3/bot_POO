@@ -20,6 +20,9 @@ class Bot{
 
     //ENVÍA MENSAJES Y TECLADO
     function sendMessage($chatID, $messaggio, $token,&$k = ''){
+
+        print_r('hala2');
+        return ;
         $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
     
         if(isset($k)) {
