@@ -29,13 +29,13 @@ if(isset($text) && $text == '/start' ){
     $respuesta = 'que uvas';
     $bot->sendMessage($id, $respuesta, $token);
 
+    start();
+
          function start()
         {
             $respuesta = 'EQUIS';
             return $bot->sendMessage($id, $respuesta, $token);
         }
-
-    start();
 }
 
 return ;
