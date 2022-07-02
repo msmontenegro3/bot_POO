@@ -20,6 +20,7 @@ $update_id = $update['update_id']; //número de actualización
 //PARA EL INLINEKEYBOARD 
 $callback_query = $update['callback_query'];
 
+$bot->sendMessage($id, 'que uvas', $token);
 
 function start()
 {
