@@ -29,6 +29,8 @@ class Webhook{
         $this->callback_query = $update['callback_query'];
         $this->id = $message["from"]["id"];
         $this->text = $message["text"];
+
+        $bot->sendMessage($this->id, $update, $this->token);
     }
 
     public function enviarMensaje($respuesta)
@@ -39,9 +41,8 @@ class Webhook{
 
 }
 
-
-$mensaje = new Webhook(file_get_contents("php://input"));
-$mensaje->enviarMensaje('hala');
+new Webhook(file_get_contents("php://input"));
+/* $mensaje->enviarMensaje('hala');
 
 
 if($text == '/start' ){
@@ -49,4 +50,4 @@ if($text == '/start' ){
     $mensaje = new Webhook(file_get_contents("php://input"));
     $mensaje->enviarMensaje('hala');
 
-}
+} */
