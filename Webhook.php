@@ -44,10 +44,12 @@ class Webhook{
         
     }
 
-    public function enviarMensaje($respuesta)
+    public function enviarMensaje()
     {
 
-        $this->bot->sendMessage($this->id, $respuesta, $this->token);
+        /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
+        header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
+
     }
 
 }
@@ -56,10 +58,7 @@ $wb = new Webhook();
 
 if(isset($text) && $text == '/start' ){
 
-    $respuesta = 'holaidas';
-    /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
-
-    $wb->enviarMensaje($respuesta);
+    $wb->enviarMensaje();
 
 }
 
