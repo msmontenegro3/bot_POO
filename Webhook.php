@@ -34,6 +34,7 @@ class Webhook{
         $data_telegram = file_get_contents("php://input");
 
         file_put_contents('archivo', $data_telegram);
+        print_r($this->message);
 
       /*   if ($this->text == "/start") {
             
