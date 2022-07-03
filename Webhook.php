@@ -53,10 +53,12 @@ class Webhook{
 
 $wb = new Webhook();
 
-if($text == '/start' ){
+if(isset($text) && $text == '/start' ){
 
     $respuesta = 'holaidas';
-    $this->bot->sendMessage($this->id, $respuesta, $this->token);
+    /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
+
+    $wb->enviarMensaje($respuesta);
 
 }
 
