@@ -1,15 +1,6 @@
 <?php
 
 
-
-if(isset($text) && $text == '/start' ){
-    $respuesta = 'pan caliente';
-    //$wb->enviarMensaje();
-    header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
-
-}
-
-
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
@@ -29,13 +20,11 @@ class Webhook{
     private $text; //mensaje del usuario
 
     
-    public function __construct()
+    public function __construct($update)
     {
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-
-        $update = json_decode(file_get_contents("php://input"),true);
 
         $this->message = isset($update['message']) ? $update['message'] : "";
 
@@ -46,9 +35,7 @@ class Webhook{
 
         $this->text = isset($update['message']) ? $this->message["text"] : "";
 
-        $data_telegram = file_get_contents("php://input");
-
-        file_put_contents('archivo', $data_telegram);
+        file_put_contents('archivo', $this->text);
 
       /*   if ($this->text == "/start") {
             
@@ -60,16 +47,22 @@ class Webhook{
 
     public function enviarMensaje()
     {
+        file_put_contents('llegaTextoALmetodo', $this->text);
 
-        /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
-        header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
+        if(isset($this->text) && $this->text == '/start' ){
+            $respuesta = 'pan caliente';
+            //$wb->enviarMensaje();
+            
+            $this->botsendMessage($this->id, $respuesta, $this->token);
+        
+        }
 
     }
 
 }
 
 $wb = new Webhook();
-
+$wb->enviarMensaje(json_decode(file_get_contents("php://input"),true));
 
 
 /* $mensaje->enviarMensaje('hala');
