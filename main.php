@@ -3,7 +3,6 @@
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
-require_once 'Webhook.php';
 
 $usu = new User();
 
@@ -22,41 +21,14 @@ $update_id = $update['update_id']; //número de actualización
 $callback_query = $update['callback_query'];
 
 
-
-$id = $message["from"]["id"]; //id del chat
-$text = $message["text"]; //mensaje del usuario
-
-if(isset($text) && $text == '/start' ){
-
-    $respuesta = 'que uvas';
-    $bot->sendMessage($id, $respuesta, $token);
-
-   /*  start();
-
-         function start()
-        {
-            $respuesta = 'EQUIS';
-            $bot->sendMessage($id, $respuesta, $token);
-        } */
+function start()
+{
+    
+    $bot->sendMessage($id, 'que uvas', $token);
 }
 
-
-
-//file_put_contents('archivo', $data);
-
-
-/* if(isset($message)){
-    function start()
-    {
-        $respuesta = 'EQUIS';
-        return $bot->sendMessage($id, $respuesta, $token);
-    }
-    
-    start();
-} */
-
-
-
+start();
+return ;
 
 
 if (isset($message)) {
@@ -134,7 +106,6 @@ if(isset($text) && $text == '/recursos' ){
     $bot->sendMessage($id, $respuesta, $token);
 
    /*  $question = "Qué pex";
-
     $bot->sendPoll($id, $question, $options, $token); */
 }
 
@@ -172,7 +143,6 @@ if(isset($text) && $text == '1'){
 /*     foreach ($enunciado->armarRespuestas(3) as $key => $value) {
     $json_array['inline_keyboard'][0][$key]['text'] = $enunciado->armarRespuestas(3)[$key]['respuesta'];
     $json_array['inline_keyboard'][0][$key]['callback_data'] = $enunciado->armarRespuestas(3)[$key]['id'];
-
     } */
 
     $k = json_encode($json_array);
@@ -197,4 +167,3 @@ if (isset($boton_pressed)) {
 /*     $respuesta = "Upssss te equivocaste";
     $bot->sendMessage($id,$respuesta,$token); */
 }
-
