@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
@@ -22,27 +21,14 @@ class Webhook{
     
     public function __construct($update)
     {
-        file_put_contents('archivo', $update);
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-        
         $this->message = isset($update['message']) ? $update['message'] : "";
-        
-        /* $this->update_id = isset($update['update_id']) ? $update['update_id'] : ""; */
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
-        
         $this->id = isset($update['message']) ? $this->message["from"]["id"] : "";
-        
         $this->text = isset($update['message']) ? $this->message["text"] : "";
-        
-        
-        /*   if ($this->text == "/start") {
-            
-            $bot->sendMessage($this->id, 'asdfajk', $this->token);
-        }
- */
-        
+
     }
 
     public function enviarMensaje()
