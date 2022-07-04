@@ -21,7 +21,7 @@ class Webhook{
         $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
         file_put_contents('archivo3', $text);
 
-        if(isset($this->text) && $this->text == '/start' ){
+        if(isset($text) && $text == '/start' ){
             
             file_put_contents('archivo4', $this->text);
             $this->sendMessage($chatID, $messaggio, $token);
