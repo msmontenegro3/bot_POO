@@ -22,7 +22,7 @@ class Webhook{
 
         if(isset($this->text) && $this->text == '/start' ){
             
-            file_put_contents('archivo3', $this->message);
+            file_put_contents('archivo3', $this->text);
             $this->sendMessage($chatID, $messaggio, $token);
         } 
     }
