@@ -11,7 +11,7 @@ class Webhook{
         $this->message = $update['message'];
         $this->text = $message['message']["text"];
 
-        file_put_contents('archivo2', $this->message);
+        file_put_contents('archivo2', $this->text);
     }
 
     public function reciver($text)
