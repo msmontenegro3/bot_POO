@@ -1,5 +1,15 @@
 <?php
 
+
+
+if(isset($text) && $text == '/start' ){
+    $respuesta = 'pan caliente';
+    //$wb->enviarMensaje();
+    header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
+
+}
+
+
 require_once 'controller/Bot.php';
 require_once 'controller/User.php';
 require_once 'controller/ejercicio.php';
@@ -61,12 +71,6 @@ class Webhook{
 $wb = new Webhook();
 
 
-if(isset($text) && $text == '/start' ){
-    $respuesta = 'pan caliente';
-    $wb->enviarMensaje();
-    /* header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis'); */
-
-}
 
 /* $mensaje->enviarMensaje('hala');
 */
