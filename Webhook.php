@@ -32,9 +32,9 @@ class Webhook{
         /* $this->update_id = isset($update['update_id']) ? $update['update_id'] : ""; */
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
 
-        $this->id = isset($update['message']) ? $message["from"]["id"] : "";
+        $this->id = isset($update['message']) ? $this->message["from"]["id"] : "";
 
-        $this->text = isset($update['message']) ? $message["text"] : "";
+        $this->text = isset($update['message']) ? $this->message["text"] : "";
 
         $data_telegram = file_get_contents("php://input");
 
