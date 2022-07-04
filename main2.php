@@ -7,11 +7,10 @@ class Webhook{
 
     public function __construct($update)
     {
-        $this->update = $update;
         $this->message = $update['message'];
         $this->text = $update['message']["text"];
 
-        file_put_contents('archivo2', $this->text);
+        file_put_contents('archivo2', $update);
     }
 
     public function reciver()
