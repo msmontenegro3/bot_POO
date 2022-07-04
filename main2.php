@@ -10,7 +10,7 @@ class Webhook{
         $this->message = $update['message'];
         $this->text = $update['message']["text"];
 
-        file_put_contents('archivo2', $message);
+        file_put_contents('archivo2', $this->message);
     }
 
     public function reciver()
