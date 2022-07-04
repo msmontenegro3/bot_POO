@@ -9,12 +9,12 @@ class Webhook{
     {
         $this->update = $update;
         $this->message = $update['message'];
-        $this->text = $message['message']["text"];
+        $this->text = $update['message']["text"];
 
         file_put_contents('archivo2', $this->text);
     }
 
-    public function reciver($text)
+    public function reciver()
     {
         $chatID = 1073553770;
         $messaggio = 'HOLA WEY';
