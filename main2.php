@@ -19,7 +19,8 @@ class Webhook{
         $chatID = 1073553770;
         $messaggio = 'HOLA WEY';
         $token= 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-
+        file_put_contents('archivo3', $this->text);
+        
         if(isset($this->text) && $this->text == '/start' ){
             
             file_put_contents('archivo3', $this->text);
