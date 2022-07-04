@@ -39,7 +39,6 @@ class Webhook{
         $data_telegram = file_get_contents("php://input");
 
         file_put_contents('archivo', $data_telegram);
-        print_r($this->message);
 
       /*   if ($this->text == "/start") {
             
@@ -49,11 +48,11 @@ class Webhook{
         
     }
 
-    public function enviarMensaje($respuesta)
+    public function enviarMensaje()
     {
 
-        $this->bot->sendMessage($this->id, $respuesta, $this->token);
-       /*  header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis'); */
+        /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
+        header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
 
     }
 
@@ -64,7 +63,7 @@ $wb = new Webhook();
 
 if(isset($text) && $text == '/start' ){
     $respuesta = 'pan caliente';
-    $wb->enviarMensaje($respuesta);
+    $wb->enviarMensaje();
     /* header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis'); */
 
 }
