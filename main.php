@@ -22,6 +22,7 @@ $update_id = $update['update_id']; //número de actualización
 $callback_query = $update['callback_query'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 $id = $message["from"]["id"]; //id del chat
 $text = $message["text"]; //mensaje del usuario
@@ -58,6 +59,8 @@ return ;
 
 
 
+=======
+>>>>>>> parent of f43a3b2... prueba
 =======
 >>>>>>> parent of f43a3b2... prueba
 if (isset($message)) {
