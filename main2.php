@@ -45,9 +45,13 @@ class Webhook{
 
 }
 
-$wb->reciver();
+
 $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
+$wb->reciver();
 return;
+
+
+//---------------------------------------------------------
 
 $update = json_decode(file_get_contents("php://input"),true);
 $message = $update['message'];
