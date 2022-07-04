@@ -25,19 +25,19 @@ class Webhook{
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
-
+        
         $this->message = isset($update['message']) ? $update['message'] : "";
-
+        
         /* $this->update_id = isset($update['update_id']) ? $update['update_id'] : ""; */
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
-
+        
         $this->id = isset($update['message']) ? $this->message["from"]["id"] : "";
-
+        
         $this->text = isset($update['message']) ? $this->message["text"] : "";
-
+        
         file_put_contents('archivo', $this->text);
-
-      /*   if ($this->text == "/start") {
+        
+        /*   if ($this->text == "/start") {
             
             $bot->sendMessage($this->id, 'asdfajk', $this->token);
         }
@@ -61,8 +61,8 @@ class Webhook{
 
 }
 
-$wb = new Webhook();
-$wb->enviarMensaje(json_decode(file_get_contents("php://input"),true));
+$wb = new Webhook(json_decode(file_get_contents("php://input"),true));
+$wb->enviarMensaje();
 
 
 /* $mensaje->enviarMensaje('hala');
