@@ -22,6 +22,7 @@ class Webhook{
     
     public function __construct($update)
     {
+        file_put_contents('archivo', $update);
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
@@ -35,7 +36,6 @@ class Webhook{
         
         $this->text = isset($update['message']) ? $this->message["text"] : "";
         
-        file_put_contents('archivo', $this->text);
         
         /*   if ($this->text == "/start") {
             
