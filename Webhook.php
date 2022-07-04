@@ -24,12 +24,17 @@ class Webhook{
         $this->bot = new Bot();
         $this->usu = new User();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
+
         $update = json_decode(file_get_contents("php://input"),true);
-        $this->message = $update['message'];
-        $this->update_id = $update['update_id'];
-        $this->callback_query = $update['callback_query'];
-        $this->id = $message["from"]["id"];
-        $this->text = $message["text"];
+
+        $this->message = isset($update['message']) ? $update['message'] : "";
+
+        /* $this->update_id = isset($update['update_id']) ? $update['update_id'] : ""; */
+        $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
+
+        $this->id = isset($update['message']) ? $message["from"]["id"] : "";
+
+        $this->text = isset($update['message']) ? $message["text"] : "";
 
         $data_telegram = file_get_contents("php://input");
 
@@ -44,22 +49,23 @@ class Webhook{
         
     }
 
-    public function enviarMensaje()
+    public function enviarMensaje($respuesta)
     {
 
-        /* $this->bot->sendMessage($this->id, $respuesta, $this->token); */
-        header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
+        $this->bot->sendMessage($this->id, $respuesta, $this->token);
+       /*  header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis'); */
 
     }
 
 }
 
 $wb = new Webhook();
-$wb->enviarMensaje();
+
 
 if(isset($text) && $text == '/start' ){
-
-    header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis');
+    $respuesta = 'pan caliente';
+    $wb->enviarMensaje($respuesta);
+    /* header('Location:https://api.telegram.org/bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4/sendMessage?chat_id=1073553770&text=holis'); */
 
 }
 
