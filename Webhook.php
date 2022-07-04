@@ -53,7 +53,7 @@ class Webhook{
             $respuesta = 'pan caliente';
             //$wb->enviarMensaje();
             
-            $this->botsendMessage($this->id, $respuesta, $this->token);
+            $this->bot->sendMessage($this->id, $respuesta, $this->token);
         
         }
 
