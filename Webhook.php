@@ -30,7 +30,7 @@ class Webhook{
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
 
         
-        if (isset($this->message)) {
+        if ($this->message != "") {
             $this->id = $this->message["from"]["id"]; //id del chat
             $this->name = $this->message["from"]["first_name"]; //nombre del usuario
             $this->last_name = $this->message["from"]["last_name"]; //apellido del usuario
