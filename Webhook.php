@@ -42,7 +42,7 @@ class Webhook{
             
             //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
         }
-        file_put_contents('llegaCallBackqueryData', $this->button_pressed);
+        file_put_contents('llegaCallBackqueryData', $this->callback_query['data']);
         file_put_contents('llegaDataCallBackQuery', $this->callback_query);
 
     }
