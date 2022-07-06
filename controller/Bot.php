@@ -133,7 +133,7 @@ class Bot{
 
     public function ejercicio($id, $respuesta, $token){
 
-        $respuesta = "Escriba el número de ejercicio que desee (en números)";
+        $respuesta = "Seleccione el número de ejercicio que desee";
 
         $keyboard= [
             ['1','2']
