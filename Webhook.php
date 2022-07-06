@@ -47,7 +47,9 @@ class Webhook{
 
     public function reciver($respuesta = '')
     {
-        if ($this->message != "") {
+        $comandos_array = array('/start', '/help', '/recursos', '/indice', 'ejercicio');
+
+        if ($this->message != "" && in_array($this->text, $comandos_array)){
 
             $regex = '/';
             $metodo = str_replace($regex, '', $this->text);
