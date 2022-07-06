@@ -50,8 +50,11 @@ class Webhook{
         if ($this->message != "") {
             $respuesta = 'envio comando';
             //$wb->enviarMensaje();
+
+            $regex = //\/gm;
+            $metodo = str_replace($regex, '', $this->text);
             
-            $this->bot->sendMessage($this->id, $respuesta, $this->token);
+            $this->bot->sendMessage($this->id, $metodo, $this->token);
         }else{
             $respuesta = 'envio callbackquery';
             //$wb->enviarMensaje();
