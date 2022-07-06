@@ -26,9 +26,19 @@ class Webhook{
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
         $this->message = isset($update['message']) ? $update['message'] : "";
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
-        $this->button_pressed = isset($update['callback_query']) ? $this->callback_query['data'] : "";
-        $this->id = isset($update['message']) ? $this->message["from"]["id"] : "";
-        $this->text = isset($update['message']) ? $this->message["text"] : "";
+
+        
+        if (isset($this->message)) {
+            $this->id = $this->message["from"]["id"]; //id del chat
+            $this->name = $this->message["from"]["first_name"]; //nombre del usuario
+            $this->last_name = $this->message["from"]["last_name"]; //apellido del usuario
+            $this->text = $this->message["text"]; //mensaje del usuario
+            $this->date = date("d F Y H:i:s", $this->message["date"]);//fecha
+        }else{
+            $this->id = $this->callback_query["from"]["id"]; //id del chat
+            $this->boton_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
+            //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
+        }
 
     }
 
