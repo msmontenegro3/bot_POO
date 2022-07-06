@@ -88,7 +88,20 @@ class Bot{
         curl_close($ch);
     } */
 
+    public function start()
+    {
 
+            $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación 😄 \n\n
+            A continuación tienes los comandos que puedes utilizar:
+            \n /help
+            \n /indice
+            \n /recursos
+            \n /ejercicio
+            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /ejercicio";
+        
+            $this->sendMessage($id, $respuesta, $token);
+        
+    }
 
 
 }

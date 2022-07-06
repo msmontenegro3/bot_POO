@@ -45,6 +45,21 @@ class Webhook{
 
     }
 
+    public function reciver()
+    {
+        if ($this->message != "") {
+            $respuesta = 'envio comando';
+            //$wb->enviarMensaje();
+            
+            $this->bot->sendMessage($this->id, $respuesta, $this->token);
+        }else{
+            $respuesta = 'envio callbackquery';
+            //$wb->enviarMensaje();
+            
+            $this->bot->sendMessage($this->id, $respuesta, $this->token);
+        }
+    }
+
 }
 
 $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
