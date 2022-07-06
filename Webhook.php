@@ -45,16 +45,14 @@ class Webhook{
 
     }
 
-    public function reciver()
+    public function reciver($respuesta = '')
     {
         if ($this->message != "") {
-            $respuesta = 'envio comando';
-            //$wb->enviarMensaje();
 
             $regex = '/';
             $metodo = str_replace($regex, '', $this->text);
             
-            $this->bot->sendMessage($this->id, $metodo, $this->token);
+            $this->bot->$metodo($this->id, $respuesta, $this->token);
         }else{
             $respuesta = 'envio callbackquery';
             //$wb->enviarMensaje();
