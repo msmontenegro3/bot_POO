@@ -63,7 +63,7 @@ class Webhook{
 }
 
 $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
-$wb->enviarMensaje();
+$wb->reciver();
 
 
 /* $mensaje->enviarMensaje('hala');
