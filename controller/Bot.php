@@ -131,4 +131,19 @@ class Bot{
         $this->sendMessage($id, $respuesta, $token);
     }
 
+    public function ejercicio($id, $respuesta, $token){
+        $respuesta = "LISTA DE ENLACES QUE PUEDEN INTERESARTE PARA ESTUDIAR:";
+        $this->sendMessage($id, $respuesta, $token);
+
+        $respuesta = "Escriba el número de ejercicio que desee (en números)";
+
+        $keyboard= [
+            ['1','2']
+        ];
+
+        $key = array('one_time_keyboard' => true,'resize_keyboard' => true,'keyboard' => $keyboard);
+        $k=json_encode($key);
+        $this->sendMessage($id, $respuesta, $token, $k);
+    }
+
 }
