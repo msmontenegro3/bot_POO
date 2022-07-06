@@ -36,7 +36,7 @@ class Webhook{
             $this->date = date("d F Y H:i:s", $this->message["date"]);//fecha
         }else{
             $this->id = $this->callback_query["from"]["id"]; //id del chat
-            $this->boton_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
+            $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
         }
 
