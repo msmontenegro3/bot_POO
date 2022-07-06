@@ -37,6 +37,8 @@ class Webhook{
         }else{
             $this->id = $this->callback_query["from"]["id"]; //id del chat
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
+            file_put_contents('llegaCallBackqueryData', $this->callback_query['data']);
+            file_put_contents('llegaDataCallBackQuery', $this->callback_query);
             //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
         }
 
@@ -68,6 +70,7 @@ class Webhook{
             $this->bot->$metodo($this->id, $respuesta, $this->token);
         }else if($this->button_pressed != ""){
 
+            file_put_contents('llegaButton_Pressed', $this->button_pressed);
             $respuesta = 'envio callbackquery';
             $this->bot->sendMessage($this->id, $respuesta, $this->token);
 
