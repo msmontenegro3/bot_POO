@@ -26,6 +26,7 @@ class Webhook{
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
         $this->message = isset($update['message']) ? $update['message'] : "";
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
+        $this->button_pressed = isset($update['callback_query']) ? $this->callback_query['data'] : "";
         $this->id = isset($update['message']) ? $this->message["from"]["id"] : "";
         $this->text = isset($update['message']) ? $this->message["text"] : "";
 
@@ -55,7 +56,7 @@ class Webhook{
             $metodo = str_replace($regex, '', $this->text);
             
             $this->bot->$metodo($this->id, $respuesta, $this->token);
-        }else if($this->callback_query != ""){
+        }else if($this->button_pressed != ""){
 
             $respuesta = 'envio callbackquery';
             $this->bot->sendMessage($this->id, $respuesta, $this->token);
@@ -64,7 +65,7 @@ class Webhook{
 
             $respuesta = 'No entendí tu mensaje';
             $this->bot->sendMessage($this->id, $respuesta, $this->token);
-            
+
         }
     }
 
