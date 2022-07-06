@@ -88,7 +88,7 @@ class Bot{
         curl_close($ch);
     } */
 
-    public function start()
+    public function start($id, $respuesta, $token)
     {
 
             $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación 😄 \n\n
