@@ -55,11 +55,16 @@ class Webhook{
             $metodo = str_replace($regex, '', $this->text);
             
             $this->bot->$metodo($this->id, $respuesta, $this->token);
-        }else{
+        }else if($this->callback_query != ""){
+
             $respuesta = 'envio callbackquery';
-            //$wb->enviarMensaje();
-            
             $this->bot->sendMessage($this->id, $respuesta, $this->token);
+
+        }else{
+
+            $respuesta = 'No entendí tu mensaje';
+            $this->bot->sendMessage($this->id, $respuesta, $this->token);
+            
         }
     }
 

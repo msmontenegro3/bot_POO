@@ -140,11 +140,11 @@ class Bot{
                 [
                     [
                         "text" => "Ejercicio 1",
-                        "callback_data" => 1
+                        "callback_data" => "armarEjercicio(1)"
                     ],
                     [
                         "text" => "Ejercicio 2",
-                        "callback_data" => 2
+                        "callback_data" => "armarEjercicio(2)"
                     ]
                 ]
             ]
