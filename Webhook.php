@@ -51,7 +51,7 @@ class Webhook{
             $respuesta = 'envio comando';
             //$wb->enviarMensaje();
 
-            $regex = //\/gm;
+            $regex = '/';
             $metodo = str_replace($regex, '', $this->text);
             
             $this->bot->sendMessage($this->id, $metodo, $this->token);
