@@ -87,9 +87,10 @@ class Ejercicio
             $bot->sendMessage($id, $imprimir, $token);
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $id, $token);
-            file_put_contents('imprimirArchivo', $imprimir);
+            /* file_put_contents('imprimirArchivo', $imprimir); */
         }
 
+        file_put_contents('imprimirArchivo', $imprimir);
         /* file_put_contents('arregloPreguntas', $numero_preguntas); */
       /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
