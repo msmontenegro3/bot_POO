@@ -135,7 +135,7 @@ class Bot{
 
         $respuesta = "Seleccione el número de ejercicio que desee";
 
-        $keyboard = [
+        /* $keyboard = [
             "inline_keyboard" => [
                 [
                     [
@@ -148,7 +148,27 @@ class Bot{
                     ]
                 ]
             ]
+        ]; */
+
+        $keyboard = [
+            "inline_keyboard" => [
+                [
+                    [
+                        "text" => "Ejercicio 1",
+                        "callback_data" => "presentarEnunciado(1)"
+                    ]
+                ]
+                [
+                    [
+                        "text" => "Ejercicio 2",
+                        "callback_data" => "presentarEnunciado(2)"
+                    ]
+                ]
+            ]
         ];
+
+
+
         $k=json_encode($keyboard);
         $this->sendMessage($id, $respuesta, $token, $k);
     }
