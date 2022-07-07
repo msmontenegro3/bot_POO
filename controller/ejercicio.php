@@ -81,6 +81,12 @@ class Ejercicio
     {
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
+        $contador=0;
+        if ($contador < $numero_preguntas) {
+            $imprimir = $arreglo_preguntas[$contador][1];
+            file_put_contents('arregloPreguntas', $imprimir);
+        }
+
         file_put_contents('arregloPreguntas', $numero_preguntas);
       /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
