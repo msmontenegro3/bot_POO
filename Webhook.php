@@ -78,7 +78,6 @@ class Webhook{
             $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
 
             
-
             $this->eje->$metodo($parametro = '', $this->id, $this->token);
 
         }else{

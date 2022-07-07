@@ -43,6 +43,12 @@ class Ejercicio
         return $ejercicio_array;
     }
 
+    public function recall_start()
+    {
+        $bot = new Bot();
+        $bot->start();
+    }
+
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
         $bot = new Bot();
@@ -59,7 +65,7 @@ class Ejercicio
                     ],
                     [
                         "text" => "❌",
-                        "callback_data" => "seleccionar_ejercicio()"
+                        "callback_data" => "recall_start()"
                     ]
                 ]
             ]
