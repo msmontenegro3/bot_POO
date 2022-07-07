@@ -25,6 +25,7 @@ class Webhook{
     {
         $this->bot = new Bot();
         $this->usu = new User();
+        $this->eje = new Ejercicio();
         $this->token = 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4';
         $this->message = isset($update['message']) ? $update['message'] : "";
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
@@ -79,7 +80,7 @@ class Webhook{
             file_put_contents('metodoCallback', $metodo);
             file_put_contents('parametroCallback', $parametro);
 
-            $this->bot->$metodo($parametro);
+            $this->eje->$metodo($parametro);
 
         }else{
 
