@@ -62,7 +62,7 @@ class Ejercicio
                 [
                     [
                         "text" => "✅",
-                        "callback_data" => "presentarEnunciado(1)"
+                        "callback_data" => "presentarPreguntas(1)"
                     ],
                     [
                         "text" => "❌",
@@ -74,6 +74,22 @@ class Ejercicio
         $k=json_encode($keyboard);
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
+
+
+
+    public function presentarPreguntas($ejercicio_id)
+    {
+        $arregloPreguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
+
+        foreach ($arregloPreguntas as $key => $value) {
+    
+            $data_pregunta[] = array($value['id'] ,$value['pregunta'], $value['id_respuesta_correcta'] );
+        
+        }
+
+        
+    }
+
 
     public function armarRespuestas($pregunta_id)
     {
