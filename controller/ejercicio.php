@@ -62,7 +62,7 @@ class Ejercicio
                 [
                     [
                         "text" => "✅",
-                        "callback_data" => "presentarPreguntas('. $ejercicio_id .')"
+                        "callback_data" => 'presentarPreguntas('. $ejercicio_id .')'
                     ],
                     [
                         "text" => "❌",
