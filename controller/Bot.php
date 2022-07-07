@@ -157,7 +157,7 @@ class Bot{
                         "text" => "Ejercicio 1",
                         "callback_data" => "presentarEnunciado(1)"
                     ]
-                ]
+                    ],
                 [
                     [
                         "text" => "Ejercicio 2",
