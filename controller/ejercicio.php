@@ -39,7 +39,7 @@ class Ejercicio
             # code...
         } */
 
-        file_put_contents('llegoElMetodo', $imprimir);
+        /* file_put_contents('llegoElMetodo', $imprimir); */
         return $ejercicio_array;
     }
 
@@ -83,11 +83,11 @@ class Ejercicio
         $numero_preguntas = count($arreglo_preguntas);
         $contador=0;
         if ($contador < $numero_preguntas) {
-            $imprimir = $arreglo_preguntas[$contador][1];
+            $imprimir = $arreglo_preguntas[$contador];
             file_put_contents('imprimirArchivo', $imprimir);
         }
 
-        file_put_contents('arregloPreguntas', $numero_preguntas);
+        /* file_put_contents('arregloPreguntas', $numero_preguntas); */
       /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
 
