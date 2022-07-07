@@ -100,9 +100,9 @@ class Ejercicio
     public function presentarRespuestas($pregunta_id, $id, $token)
     {
         $bot = new Bot();
-        foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
-            $json_array['inline_keyboard'][0][$key]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
-            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'responder(' .  $this->armarRespuestas($pregunta_id)[$key]['id'] . ')';
+        foreach ($this->armarRespuestas(3) as $key => $value) {
+            $json_array['inline_keyboard'][0][$key]['text'] = $this->armarRespuestas(3)[$key]['respuesta'];
+            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'responder(' .  $this->armarRespuestas(3)[$key]['id'] . ')';
         }
 
         $k = json_encode($json_array);
