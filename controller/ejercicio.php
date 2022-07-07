@@ -12,7 +12,7 @@ class Ejercicio
     private $ejercicio;
     private $respuesta_correcta;
     private $feedback_pregunta;
-    private $contador;
+    public $contador;
 
     public function __construct ()
     {
@@ -56,9 +56,7 @@ class Ejercicio
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
         $this->contador = 0;
-        $c = 0;
-        file_put_contents('thiscContador', $this->contador[0]);
-        file_put_contents('variableequis', $c);
+        
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
@@ -86,12 +84,10 @@ class Ejercicio
 
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
-        
+
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        
-        return ;
 
         if ($this->contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$this->contador]['pregunta'];
@@ -164,42 +160,5 @@ class Ejercicio
 
 /* $ej = new Ejercicio();
 
-print_r($ej->armarRespuestas(3)[0]); */
-
-//print_r($ej->armarEjercicio(1)['datos'][0][1]);
-
-//print_r($ej->armarRespuestas(3));
-/* 
-foreach ($ej->armarRespuestas(3) as $key => $value) {
-    //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
-    echo 
-    '[
-        "text" => "' .  $value['respuesta'] . '",
-        "callback_data" => '.  $value['id']  . '
-    ],';
-
-} */
-
-//print_r($arreglo_respuesta);
-/* 
-  $respuestas_de_pregunta = '[
-        "inline_keyboard" => [
-            [';
-    
-
-            foreach ($ej->armarRespuestas(3) as $key => $value) {
-                //$arreglo_respuesta[] = array($value['id'], $value['respuesta']);
-                $respuestas_de_pregunta = $respuestas_de_pregunta . 
-                '[
-                    "text" => "' .  $value['respuesta'] . '",
-                    "callback_data" => '.  $value['id']  . '
-                ],';
-            
-            }
-        
-
-            $respuestas_de_pregunta = $respuestas_de_pregunta . ']
-            ]
-        ]';
-        
-        print_r($respuestas_de_pregunta); */
+$ej->presentarEnunciado();
+$ej->presentarPreguntas(); */
