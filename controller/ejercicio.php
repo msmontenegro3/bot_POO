@@ -4,6 +4,7 @@
 
 require_once 'model/EjerciciosModel.php';
 
+
 class Ejercicio
 {
     private $ejercicio;
@@ -28,7 +29,8 @@ class Ejercicio
         }
 
         $ejercicio_array['datos'] = $data_pregunta;
-
+        
+        file_put_contents('llegoElMetodo', $ejercicio_id);
         return $ejercicio_array;
     }
 

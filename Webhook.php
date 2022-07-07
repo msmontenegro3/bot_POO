@@ -73,8 +73,11 @@ class Webhook{
 
             file_put_contents('llegaButton_Pressed', $this->button_pressed);
 
-            $respuesta = 'envio callbackquery';
-            $this->bot->button_pressed;
+            $metodo = explode('(', $this->button_pressed)[0];
+            $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
+
+
+            $this->bot->$metodo($parametro);
 
         }else{
 
