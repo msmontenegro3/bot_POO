@@ -12,6 +12,7 @@ class Ejercicio
     private $ejercicio;
     private $respuesta_correcta;
     private $feedback_pregunta;
+    public $contador;
 
     public function __construct ()
     {
@@ -74,6 +75,8 @@ class Ejercicio
             ]
         ];
         $k=json_encode($keyboard);
+
+        $this->contador=0;
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
@@ -83,16 +86,16 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        $contador=0;
-        if ($contador < $numero_preguntas) {
-            $imprimir = $arreglo_preguntas[$contador]['pregunta'];
+        
+        if ($this->contador < $numero_preguntas) {
+            $imprimir = $arreglo_preguntas[$this->contador]['pregunta'];
 
-            $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
-            $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
+            $this->respuesta_correcta = $arreglo_preguntas[$this->contador]['id_respuesta_correcta'];
+            $this->feedback_pregunta = $arreglo_preguntas[$this->contador]['feedback'];
 
             $bot->sendMessage($id, $imprimir, $token);
 
-            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $id, $token);
+            $this->presentarRespuestas($arreglo_preguntas[$this->contador]['id'], $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }
 
