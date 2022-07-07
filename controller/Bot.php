@@ -135,7 +135,8 @@ class Bot{
 
         $respuesta = "Seleccione el número de ejercicio que desee";
 
-        /* $keyboard = [
+        /* Sin que se despliegue bien en la pantalla 
+        $keyboard = [
             "inline_keyboard" => [
                 [
                     [
