@@ -96,8 +96,8 @@ class Bot{
             \n /help
             \n /indice
             \n /recursos
-            \n /seleccionarEjercicio
-            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionarEjercicio";
+            \n /seleccionar_ejercicio
+            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionar_ejercicio";
         
             $this->sendMessage($id, $respuesta, $token);
         
@@ -109,14 +109,14 @@ class Bot{
         $this->sendMessage($id, $respuesta, $token);
     }
 
-    public function indice($id, $respuesta, $token){
+    /* public function indice($id, $respuesta, $token){
         $respuesta = "LISTA DE EJERCICIOS:
         \nSi desea acceder a un ejercicio determinado seleccione el comando /ejercicio
         \n /ejercicio1 - Abstracción celular
         \n /ejercicio2 - Sistema estudiantes de escuela";
 
         $this->sendMessage($id, $respuesta, $token);
-    }
+    } */
 
     public function recursos($id, $respuesta, $token){
         $respuesta = "LISTA DE ENLACES QUE PUEDEN INTERESARTE PARA ESTUDIAR:";
