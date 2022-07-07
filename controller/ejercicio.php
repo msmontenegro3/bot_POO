@@ -88,6 +88,8 @@ class Ejercicio
 
     public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
+        file_put_contents('arrayParamPreguntas', $array_param_preguntas);
+
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
 
