@@ -79,9 +79,9 @@ class Ejercicio
 
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
-        $arregloPreguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
-        $imprimir = $arregloPreguntas[0];
-        file_put_contents('arregloPreguntas', $imprimir);
+        $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
+        $numero_preguntas = count($arreglo_preguntas);
+        file_put_contents('arregloPreguntas', $numero_preguntas);
       /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
 
