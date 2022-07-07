@@ -88,12 +88,12 @@ class Ejercicio
 
     public function presentarPreguntas($array_parametros_preguntas, $id, $token)
     {
-        file_put_contents('thisContadorEnPresentarPreguntas', $this->contador);
+        file_put_contents('thisContadorEnPresentarPreguntas', $array_parametros_preguntas);
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($array_parametros_preguntas['ejercicio_id']);
         $numero_preguntas = count($arreglo_preguntas);
         $contador = $array_parametros_preguntas['contador'];
-        if ($this->contador < $numero_preguntas) {
+        if ($contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
