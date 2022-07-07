@@ -62,13 +62,16 @@ class Ejercicio
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
 
+        $array_param_preguntas['ejercicio_id'] =  $ejercicio_id;
+        $array_param_preguntas['contador'] =  0;
+
         $respuesta = '¿Quieres continuar con el ejercicio?';
         $keyboard = [
             "inline_keyboard" => [
                 [
                     [
                         "text" => "✅",
-                        "callback_data" => "presentarPreguntas(". $ejercicio_id .")"
+                        "callback_data" => "presentarPreguntas(". $array_param_preguntas .")"
                     ],
                     [
                         "text" => "❌",
@@ -83,13 +86,15 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function presentarPreguntas($ejercicio_id, $id, $token)
+    public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
-        file_put_contents('thisContadorEnPresentarPreguntas', $this->contador);
+        $ejercicio_id = $array_param_preguntas['ejercicio_id'];
+        $contador = $array_param_preguntas['contador'];
+
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        $contador = 0;
+        
         if ($contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
