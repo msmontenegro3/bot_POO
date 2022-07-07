@@ -83,7 +83,7 @@ class Ejercicio
         $numero_preguntas = count($arreglo_preguntas);
         $contador=0;
         if ($contador < $numero_preguntas) {
-            $imprimir = $arreglo_preguntas[$contador];
+            $imprimir = $arreglo_preguntas[$contador]['pregunta'];
             file_put_contents('imprimirArchivo', $imprimir);
         }
 
