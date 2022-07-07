@@ -62,7 +62,7 @@ class Webhook{
 
     public function reciver($respuesta = '')
     {
-        $comandos_array = array('/start', '/help', '/recursos', '/indice', '/seleccionar_ejercicio');
+        $comandos_array = array('/start', '/help', '/recursos', '/seleccionar_ejercicio');
 
         if ($this->message != "" && in_array($this->text, $comandos_array)){
 
