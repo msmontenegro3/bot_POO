@@ -75,8 +75,6 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-
-
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
         $bot = new Bot();
@@ -87,7 +85,9 @@ class Ejercicio
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
             $bot->sendMessage($id, $imprimir, $token);
-            file_put_contents('imprimirArchivo', $imprimir);
+
+            $this->presentarRespuestas($arreglo_preguntas[$contador]['id']);
+            /* file_put_contents('imprimirArchivo', $imprimir); */
         }
 
         /* file_put_contents('arregloPreguntas', $numero_preguntas); */
@@ -96,6 +96,16 @@ class Ejercicio
         
     }
 
+
+    public function presentarRespuestas($pregunta_id)
+    {
+        foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
+            $json_array['inline_keyboard'][0][$key]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
+            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'responder(' .  $this->armarRespuestas($pregunta_id)[$key]['id'] . ')';
+        }
+
+        file_put_contents('presentarRespuestasMethod', $json_array);
+    }
 
     public function armarRespuestas($pregunta_id)
     {
