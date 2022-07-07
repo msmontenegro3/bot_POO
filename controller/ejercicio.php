@@ -77,7 +77,7 @@ class Ejercicio
 
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
-        file_put_contents('idDelEjerciciollega', $arreglo_preguntas);
+        
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);

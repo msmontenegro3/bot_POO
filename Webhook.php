@@ -77,7 +77,8 @@ class Webhook{
             $metodo = explode('(', $this->button_pressed)[0];
             $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
 
-            
+            file_put_contents('metodo', $metodo);
+            file_put_contents('parametro', $parametro);
             $this->eje->$metodo($parametro, $this->id, $this->token);
 
         }else{
