@@ -130,6 +130,11 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
+    public function validarRespuesta($param)
+    {
+        file_put_contents('llega_hasta_validar', $param);
+    }
+
     public function armarRespuestas($pregunta_id)
     {
         $respuestas_array = $this->ejercicio->getRespuestasPorPregunta($pregunta_id);
