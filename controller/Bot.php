@@ -97,7 +97,7 @@ class Bot{
             \n /indice
             \n /recursos
             \n /seleccionarEjercicio
-            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /ejercicio";
+            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionarEjercicio";
         
             $this->sendMessage($id, $respuesta, $token);
         
