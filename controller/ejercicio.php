@@ -55,23 +55,20 @@ class Ejercicio
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
-        $contador = 0;
+        /* $this->contador = 0; */
         /* file_put_contents('thisContadorEnEnunciado', $this->contador); */
         
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
 
-        $array_parametros_preguntas['ejercicio_id'] = $ejercicio_id;
-        $array_parametros_preguntas['contador'] = $contador;
-        
         $respuesta = '¿Quieres continuar con el ejercicio?';
         $keyboard = [
             "inline_keyboard" => [
                 [
                     [
                         "text" => "✅",
-                        "callback_data" => "presentarPreguntas(". $array_parametros_preguntas .")"
+                        "callback_data" => "presentarPreguntas(". $ejercicio_id .")"
                     ],
                     [
                         "text" => "❌",
@@ -86,13 +83,13 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function presentarPreguntas($array_parametros_preguntas, $id, $token)
+    public function presentarPreguntas($ejercicio_id, $id, $token)
     {
-        file_put_contents('thisContadorEnPresentarPreguntas', $array_parametros_preguntas);
+        file_put_contents('thisContadorEnPresentarPreguntas', $this->contador);
         $bot = new Bot();
-        $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($array_parametros_preguntas['ejercicio_id']);
+        $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        $contador = $array_parametros_preguntas['contador'];
+        $contador = 0;
         if ($contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
@@ -115,7 +112,7 @@ class Ejercicio
 
     public function presentarRespuestas($pregunta_id, $id, $token)
     {
-
+        //sirve :)
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
             $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
