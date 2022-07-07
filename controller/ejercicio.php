@@ -55,6 +55,8 @@ class Ejercicio
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
+        $this->contador=0;
+        file_put_contents('thiscContador', $this->contador);
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
@@ -76,7 +78,7 @@ class Ejercicio
         ];
         $k=json_encode($keyboard);
 
-        $this->contador=0;
+
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
@@ -86,7 +88,7 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        file_put_contents('thiscContador', $this->contador);
+        
         return ;
 
         if ($this->contador < $numero_preguntas) {

@@ -135,22 +135,6 @@ class Bot{
 
         $respuesta = "Seleccione el número de ejercicio que desee";
 
-        /* Sin que se despliegue bien en la pantalla 
-        $keyboard = [
-            "inline_keyboard" => [
-                [
-                    [
-                        "text" => "Ejercicio 1",
-                        "callback_data" => "presentarEnunciado(1)"
-                    ],
-                    [
-                        "text" => "Ejercicio 2",
-                        "callback_data" => "presentarEnunciado(2)"
-                    ]
-                ]
-            ]
-        ]; */
-
         $keyboard = [
             "inline_keyboard" => [
                 [
