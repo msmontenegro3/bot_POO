@@ -82,7 +82,7 @@ class Ejercicio
         $arregloPreguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $imprimir = $arregloPreguntas[0];
         file_put_contents('arregloPreguntas', $imprimir);
-        $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id);
+      /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
 
         /* $respuesta = $arregloPreguntas['pregunta'];
