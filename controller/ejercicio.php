@@ -43,10 +43,11 @@ class Ejercicio
         return $ejercicio_array;
     }
 
-    public function recall_start()
+    public function recall_start($param, $id, $token)
     {
         $bot = new Bot();
-        $bot->start();
+        $respuesta = '';
+        $bot->start($id, $respuesta, $token);
     }
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
