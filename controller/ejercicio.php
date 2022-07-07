@@ -30,7 +30,7 @@ class Ejercicio
 
         $ejercicio_array['datos'] = $data_pregunta;
 
-        file_put_contents('llegoElMetodo', $arregloPreguntas);
+        file_put_contents('llegoElMetodo', sizeof($arregloPreguntas));
         return $ejercicio_array;
     }
 
