@@ -27,6 +27,12 @@ class EjerciciosModel{
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPreguntaPorEjercicio($ejercicio_id, $pregunta_id)
+    {
+        $dt = $this->conexion->query('SELECT * FROM preguntas WHERE id_ejercicio = '. $ejercicio_id .' AND id = '. $pregunta_id .'');
+        return $dt->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getRespuestasPorPregunta($pregunta_id)
     {
         $dt = $this->conexion->query('SELECT * FROM respuestas WHERE pregunta_id = ' . $pregunta_id);

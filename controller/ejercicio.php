@@ -77,17 +77,16 @@ class Ejercicio
 
 
 
-    public function presentarPreguntas($ejercicio_id)
+    public function presentarPreguntas($ejercicio_id, $id, $token)
     {
         $arregloPreguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
+        file_put_contents('arregloPreguntas', $arregloPreguntas);
+        $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id);
 
-        foreach ($arregloPreguntas as $key => $value) {
-    
-            $data_pregunta[] = array($value['id'] ,$value['pregunta'], $value['id_respuesta_correcta'] );
-        
-        }
 
-        
+        /* $respuesta = $arregloPreguntas['pregunta'];
+
+        $bot->sendMessage($id, $respuesta, $token); */
     }
 
 
