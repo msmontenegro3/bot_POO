@@ -10,6 +10,8 @@ require_once 'Webhook.php';
 class Ejercicio
 {
     private $ejercicio;
+    private $respuesta_correcta;
+    private $feedback_pregunta;
 
     public function __construct ()
     {
@@ -85,6 +87,9 @@ class Ejercicio
         if ($contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
+            $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
+            $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
+
             $bot->sendMessage($id, $imprimir, $token);
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $id, $token);
@@ -105,8 +110,19 @@ class Ejercicio
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
             $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'responder(' .  $this->armarRespuestas($pregunta_id)[$key]['id'] . ')';
+
+            $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
+
+            $argumento_validar['pregunta_id'] = $pregunta_id;
+            $argumento_validar['id_respuesta_boton'] = $id_respuesta_boton;
+            $argumento_validar['feedback_pregunta'] = $this->feedback_pregunta;
+            $argumento_validar['respuesta_correcta'] = $this->respuesta_correcta;
+
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $argumento_validar  . ')';
+
         }
+
+        file_put_contents('argumento_validar', $argumento_validar);
 
         $k = json_encode($json_array);
 
