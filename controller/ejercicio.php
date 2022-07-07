@@ -104,7 +104,8 @@ class Ejercicio
             $json_array['inline_keyboard'][0][$key]['callback_data'] = 'responder(' .  $this->armarRespuestas($pregunta_id)[$key]['id'] . ')';
         }
 
-        file_put_contents('presentarRespuestasMethod', $json_array);
+        $imprimir = $json_array;
+        file_put_contents('presentarRespuestasMethod', $imprimir);
     }
 
     public function armarRespuestas($pregunta_id)
