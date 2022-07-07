@@ -56,6 +56,7 @@ class Ejercicio
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
         $this->contador = 0;
+        file_put_contents('thisContadorEnEnunciado', $this->contador);
         
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
@@ -84,7 +85,7 @@ class Ejercicio
 
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
-
+        file_put_contents('thisContadorEnPresentarPreguntas', $this->contador);
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
