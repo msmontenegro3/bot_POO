@@ -79,7 +79,7 @@ class Webhook{
 
             
 
-            $this->eje->$metodo($parametro);
+            $this->eje->$metodo($parametro, $this->id, $this->token);
 
         }else{
 

@@ -3,6 +3,8 @@
 /* require_once '../model/EjerciciosModel.php'; */
 
 require_once 'model/EjerciciosModel.php';
+require_once 'controller/Bot.php';
+require_once 'Webhook.php';
 
 
 class Ejercicio
@@ -30,9 +32,22 @@ class Ejercicio
 
         $ejercicio_array['datos'] = $data_pregunta;
 
-        $imprimir = sizeof($arregloPreguntas);
+
+        /* $contador_preguntas = sizeof($arregloPreguntas);
+
+        if ($contador_preguntas > 0) {
+            # code...
+        } */
+
         file_put_contents('llegoElMetodo', $imprimir);
         return $ejercicio_array;
+    }
+
+    public function presentarEnunciado($ejercicio_id, $id, $token)
+    {
+        $bot = new Bot();
+        $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
+        $bot->sendMessage($id, $enunciado, $token);
     }
 
     public function armarRespuestas($pregunta_id)
