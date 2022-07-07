@@ -48,6 +48,24 @@ class Ejercicio
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
+
+        $respuesta = '¿Quieres continuar con el ejercicio?';
+        $keyboard = [
+            "inline_keyboard" => [
+                [
+                    [
+                        "text" => "✅",
+                        "callback_data" => "presentarEnunciado(1)"
+                    ],
+                    [
+                        "text" => "❌",
+                        "callback_data" => "presentarEnunciado(2)"
+                    ]
+                ]
+            ]
+        ];
+        $k=json_encode($keyboard);
+        $this->sendMessage($id, $respuesta, $token, $k);
     }
 
     public function armarRespuestas($pregunta_id)
