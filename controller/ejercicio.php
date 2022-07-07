@@ -59,7 +59,7 @@ class Ejercicio
                     ],
                     [
                         "text" => "❌",
-                        "callback_data" => "presentarEnunciado(2)"
+                        "callback_data" => "seleccionar_ejercicio()"
                     ]
                 ]
             ]
