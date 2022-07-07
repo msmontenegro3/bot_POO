@@ -57,7 +57,7 @@ class Ejercicio
     {
         $this->contador = 0;
         $c = 0;
-        file_put_contents('thiscContador', $this->contador);
+        file_put_contents('thiscContador', $this->contador[0]);
         file_put_contents('variableequis', $c);
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
