@@ -147,7 +147,7 @@ class Bot{
                         "callback_data" => "presentarEnunciado(2)"
                     ]
                 ]
-            ], "resize_keyboard" => true
+            ]
         ];
         $k=json_encode($keyboard);
         $this->sendMessage($id, $respuesta, $token, $k);
