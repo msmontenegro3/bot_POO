@@ -71,11 +71,13 @@ class Webhook{
             $this->bot->$metodo($this->id, $respuesta, $this->token);
         }else if($this->button_pressed != ""){
 
-            file_put_contents('llegaButton_Pressed', $this->button_pressed);
+            
 
             $metodo = explode('(', $this->button_pressed)[0];
             $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
 
+            file_put_contents('metodoCallback', $metodo);
+            file_put_contents('parametroCallback', $parametro);
 
             $this->bot->$metodo($parametro);
 
