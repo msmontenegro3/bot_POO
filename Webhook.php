@@ -81,7 +81,7 @@ class Webhook{
             }
 
             file_put_contents('metodo', $metodo);
-            file_put_contents('parametro', $parametro);
+            file_put_contents('parametro', $parametro[0]);
             $this->eje->$metodo($parametro, $this->id, $this->token);
 
         }else{
