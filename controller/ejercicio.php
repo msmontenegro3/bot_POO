@@ -86,7 +86,9 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        
+        file_put_contents('thiscContador', $this->contador);
+        return ;
+
         if ($this->contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$this->contador]['pregunta'];
 
