@@ -65,7 +65,7 @@ class Ejercicio
             ]
         ];
         $k=json_encode($keyboard);
-        $this->sendMessage($id, $respuesta, $token, $k);
+        $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
     public function armarRespuestas($pregunta_id)
