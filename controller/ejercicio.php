@@ -55,7 +55,7 @@ class Ejercicio
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
-        /* $this->contador = 0; */
+        $this->contador = 0;
         /* file_put_contents('thisContadorEnEnunciado', $this->contador); */
         
         $bot = new Bot();
@@ -89,7 +89,7 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        $contador = 0;
+        $contador = $this->contador;
         if ($this->contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
