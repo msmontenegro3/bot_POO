@@ -12,7 +12,7 @@ class Ejercicio
     private $ejercicio;
     private $respuesta_correcta;
     private $feedback_pregunta;
-    public $contador;
+    private $contador;
 
     public function __construct ()
     {
@@ -55,8 +55,10 @@ class Ejercicio
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
-        $this->contador=0;
+        $this->contador = 0;
+        $c = 0;
         file_put_contents('thiscContador', $this->contador);
+        file_put_contents('variableequis', $c);
         $bot = new Bot();
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
