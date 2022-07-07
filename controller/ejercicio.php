@@ -79,21 +79,21 @@ class Ejercicio
 
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
+        $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
         $contador=0;
         if ($contador < $numero_preguntas) {
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
+
+            $bot->sendMessage($id, $imprimir, $token);
             file_put_contents('imprimirArchivo', $imprimir);
         }
 
         /* file_put_contents('arregloPreguntas', $numero_preguntas); */
       /*   $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id); */
 
-
-        /* $respuesta = $arregloPreguntas['pregunta'];
-
-        $bot->sendMessage($id, $respuesta, $token); */
+        
     }
 
 
