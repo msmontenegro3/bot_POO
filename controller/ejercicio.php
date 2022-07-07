@@ -80,7 +80,8 @@ class Ejercicio
     public function presentarPreguntas($ejercicio_id, $id, $token)
     {
         $arregloPreguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
-        file_put_contents('arregloPreguntas', $arregloPreguntas);
+        $imprimir = $arregloPreguntas[0];
+        file_put_contents('arregloPreguntas', $imprimir);
         $pregunta = $this->ejercicio->getPreguntaPorEjercicio($ejercicio_id);
 
 
