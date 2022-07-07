@@ -29,8 +29,8 @@ class Ejercicio
         }
 
         $ejercicio_array['datos'] = $data_pregunta;
-        
-        file_put_contents('llegoElMetodo', $ejercicio_id);
+
+        file_put_contents('llegoElMetodo', $ejercicio_array);
         return $ejercicio_array;
     }
 

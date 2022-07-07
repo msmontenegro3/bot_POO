@@ -77,8 +77,7 @@ class Webhook{
             $metodo = explode('(', $this->button_pressed)[0];
             $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
 
-            file_put_contents('metodoCallback', $metodo);
-            file_put_contents('parametroCallback', $parametro);
+            
 
             $this->eje->$metodo($parametro);
 
