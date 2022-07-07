@@ -42,8 +42,6 @@ class Webhook{
             
             //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
         }
-        file_put_contents('update', json_encode($update));
-        file_put_contents('llegaDataCallBackQuery', $this->callback_query);
 
     }
 
@@ -63,7 +61,7 @@ class Webhook{
 
     public function reciver($respuesta = '')
     {
-        $comandos_array = array('/start', '/help', '/recursos', '/indice', '/ejercicio');
+        $comandos_array = array('/start', '/help', '/recursos', '/indice', '/seleccionar_ejercicio');
 
         if ($this->message != "" && in_array($this->text, $comandos_array)){
 
@@ -74,8 +72,9 @@ class Webhook{
         }else if($this->button_pressed != ""){
 
             file_put_contents('llegaButton_Pressed', $this->button_pressed);
+
             $respuesta = 'envio callbackquery';
-            $this->bot->sendMessage($this->id, $respuesta, $this->token);
+            $this->bot->button_pressed;
 
         }else{
 

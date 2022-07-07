@@ -96,7 +96,7 @@ class Bot{
             \n /help
             \n /indice
             \n /recursos
-            \n /ejercicio
+            \n /seleccionarEjercicio
             \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /ejercicio";
         
             $this->sendMessage($id, $respuesta, $token);
@@ -131,7 +131,7 @@ class Bot{
         $this->sendMessage($id, $respuesta, $token);
     }
 
-    public function ejercicio($id, $respuesta, $token){
+    public function seleccionar_ejercicio($id, $respuesta, $token){
 
         $respuesta = "Seleccione el número de ejercicio que desee";
 
