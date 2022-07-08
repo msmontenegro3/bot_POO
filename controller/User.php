@@ -17,12 +17,12 @@ class User{
     
     public function setUser($id, $nombre, $apellido)
     {
-        $this->data_user->setUsuarios($id, $nombre, $apellido, $fecha);
+        $this->data_user->setUsuarios($id, $nombre, $apellido);
     }
 
     public function reingresoUser($id)
     {
-        $date = date();
+        $date = date('d/n/Y H\hi');
         $this->data_user->setUserDate($id, $date);
 
     }
