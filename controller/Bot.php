@@ -19,7 +19,7 @@ class Bot{
     }
 
     //ENVÍA MENSAJES Y TECLADO
-    function sendMessage($chatID, $messaggio, $token,&$k = ''){
+    function sendMessage($chatID, $messaggio, $token, &$k = ''){
 
 
         
@@ -28,11 +28,13 @@ class Bot{
         /* $url = "https://api.telegram.org/" . $token . "/sendMessage?&chat_id=" . $chatID; */
     
         if(isset($k)) {
-            $url = $url."&reply_markup=".$k; 
+            $url = $url . "&reply_markup=" . $k; 
             }
     
-    
-            $url = $url."&text=" . urlencode($messaggio);
+        file_put_contents('llegaASendMessage2', $url);
+            
+            
+            $url = $url . "&text=" . urlencode($messaggio);
             $ch = curl_init();
             $optArray = array(
                     CURLOPT_URL => $url,
