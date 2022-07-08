@@ -125,7 +125,7 @@ class Ejercicio
 
             $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
 
-            file_put_contents('feedback', $this->feedback_pregunta);
+            /* file_put_contents('feedback', $this->feedback_pregunta); */
 
             $respuesta_correcta = $this->respuesta_correcta;
             $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ', ' . $contador  . ', ' .  $ejercicio_id . ')';
@@ -152,10 +152,12 @@ class Ejercicio
         $contador = $array_param_respuestas[3];
 
         if ($respuesta_enviada == $respuesta_correcta){
-            $f = new EjerciciosModel();
+/*             $f = new EjerciciosModel();
 
             $feedback = $f->getFeedbackPorPregunta($pregunta_id);
-            //$feedback = 'feedback';
+            file_put_contents('feedback', $feedback); */
+
+            $feedback = 'feedback';
             $bot->sendMessage($id, $feedback, $token);
 
             $array_show_preguntas[0] = $ejercicio_id;
