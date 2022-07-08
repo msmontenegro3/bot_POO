@@ -135,15 +135,27 @@ class Ejercicio
 
 
         $k = json_encode($json_array);
-        file_put_contents('quePasoTecladitosad', $k);
+        /* file_put_contents('quePasoTecladitosad', $k); */
 
         $respuesta = 'Seleccione la respuesta correcta';
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function validarRespuesta($param)
+    public function validarRespuesta($array_param_respuestas, $id, $token)
     {
+        $pregunta_id = $array_param_respuestas[0];
+        $respuesta_enviada = $array_param_respuestas[1];
+        $respuesta_correcta = $array_param_respuestas[2];
+
+        if ($respuesta_enviada == $respuesta_correcta){
+            $respuesta = 'skjdnfksjndfkdsn';
+            $bot->sendMessage($id, $respuesta, $token);
+        }
+        
         file_put_contents('llega_hasta_validar', $param);
+
+
+
     }
 
     public function armarRespuestas($pregunta_id)
@@ -152,6 +164,9 @@ class Ejercicio
 
         return $respuestas_array;
     }
+
+
+
 
     public function metodoHola()
     {

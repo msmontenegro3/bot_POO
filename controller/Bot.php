@@ -23,7 +23,7 @@ class Bot{
 
 
         
-        file_put_contents('llegaASendMessage2', $k);
+        /* file_put_contents('llegaASendMessage2', $k); */
         $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
         /* $url = "https://api.telegram.org/" . $token . "/sendMessage?&chat_id=" . $chatID; */
     
