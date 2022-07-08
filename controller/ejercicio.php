@@ -98,7 +98,7 @@ class Ejercicio
         $numero_preguntas = count($arreglo_preguntas);
         
         if ($contador < $numero_preguntas) {
-            $imprimir = '<b>Pregunta' . ($contador + 1) . ':</b> ' .$arreglo_preguntas[$contador]['pregunta'];
+            $imprimir = '<b><i>Pregunta' . ($contador + 1) . ':</i></b> ' .$arreglo_preguntas[$contador]['pregunta'];
 
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
            // $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
