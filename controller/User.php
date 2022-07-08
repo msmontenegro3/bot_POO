@@ -1,6 +1,11 @@
 <?php
 
+
 require_once 'model/UserModel.php';
+
+/* require_once '../model/UserModel.php'; */
+
+
 class User{
 
     public $data_user;
@@ -28,7 +33,16 @@ class User{
         foreach ($dt as $key => $value) {
             $id[] = $value['codigo_usuario_tel']; 
         }
-        return $id;
+
+        if ($id = NULL) {
+            return $id[0] = '';
+        }else{
+            return $id;
+        }
+        
     }
     
 }
+/* $u = new User();
+
+print_r($u->getIdArray()); */
