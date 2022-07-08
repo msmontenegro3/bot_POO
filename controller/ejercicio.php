@@ -110,6 +110,7 @@ class Ejercicio
         }else {
             $print = 'Reciba los multiproductos!!';
             $bot->sendMessage($id, $print, $token);
+            $this->recall_start();
         }
 
         
