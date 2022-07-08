@@ -143,12 +143,18 @@ class Ejercicio
 
     public function validarRespuesta($array_param_respuestas, $id, $token)
     {
+
+        $bot = new Bot();
+
         $pregunta_id = $array_param_respuestas[0];
         $respuesta_enviada = $array_param_respuestas[1];
         $respuesta_correcta = $array_param_respuestas[2];
 
         if ($respuesta_enviada == $respuesta_correcta){
             $respuesta = 'skjdnfksjndfkdsn';
+            $bot->sendMessage($id, $respuesta, $token);
+        }else {
+            $respuesta = 'noooooo';
             $bot->sendMessage($id, $respuesta, $token);
         }
         
