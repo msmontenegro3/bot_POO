@@ -156,7 +156,7 @@ class Ejercicio
 
             //$this->presentarPreguntas($array, $id, $token);
 
-            $respuesta = 'skjdnfksjndfkdsn';
+            $respuesta = $contador +1;
             $bot->sendMessage($id, $respuesta, $token);
         }else {
             $respuesta = 'noooooo';
