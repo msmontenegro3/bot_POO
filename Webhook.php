@@ -98,9 +98,9 @@ class Webhook{
     {
         if (!in_array($this->id, $this->usu->getIdArray())) {
             $usu->setUser($this->id, $this->name, $this->last_name, $this->date);
-            $usu->setReingresoUser($this->id, $this->date);
+            $usu->reingresoUser($this->id);
         }else{
-            $usu->setReingresoUser($this->id, $this->date);
+            $usu->reingresoUser($this->id);
         }
     }
 

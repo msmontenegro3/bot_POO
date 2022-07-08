@@ -22,7 +22,7 @@ class UserModel{
         VALUES (' . $chatID  . ' , \'' .  $nombre . '\', \'' .  $apellido . '\')');
     }
 
-    public function setReingresoUser($chatID, $date)
+    public function setUserDate($chatID, $date)
     {
         $this->conexion->query('INSERT INTO ususarios_date_log (id_usuario, fecha_ingreso)
         VALUES (' . $chatID  . ' , \'' .  $date . '\')');

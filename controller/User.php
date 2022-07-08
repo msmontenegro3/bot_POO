@@ -10,9 +10,16 @@ class User{
         $this->data_user = new UserModel();
     }
     
-    public function setUser($id, $nombre, $apellido, $fecha = '')
+    public function setUser($id, $nombre, $apellido)
     {
         $this->data_user->setUsuarios($id, $nombre, $apellido, $fecha);
+    }
+
+    public function reingresoUser($id)
+    {
+        $date = date();
+        $this->data_user->setRUserDate($id, $date);
+
     }
 
     public function getIdArray()
