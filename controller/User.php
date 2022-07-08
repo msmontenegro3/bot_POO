@@ -35,7 +35,7 @@ class User{
         }
 
         if ($id = NULL) {
-            return $id[0] = '';
+            return $id[0] = 0;
         }else{
             return $id;
         }
