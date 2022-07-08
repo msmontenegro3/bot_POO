@@ -24,7 +24,7 @@ class UserModel{
 
     public function setUserDate($chatID, $date)
     {
-        $this->conexion->query('INSERT INTO ususarios_date_log (codigo_usuario_tel_id, fecha_ingreso)
+        $this->conexion->query('INSERT INTO usuarios_date_log (codigo_usuario_tel_id, fecha_ingreso)
         VALUES (' . $chatID  . ' , \'' .  $date . '\')');
     }
 
@@ -38,4 +38,7 @@ class UserModel{
 
 }
 
+
+/* $u= new UserModel();
+$u->setUserDate(1, 'rrr'); */
 ?>
