@@ -101,7 +101,7 @@ class Ejercicio
             $imprimir = $arreglo_preguntas[$contador]['pregunta'];
 
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
-            $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
+           // $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
 
             $bot->sendMessage($id, $imprimir, $token);
 
@@ -173,7 +173,6 @@ class Ejercicio
         }else {
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
-
 
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
