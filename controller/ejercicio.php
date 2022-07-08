@@ -111,6 +111,7 @@ class Ejercicio
             $print = 'Reciba los multiproductos!!';
             $bot->sendMessage($id, $print, $token);
             $this->recall_start();
+            return;
         }
 
         
@@ -162,7 +163,7 @@ class Ejercicio
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
-           $feedback = $f->getFeedbackPorPregunta(3)[0]['feedback'];
+           $feedback = $f->getFeedbackPorPregunta($pregunta_id)[0]['feedback'];
 
 
             $bot->sendMessage($id, $feedback, $token);
