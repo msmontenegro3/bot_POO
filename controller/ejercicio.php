@@ -121,15 +121,14 @@ class Ejercicio
     {
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
-            $json_array['inline_keyboard'][0][$key]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
+            $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
 
             $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
 
-            $feedback = 1;
             file_put_contents('feedback', $this->feedback_pregunta);
 
             $respuesta_correcta = $this->respuesta_correcta;
-            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $feedback  . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
