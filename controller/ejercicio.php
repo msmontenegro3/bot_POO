@@ -128,7 +128,7 @@ class Ejercicio
             /* file_put_contents('feedback', $this->feedback_pregunta); */
 
             $respuesta_correcta = $this->respuesta_correcta;
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ', ' . $contador  . ', ' .  $ejercicio_id . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $contador  . ',' .  $ejercicio_id . ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
