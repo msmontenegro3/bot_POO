@@ -1,9 +1,9 @@
 <?php
 
 
-require_once 'model/UserModel.php';
+/* require_once 'model/UserModel.php'; */
 
-/* require_once '../model/UserModel.php'; */
+require_once '../model/UserModel.php';
 
 
 class User{
@@ -32,17 +32,21 @@ class User{
         $dt = $this->data_user->getUserData();
         foreach ($dt as $key => $value) {
             $id[] = $value['codigo_usuario_tel']; 
+            print_r($value['codigo_usuario_tel']);
         }
 
-        if ($id = NULL) {
-            return $id[0] = 0;
-        }else{
-            return $id;
+        if (!isset($id) || $id == NULL) {
+            return $id = 0;
+
         }
+        return $id;
+
         
     }
     
 }
 /* $u = new User();
 
-print_r($u->getIdArray()); */
+print_r($u->getIdArray());
+print_r('<br>');
+var_dump($u->getIdArray()); */
