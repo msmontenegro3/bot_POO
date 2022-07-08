@@ -39,7 +39,7 @@ class Webhook{
             if (isset($this->message["from"]["last_name"])) {
                 $this->last_name = $this->message["from"]["last_name"]; //apellido del usuario
             }else {
-                # code...
+
                 $this->last_name = 'N/D';
             }
             
