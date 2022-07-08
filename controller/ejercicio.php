@@ -154,14 +154,14 @@ class Ejercicio
         if ($respuesta_enviada == $respuesta_correcta){
             $f = new EjerciciosModel();
 
-            //$feedback = $f->getFeedbackPorPregunta();
-            $feedback = 'feedback';
+            $feedback = $f->getFeedbackPorPregunta($pregunta_id);
+            //$feedback = 'feedback';
             $bot->sendMessage($id, $feedback, $token);
 
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador + 1;
 
-            $respuesta = 'Vamos con la siguiente preginta...';
+            $respuesta = 'Vamos con la siguiente pregunta...';
             $bot->sendMessage($id, $respuesta, $token);
 
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
