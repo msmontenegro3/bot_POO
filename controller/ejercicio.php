@@ -176,10 +176,10 @@ class Ejercicio
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
 
-
-            file_put_contents('contador', $contador);
+            $emoji = '🙊';
+            $bot->sendMessage($id, $emoji, $token);
             
-            $respuesta = 'ohhh';
+            $respuesta = 'Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
 
 
