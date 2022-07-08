@@ -155,7 +155,7 @@ class Ejercicio
         if ($respuesta_enviada == $respuesta_correcta){
              $f = new EjerciciosModel();
 
-           $feedback = $f->getFeedbackPorPregunta($pregunta_id);
+           $feedback = $f->getFeedbackPorPregunta($pregunta_id)[0];
 
 
             $bot->sendMessage($id, $feedback, $token);
