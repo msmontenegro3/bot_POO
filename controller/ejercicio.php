@@ -125,7 +125,7 @@ class Ejercicio
 
             $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
 
-            $feedback = $this->feedback_pregunta;
+            $feedback = strval($this->feedback_pregunta);
             file_put_contents('feedback', $feedback);
 
             $respuesta_correcta = $this->respuesta_correcta;
