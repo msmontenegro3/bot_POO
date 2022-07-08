@@ -131,11 +131,11 @@ class Ejercicio
             $argumento_validar['feedback_pregunta'] = $this->feedback_pregunta;
             $argumento_validar['respuesta_correcta'] = $this->respuesta_correcta;
 
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $argumento_validar  . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . json_encode($argumento_validar)  . ')';
 
         }
 
-        file_put_contents('argumento_validar', $argumento_validar);
+        file_put_contents('argumento_validar', json_encode($argumento_validar));
 
         $k = json_encode($json_array);
 
