@@ -107,6 +107,9 @@ class Ejercicio
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
+        }else {
+            $print = 'Reciba los multiproductos!!';
+            $bot->sendMessage($id, $print, $token);
         }
 
         
