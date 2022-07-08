@@ -38,4 +38,10 @@ class EjerciciosModel{
         $dt = $this->conexion->query('SELECT * FROM respuestas WHERE pregunta_id = ' . $pregunta_id);
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getFeedbackPorPregunta($pregunta_id)
+    {
+        $dt = $this->conexion->query('SELECT feedback FROM preguntas WHERE pregunta_id = ' . $pregunta_id);
+        return $dt->fetch_all(MYSQLI_ASSOC);
+    }
 }

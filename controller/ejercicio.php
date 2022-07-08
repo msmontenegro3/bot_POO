@@ -152,12 +152,18 @@ class Ejercicio
         $contador = $array_param_respuestas[3];
 
         if ($respuesta_enviada == $respuesta_correcta){
+            $f = new EjerciciosModel();
+
+            $feedback = $f->getFeedbackPorPregunta();
+            $bot->sendMessage($id, $feedback, $token);
+
+            $array_show_preguntas[0] = $ejercicio_id;
+            $array_show_preguntas[1] = $contador + 1;
 
 
-            //$this->presentarPreguntas($array, $id, $token);
+            $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
-            $respuesta = $contador +1;
-            $bot->sendMessage($id, $respuesta, $token);
+            
         }else {
             $respuesta = 'noooooo';
             $bot->sendMessage($id, $respuesta, $token);
