@@ -1,5 +1,6 @@
 <?php
 
+require_once 'controller/User.php';
 
 class Bot{
 
@@ -95,6 +96,10 @@ class Bot{
 
     public function start($id, $respuesta, $token)
     {
+        /* $usu = new User();
+        if (!in_array($id, $usu->getIdArray())) {
+            $usu->setUser($id, $name, $last_name, $date);
+        } */
 
             $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación 😄 \n\n
             A continuación tienes los comandos que puedes utilizar:
@@ -162,5 +167,7 @@ class Bot{
         $k=json_encode($keyboard);
         $this->sendMessage($id, $respuesta, $token, $k);
     }
+
+    
 
 }
