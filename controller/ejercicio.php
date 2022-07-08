@@ -103,7 +103,14 @@ class Ejercicio
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
            // $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
 
+
             $bot->sendMessage($id, $imprimir, $token);
+
+            if ($arreglo_preguntas[$contador]['image_link'] != NULL) {
+                $image_link = 'img/' . $arreglo_preguntas[$contador]['image_link'];
+                $bot->sendPhoto($id, $image_link, $token);
+
+            }
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
