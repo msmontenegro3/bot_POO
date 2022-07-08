@@ -105,7 +105,7 @@ class Ejercicio
 
             $bot->sendMessage($id, $imprimir, $token);
 
-            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $id, $token);
+            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }
 
@@ -117,7 +117,7 @@ class Ejercicio
     }
 
 
-    public function presentarRespuestas($pregunta_id, $contador, $id, $token)
+    public function presentarRespuestas($pregunta_id, $contador, $ejercicio_id, $id, $token)
     {
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
@@ -128,7 +128,7 @@ class Ejercicio
             file_put_contents('feedback', $this->feedback_pregunta);
 
             $respuesta_correcta = $this->respuesta_correcta;
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ', ' . $contador  . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ', ' . $contador  . ', ' .  $ejercicio_id . ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
