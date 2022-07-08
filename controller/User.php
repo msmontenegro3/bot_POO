@@ -36,7 +36,7 @@ class User{
         }
 
         if (!isset($id) || $id == NULL) {
-            return $id = 0;
+            return $id[] = 0;
 
         }
         return $id;
