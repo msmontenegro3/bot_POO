@@ -108,7 +108,11 @@ class Ejercicio
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }else {
-            $print = 'Reciba los multiproductos!!';
+            $print = '? Has resuelto el primer estudio de caso ?. 
+            Instancia la clase celular en la clase main y prueba 
+            los métodos que has utilizado. Aquí tienes un repositorio 
+            con el ejercicio resuelto a nuestra manera para que te sirva de 
+            guía ?: https://github.com/msmontenegro3/estudioCaso1.git';
             $bot->sendMessage($id, $print, $token);
 
         }
