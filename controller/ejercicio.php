@@ -121,7 +121,7 @@ class Ejercicio
     {
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
-            $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
+            $json_array['inline_keyboard'][0][$key]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
 
             $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
 
