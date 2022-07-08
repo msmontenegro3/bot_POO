@@ -108,11 +108,10 @@ class Ejercicio
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }else {
-            $print = '? Has resuelto el primer estudio de caso ?. 
-            Instancia la clase celular en la clase main y prueba 
-            los métodos que has utilizado. Aquí tienes un repositorio 
-            con el ejercicio resuelto a nuestra manera para que te sirva de 
-            guía ?: https://github.com/msmontenegro3/estudioCaso1.git';
+            $print = 'Has resuelto el estudio de caso. 
+            Ahora programa tu propia solución en tu editor de código. A quí tienes nuestro repositorio con los dos ejercicios de este bot resuletos a nuestra manera:
+            https://github.com/msmontenegro3/estudioCaso1.git
+            https://github.com/msmontenegro3/estudioCaso3';
             $bot->sendMessage($id, $print, $token);
 
         }
