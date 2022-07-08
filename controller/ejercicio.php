@@ -107,7 +107,7 @@ class Ejercicio
             $bot->sendMessage($id, $imprimir, $token);
 
             if ($arreglo_preguntas[$contador]['image_link'] != NULL) {
-                $image_link = 'img/' . $arreglo_preguntas[$contador]['image_link'];
+                $image_link = $arreglo_preguntas[$contador]['image_link'];
                 $bot->sendPhoto($id, $image_link, $token);
 
             }
