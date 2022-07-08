@@ -153,7 +153,10 @@ class Ejercicio
         $ejercicio_id = $array_param_respuestas[4];
 
         if ($respuesta_enviada == $respuesta_correcta){
-             $f = new EjerciciosModel();
+            $f = new EjerciciosModel();
+
+            $emoji = '🎉';
+            $bot->sendMessage($id, $emoji, $token);
 
            $feedback = $f->getFeedbackPorPregunta(3)[0]['feedback'];
 
