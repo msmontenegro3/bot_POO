@@ -124,7 +124,7 @@ class Bot{
     } */
 
     public function recursos($id, $respuesta, $token){
-        $respuesta = "LISTA DE ENLACES QUE PUEDEN INTERESARTE PARA ESTUDIAR:";
+        $respuesta = "<b>LISTA DE ENLACES QUE PUEDEN INTERESARTE PARA ESTUDIAR:</b>";
         $this->sendMessage($id, $respuesta, $token);
 
         $respuesta = "Infografías: 
