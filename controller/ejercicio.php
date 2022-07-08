@@ -183,7 +183,7 @@ class Ejercicio
             $bot->sendMessage($id, $respuesta, $token);
 
 
-            //$this->presentarPreguntas($array_show_preguntas, $id, $token);
+            $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
         }
 
