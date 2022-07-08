@@ -178,6 +178,10 @@ class Ejercicio
 
 
             file_put_contents('contador', $contador);
+            
+            $respuesta = 'ohhh';
+            $bot->sendMessage($id, $respuesta, $token);
+
 
             //$this->presentarPreguntas($array_show_preguntas, $id, $token);
 
