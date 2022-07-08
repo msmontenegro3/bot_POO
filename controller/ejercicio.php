@@ -176,7 +176,10 @@ class Ejercicio
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
 
-            $this->presentarPreguntas($array_show_preguntas, $id, $token);
+
+            file_put_contents('contador', $contador);
+
+            //$this->presentarPreguntas($array_show_preguntas, $id, $token);
 
         }
 
