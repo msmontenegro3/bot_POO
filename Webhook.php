@@ -14,11 +14,13 @@ class Webhook{
     private $update_id; //número de actualización
     //PARA EL INLINEKEYBOARD 
     private $callback_query;
+    private $button_pressed;
     //DATOS DEL USUARIO
     private $id; //id del chat
     private $text; //mensaje del usuario
     private $date;
-    private $button_pressed;
+    private $name;
+    private $last_name;
 
     
     public function __construct($update)
@@ -63,7 +65,7 @@ class Webhook{
     public function reciver($respuesta = '')
     {
         $comandos_array = array('/start', '/help', '/recursos', '/seleccionar_ejercicio');
-
+        
         if ($this->message != "" && in_array($this->text, $comandos_array)){
 
             $regex = '/';
@@ -92,9 +94,20 @@ class Webhook{
         }
     }
 
+    public function validarUsuario()
+    {
+        if (!in_array($this->id, $this->usu->getIdArray())) {
+            $usu->setUser($this->id, $this->name, $this->last_name, $this->date);
+            $usu->setReingresoUser($this->id, $this->date);
+        }else{
+            $usu->setReingresoUser($this->id, $this->date);
+        }
+    }
+
 }
 
 $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
+$wb->validarUsuario();
 $wb->reciver();
 
 

@@ -17,9 +17,15 @@ class UserModel{
     }
 
 
-    public function setUsuarios($chatID, $nombre, $apellido, $fecha=''){
-        $this->conexion->query('INSERT INTO usuarios (codigo_usuario_tel, nombre_us, apellido_us, fecha)
-        VALUES (' . $chatID  . ' , \'' .  $nombre . '\', \'' .  $apellido . '\', \'' .  $fecha  . '\')');
+    public function setUsuarios($chatID, $nombre, $apellido){
+        $this->conexion->query('INSERT INTO usuarios (codigo_usuario_tel, nombre_us, apellido_us)
+        VALUES (' . $chatID  . ' , \'' .  $nombre . '\', \'' .  $apellido . '\')');
+    }
+
+    public function setReingresoUser($chatID, $date)
+    {
+        $this->conexion->query('INSERT INTO ususarios_date_log (id_usuario, fecha_ingreso)
+        VALUES (' . $chatID  . ' , \'' .  $date . '\')');
     }
 
     public function getUserData(){
