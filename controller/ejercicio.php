@@ -129,7 +129,7 @@ class Ejercicio
 
             $json_array['inline_keyboard'][$key][0]['callback_data'] = "validarRespuesta(\"" . $pregunta_id  . "," .  $id_respuesta_boton  . "," .  $this->feedback_pregunta  . "," .   $this->respuesta_correcta  . "\")";
 
-            file_put_contents('tecladoDañadojeje', $json_array);
+            file_put_contents('tecladoDañadojeje', $json_array['inline_keyboard'][$key][0]['callback_data']);
         }
 
 
