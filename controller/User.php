@@ -1,9 +1,9 @@
 <?php
 
+/* 
+require_once 'model/UserModel.php'; */
 
-require_once 'model/UserModel.php';
-
-/* require_once '../model/UserModel.php'; */
+require_once '../model/UserModel.php';
 
 
 class User{
@@ -23,7 +23,7 @@ class User{
     public function reingresoUser($id)
     {
         $date = date();
-        $this->data_user->setRUserDate($id, $date);
+        $this->data_user->setUserDate($id, $date);
 
     }
 
