@@ -135,7 +135,7 @@ class Ejercicio
 
         }
 
-        file_put_contents('argumento_validar', json_encode($argumento_validar));
+        file_put_contents('argumento_validar', json_decode($argumento_validar));
 
         $k = json_encode($json_array);
 
