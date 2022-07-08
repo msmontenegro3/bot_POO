@@ -131,7 +131,7 @@ class Ejercicio
 
 
         $k = json_encode($json_array);
-        file_put_contents('quePasoTecladitosad', json_decode($k));
+        file_put_contents('quePasoTecladitosad', json_decode($json_array));
 
         $respuesta = 'Seleccione la respuesta correcta';
         $bot->sendMessage($id, $respuesta, $token, $k);
