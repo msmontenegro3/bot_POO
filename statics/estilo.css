@@ -5,6 +5,9 @@
 	color: #444
 }
 
+h1{
+   text-align: center;
+}
 /* .tabla {
     width: 100%;
     border: 1px solid;
@@ -27,15 +30,15 @@ caption {
  } */
  
  table {
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
  }
 
  th, td {
     width: 25%;
-    text-align: left;
+    text-align: center;
     vertical-align: top;
-    border-bottom: 1px solid rgb(150, 150, 150);
+    border: 1px solid rgb(150, 150, 150);
     border-collapse: collapse;
     padding: 8px;
     caption-side: bottom;
@@ -49,3 +52,5 @@ caption {
  th {
     background: #eee;
  }
+
+ 

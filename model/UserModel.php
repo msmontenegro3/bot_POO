@@ -34,6 +34,20 @@ class UserModel{
         return $dt->fetch_all(MYSQLI_ASSOC);
     
     }
+
+    public function getUsers(){
+
+        $dt = $this->conexion->query('SELECT * FROM usuarios');
+        return $dt->fetch_all(MYSQLI_ASSOC);
+    
+    }
+
+
+    public function showRegistro()
+    {
+        $dt = $this->conexion->query('SELECT * FROM mostrar_fechas_ingreso');
+        return $dt->fetch_all(MYSQLI_ASSOC);
+    }
     
 
 }

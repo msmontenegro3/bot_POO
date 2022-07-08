@@ -104,17 +104,16 @@ class Bot{
             $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación 😄 \n\n
             A continuación tienes los comandos que puedes utilizar:
             \n /help
-            \n /indice
             \n /recursos
             \n /seleccionar_ejercicio
-            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionar_ejercicio";
+            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionar_ejercicio y para una mejor experiencia con el teclado por favor utiliza Telegram Web (algunos teclados son muy grandes y los puedes visualizar posando el mouse sobre ellos 😉)";
         
             $this->sendMessage($id, $respuesta, $token);
         
     }
 
     public function help($id, $respuesta, $token){
-        $respuesta = "Este bot se encarga de generar ejercicios y guiarte en el proceso de abstracción, de acuerdo a los pilares de la programación orientada a objetos (POO) 😁.\n\nSabemos que puede ser un camino difícil, por lo que vas a iniciar con ejercicios sencillos, y asociarlos a su solución en diagrama UML. Una vez realizado el proceso de abstracción, recomendamos que desarrolles estos ejercicios en el lenguaje de programación Java.\n\n FAQ \n\n<b>¿Qué hago si no encuentro el teclado 😓?</b>\nPuedes abrir el teclado nuevamente con el botón que está en el cuadro de ingreso de texto, al lado derecho, antes del clip de adjuntar archivos\n\n¿<b>Cómo regreso a la pregunta anterior 🥴?</b>\nSólo copia el mensaje anterior a la pregunta que deseas ver y listo 🤩";
+        $respuesta = "Este bot se encarga de generar ejercicios y guiarte en el proceso de abstracción, de acuerdo a los pilares de la programación orientada a objetos (POO) 😁.\n\nSabemos que puede ser un camino difícil, por lo que vas a iniciar con ejercicios sencillos, y asociarlos a su solución en diagrama UML. Una vez realizado el proceso de abstracción, recomendamos que desarrolles estos ejercicios en el lenguaje de programación Java.";
 
         $this->sendMessage($id, $respuesta, $token);
     }
