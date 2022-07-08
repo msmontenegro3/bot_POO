@@ -97,10 +97,10 @@ class Webhook{
     public function validarUsuario()
     {
         if (!in_array($this->id, $this->usu->getIdArray())) {
-            $usu->setUser($this->id, $this->name, $this->last_name, $this->date);
-            $usu->reingresoUser($this->id);
+            $this->usu->setUser($this->id, $this->name, $this->last_name, $this->date);
+            $this->usu->reingresoUser($this->id);
         }else{
-            $usu->reingresoUser($this->id);
+            $this->usu->reingresoUser($this->id);
         }
     }
 
