@@ -125,7 +125,8 @@ class Ejercicio
 
             $id_respuesta_boton = $this->armarRespuestas($pregunta_id)[$key]['id'];
             $feedback = $this->feedback_pregunta;
-            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  .  ')';
+            $respuesta_correcta = $this->respuesta_correcta;
+            $json_array['inline_keyboard'][0][$key]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','  .  $respuesta_correcta  .  ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
