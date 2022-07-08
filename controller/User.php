@@ -1,9 +1,9 @@
 <?php
 
-/* 
-require_once 'model/UserModel.php'; */
 
-require_once '../model/UserModel.php';
+require_once 'model/UserModel.php';
+
+/* require_once '../model/UserModel.php'; */
 
 
 class User{
