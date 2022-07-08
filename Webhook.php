@@ -37,6 +37,10 @@ class Webhook{
             $this->id = $this->message["from"]["id"]; //id del chat
             $this->name = $this->message["from"]["first_name"]; //nombre del usuario
             $this->last_name = $this->message["from"]["last_name"]; //apellido del usuario
+            if (!isset($this->last_name)) {
+                $this->last_name = 'N/D';
+            }
+            
             $this->text = $this->message["text"]; //mensaje del usuario
             $this->date = date("d F Y H:i:s", $this->message["date"]);//fecha
         }else{
