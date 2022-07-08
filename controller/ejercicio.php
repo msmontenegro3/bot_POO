@@ -127,14 +127,11 @@ class Ejercicio
 
             $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ',' .  $this->feedback_pregunta  . ',' .   $this->respuesta_correcta  . ')';
 
-            
-
-            file_put_contents('tecladoDañadojeje', $json_array['inline_keyboard'][$key][0]['text']);
         }
 
 
         $k = json_encode($json_array);
-        file_put_contents('quePasoTecladitosad', $k);
+        file_put_contents('quePasoTecladitosad', json_decode($k));
 
         $respuesta = 'Seleccione la respuesta correcta';
         $bot->sendMessage($id, $respuesta, $token, $k);
