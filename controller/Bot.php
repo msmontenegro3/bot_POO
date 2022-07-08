@@ -21,24 +21,9 @@ class Bot{
     //ENVÍA MENSAJES Y TECLADO
     function sendMessage($chatID, $messaggio, $token,&$k = ''){
 
-        $keyboard = [
-            "inline_keyboard" => [
-                [
-                    [
-                        "text" => "✅",
-                        "callback_data" => "presentarPreguntas(x)"
-                    ],
-                    [
-                        "text" => "❌",
-                        "callback_data" => "recall_start()"
-                    ]
-                ]
-            ]
-        ];
-        $k=json_encode($keyboard);
 
         
-        file_put_contents('llegaASendMessage', $k);
+        file_put_contents('llegaASendMessage2', $k);
         $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
         /* $url = "https://api.telegram.org/" . $token . "/sendMessage?&chat_id=" . $chatID; */
     
