@@ -160,13 +160,19 @@ class Ejercicio
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador + 1;
 
+            $respuesta = 'Vamos con la siguiente preginta...';
+            $bot->sendMessage($id, $respuesta, $token);
 
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
             
         }else {
-            $respuesta = 'noooooo';
-            $bot->sendMessage($id, $respuesta, $token);
+            $array_show_preguntas[0] = $ejercicio_id;
+            $array_show_preguntas[1] = $contador;
+
+
+            $this->presentarPreguntas($array_show_preguntas, $id, $token);
+
         }
         
         file_put_contents('llega_hasta_validar', $param);
