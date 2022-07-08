@@ -119,7 +119,6 @@ class Ejercicio
 
     public function presentarRespuestas($pregunta_id, $id, $token)
     {
-        //sirve :)
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
             $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
@@ -132,6 +131,7 @@ class Ejercicio
 
 
         $k = json_encode($json_array);
+        file_put_contents('quePasoTecladitosad', $k);
 
         $respuesta = 'Seleccione la respuesta correcta';
         $bot->sendMessage($id, $respuesta, $token, $k);
