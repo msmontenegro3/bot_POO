@@ -53,7 +53,7 @@ class Bot{
     function sendPhoto($chatID, $photo, $token){
         $url = "https://api.telegram.org/" . $token . "/sendPhoto?photo=".$photo."&chat_id=" . $chatID;
     
-        $url = $url."&text=" . urlencode($messaggio);
+        $url = $url."&text=" . urlencode($photo);
         $ch = curl_init();
         $optArray = array(
                 CURLOPT_URL => $url,
