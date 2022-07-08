@@ -150,11 +150,12 @@ class Ejercicio
         $respuesta_enviada = $array_param_respuestas[1];
         $respuesta_correcta = $array_param_respuestas[2];
         $contador = $array_param_respuestas[3];
+        $ejercicio_id = $array_param_respuestas[4];
 
         if ($respuesta_enviada == $respuesta_correcta){
-/*             $f = new EjerciciosModel();
+             $f = new EjerciciosModel();
 
-            $feedback = $f->getFeedbackPorPregunta($pregunta_id);
+/*            $feedback = $f->getFeedbackPorPregunta($pregunta_id);
             file_put_contents('feedback', $feedback); */
 
             $feedback = 'feedback';
@@ -177,8 +178,7 @@ class Ejercicio
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
         }
-        
-        file_put_contents('llega_hasta_validar', $param);
+
 
 
 
