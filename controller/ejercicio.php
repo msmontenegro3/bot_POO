@@ -65,7 +65,7 @@ class Ejercicio
         $array_param_preguntas[0] =  $ejercicio_id;
         $array_param_preguntas[1] =  0;
 
-        $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩';
+        $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩 ...';
         $keyboard = [
             "inline_keyboard" => [
                 [

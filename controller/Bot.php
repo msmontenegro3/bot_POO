@@ -156,7 +156,7 @@ class Bot{
                     ],
                 [
                     [
-                        "text" => "Ejercicio 2 😎",
+                        "text" => "Enunciado 2 😎",
                         "callback_data" => "presentarEnunciado(2)"
                     ]
                 ]
