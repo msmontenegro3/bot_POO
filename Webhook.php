@@ -70,7 +70,7 @@ class Webhook{
 
     public function reciver($respuesta = '')
     {
-        $comandos_array = array('/start', '/help', '/recursos', '/seleccionar_ejercicio');
+        $comandos_array = array('/start', /* '/help', */ '/recursos', '/seleccionar_ejercicio');
         
         if ($this->message != "" && in_array($this->text, $comandos_array)){
 
@@ -116,13 +116,3 @@ $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
 $wb->validarUsuario();
 $wb->reciver();
 
-
-/* $mensaje->enviarMensaje('hala');
-*/
-
-/* if($text == '/start' ){
-
-    new Webhook(file_get_contents("php://input"));
-    $mensaje->enviarMensaje('hala');
-
-}  */

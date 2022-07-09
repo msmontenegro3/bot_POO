@@ -65,16 +65,16 @@ class Ejercicio
         $array_param_preguntas[0] =  $ejercicio_id;
         $array_param_preguntas[1] =  0;
 
-        $respuesta = '¿Quieres continuar con el ejercicio?';
+        $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩';
         $keyboard = [
             "inline_keyboard" => [
                 [
                     [
-                        "text" => "✅",
+                        "text" => "✅ Sí",
                         "callback_data" => "presentarPreguntas(". $array_param_preguntas[0] .","  . $array_param_preguntas[1]  .  ")"
                     ],
                     [
-                        "text" => "❌",
+                        "text" => "❌ No",
                         "callback_data" => "recall_start()"
                     ]
                 ]

@@ -101,7 +101,7 @@ class Bot{
             $usu->setUser($id, $name, $last_name, $date);
         } */
 
-            $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación 😄 \n\n
+            $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación. Tenemos 2 estudios de caso para que puedas practicar los pilares fundamentales de POO (programación orientada a objetos) 😄 \n\n
             A continuación tienes los comandos que puedes utilizar:
             \n /help
             \n /recursos
@@ -112,11 +112,11 @@ class Bot{
         
     }
 
-    public function help($id, $respuesta, $token){
+    /* public function help($id, $respuesta, $token){
         $respuesta = "Este bot se encarga de generar ejercicios y guiarte en el proceso de abstracción, de acuerdo a los pilares de la programación orientada a objetos (POO) 😁.\n\nSabemos que puede ser un camino difícil, por lo que vas a iniciar con ejercicios sencillos, y asociarlos a su solución en diagrama UML. Una vez realizado el proceso de abstracción, recomendamos que desarrolles estos ejercicios en el lenguaje de programación Java.";
 
         $this->sendMessage($id, $respuesta, $token);
-    }
+    } */
 
     /* public function indice($id, $respuesta, $token){
         $respuesta = "LISTA DE EJERCICIOS:
@@ -142,19 +142,21 @@ class Bot{
 
     public function seleccionar_ejercicio($id, $respuesta, $token){
 
-        $respuesta = "Seleccione el número de ejercicio que desee";
+        $respuesta = "Seleccione el número del enunciado que desee.
+        \n Enunciado 1 - Practica identificar atributos, métodos y encapsulamiento
+        \n Enunciado 2 - Practica herencia y polimorfismo";
 
         $keyboard = [
             "inline_keyboard" => [
                 [
                     [
-                        "text" => "Ejercicio 1",
+                        "text" => "Enunciado 1 😎",
                         "callback_data" => "presentarEnunciado(1)"
                     ]
                     ],
                 [
                     [
-                        "text" => "Ejercicio 2",
+                        "text" => "Ejercicio 2 😎",
                         "callback_data" => "presentarEnunciado(2)"
                     ]
                 ]
