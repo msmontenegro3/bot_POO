@@ -36,3 +36,4 @@ function puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas)
 
 
 
+

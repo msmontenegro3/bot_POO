@@ -33,6 +33,9 @@ class Webhook{
         $this->message = isset($update['message']) ? $update['message'] : "";
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
 
+        var_dump($update);
+        file_put_contents('callback_id', ob_get_flush());
+
 
 
 
@@ -84,8 +87,7 @@ class Webhook{
             $this->bot->$metodo($this->id, $respuesta, $this->token);
         }else if($this->button_pressed != ""){
 
-            var_dump($update);
-            file_put_contents('callback_id', ob_get_flush());
+     
 
             $metodo = explode('(', $this->button_pressed)[0];
             $parametro = str_replace(')', '', explode('(', $this->button_pressed)[1]);
