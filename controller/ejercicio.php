@@ -68,6 +68,7 @@ class Ejercicio
 
         $array_param_preguntas[0] =  $ejercicio_id;
         $array_param_preguntas[1] =  0;
+        $array_param_preguntas[3] = true;
 
         $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩 ...';
         $keyboard = [
@@ -96,12 +97,16 @@ class Ejercicio
         
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
+        $flag = $array_param_preguntas[3];
         
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
         
-        $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
+        if ($flag == true) {
+            $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
+            $flag = false;
+        }
         
         if ($contador < $numero_preguntas) {
             $uno = 1;
