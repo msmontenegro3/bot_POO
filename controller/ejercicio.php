@@ -186,6 +186,7 @@ class Ejercicio
         if ($intentos_fallidos != ($numero_respuestas - 1) && $respuesta_enviada == $respuesta_correcta){
 
             $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
+            
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
@@ -205,6 +206,7 @@ class Ejercicio
             
         }elseif($intentos_fallidos != ($numero_respuestas - 1) && $respuesta_enviada != $respuesta_correcta){
             $intentos_fallidos = $intentos_fallidos + 1;
+            
             $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
 
             $array_show_preguntas[0] = $ejercicio_id;
@@ -257,6 +259,8 @@ class Ejercicio
     public function puntuaRespuesta($id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas)
 {
     $f = new EjerciciosModel();
+    $count = 0;
+    file_put_contents('puntuaRespuesta' . ($count + 1), $id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas);
 
     //$f->setFallos($id_usuario, $pregunta_id, $intentos_fallidos);
     $puntuacion = ($numero_respuestas - $intentos_fallidos)/$numero_respuestas;
