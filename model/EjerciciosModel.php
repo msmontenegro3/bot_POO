@@ -48,9 +48,8 @@ class EjerciciosModel{
     public function setPuntuacion($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos)
     {
         $dt = $this->conexion->query('UPDATE score_preguntas_usuarios SET
-        
-        (score_pregunta = ' . $puntuacion  . '),
-        (intentos_fallidos = ' . $intentos_fallidos  . ')
+        score_pregunta = ' . $puntuacion  . ',
+        intentos_fallidos = ' . $intentos_fallidos  . '
         WHERE id_usuario = ' . $id_usuario . 'AND id_pregunta = ' . $pregunta_id);
         
     }
