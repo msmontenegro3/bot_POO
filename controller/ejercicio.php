@@ -260,7 +260,7 @@ class Ejercicio
 {
     $f = new EjerciciosModel();
 
-    file_put_contents('puntuaRespuesta', $id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas);
+    file_put_contents('puntuaRespuesta', array($id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas));
 
     //$f->setFallos($id_usuario, $pregunta_id, $intentos_fallidos);
     $puntuacion = ($numero_respuestas - $intentos_fallidos)/$numero_respuestas;
