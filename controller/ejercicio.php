@@ -117,7 +117,7 @@ class Ejercicio
 
             }
 
-            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $contador, $ejercicio_id, $id, $token);
+            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $arreglo_preguntas[$contador]['intentos_fallidos'], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }else {
             $print = 'Has resuelto el estudio de caso. 
@@ -136,7 +136,7 @@ class Ejercicio
     }
 
 
-    public function presentarRespuestas($pregunta_id, $contador, $ejercicio_id, $id, $token)
+    public function presentarRespuestas($pregunta_id, $intentos_fallidos, $contador, $ejercicio_id, $id, $token)
     {
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
@@ -147,7 +147,7 @@ class Ejercicio
             /* file_put_contents('feedback', $this->feedback_pregunta); */
 
             $respuesta_correcta = $this->respuesta_correcta;
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $contador  . ',' .  $ejercicio_id . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $contador  . ',' .  $ejercicio_id . ',' .  $intentos_fallidos . ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
@@ -164,21 +164,24 @@ class Ejercicio
     {
 
         $bot = new Bot();
+        $f = new EjerciciosModel();
 
         $pregunta_id = $array_param_respuestas[0];
         $respuesta_enviada = $array_param_respuestas[1];
         $respuesta_correcta = $array_param_respuestas[2];
         $contador = $array_param_respuestas[3];
         $ejercicio_id = $array_param_respuestas[4];
+        $array_preguntas = $f->getRespuestasPorPregunta($pregunta_id);
+
         
-        $f = new EjerciciosModel();
-        $numero_respuestas = count($f->getRespuestasPorPregunta($pregunta_id));
+        $numero_respuestas = count($array_preguntas);
+        $intentos_fallidos = $array_param_respuestas[5]['intentos_fallidos'];
         
         
         
         if ($respuesta_enviada == $respuesta_correcta){
 
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos = 0, $numero_respuestas);
+            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
@@ -198,7 +201,7 @@ class Ejercicio
             
         }else {
             $intentos_fallidos = $intentos_fallidos + 1;
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos++, $numero_respuestas);
+            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
 
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
