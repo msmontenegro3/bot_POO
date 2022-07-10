@@ -246,6 +246,8 @@ class Ejercicio
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
         }elseif ($intentos_fallidos = ($numero_respuestas - 1)) {
+
+
             $intentos_fallidos = $intentos_fallidos + 1;
             $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
 
