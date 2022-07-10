@@ -156,8 +156,6 @@ class Ejercicio
     {
 
         var_dump($intentos_fallidos['intentos_fallidos']);
-
-
         file_put_contents('intentosFallidos3', ob_get_flush());
 
         $bot = new Bot();
@@ -169,7 +167,7 @@ class Ejercicio
             /* file_put_contents('feedback', $this->feedback_pregunta); */
 
             $respuesta_correcta = $this->respuesta_correcta;
-            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $contador  . ',' .  $ejercicio_id . ',' .  $intentos_fallidos . ')';
+            $json_array['inline_keyboard'][$key][0]['callback_data'] = 'validarRespuesta(' . $pregunta_id  . ',' .  $id_respuesta_boton  . ','   .  $respuesta_correcta  . ',' . $contador  . ',' .  $ejercicio_id . ',' .  $intentos_fallidos['intentos_fallidos'] . ')';
 
             /*  ',' .   $this->respuesta_correcta  .  */
         }
