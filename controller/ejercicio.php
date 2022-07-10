@@ -94,7 +94,7 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function presentarPreguntas($array_param_preguntas, $id, $token, $callback_id)
+    public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
 
         file_put_contents('flagparam', $array_param_preguntas);
