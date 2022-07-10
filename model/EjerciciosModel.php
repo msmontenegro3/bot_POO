@@ -64,7 +64,7 @@ class EjerciciosModel{
     public function resetScore($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos)
     {
         $dt = $this->conexion->query('INSERT INTO score_preguntas_usuarios (id_usuarios, id_pregunta, score_pregunta, intentos_fallidos) VALUES 
-        (' . $id_usuario  . '), (' .  $pregunta_id . '), (' . $puntuacion  . '), (' . $intentos_fallidos  . ')' );
+        (' . $id_usuario  . ', ' .  $pregunta_id . ', ' . $puntuacion  . ', ' . $intentos_fallidos  . ')' );
 
     }
 
