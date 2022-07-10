@@ -155,7 +155,7 @@ class Ejercicio
     public function presentarRespuestas($pregunta_id, $intentos_fallidos, $contador, $ejercicio_id, $id, $token)
     {
 
-        var_dump($intentos_fallidos);
+        var_dump($intentos_fallidos['intentos_fallidos']);
 
 
         file_put_contents('intentosFallidos3', ob_get_flush());
