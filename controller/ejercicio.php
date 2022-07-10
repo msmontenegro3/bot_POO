@@ -119,7 +119,7 @@ class Ejercicio
 
             }
 
-            $intentos_fallidos = $this->ejercicio->getIntentosFallidos($id, $arreglo_preguntas[$contador]['id'])[0]['intentos_fallidos'];
+            $intentos_fallidos = $this->ejercicio->getIntentosFallidos($id, $arreglo_preguntas[$contador]['id']);
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $intentos_fallidos, $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
@@ -179,6 +179,7 @@ class Ejercicio
 
         
         $numero_respuestas = count($array_preguntas);
+        
         $intentos_fallidos = $array_param_respuestas[5];
         
         
