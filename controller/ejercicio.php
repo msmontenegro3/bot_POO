@@ -194,7 +194,7 @@ class Ejercicio
         
         $intentos_fallidos = $array_param_respuestas[5];
 
-        file_put_contents('intentosFallidos2', $intentos_fallidos);
+        file_put_contents('intentosFallidos2', $intentos_fallidos[0]);
 
 
         
