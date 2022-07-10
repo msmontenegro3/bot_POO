@@ -59,6 +59,10 @@ class Ejercicio
         /* file_put_contents('thisContadorEnEnunciado', $this->contador); */
         
         $bot = new Bot();
+
+        $sticker = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['sticker'];
+        $bot->sendSticker($id, $sticker, $token);
+        
         $enunciado = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['enunciado'];
         $bot->sendMessage($id, $enunciado, $token);
 
