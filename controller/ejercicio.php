@@ -181,9 +181,9 @@ class Ejercicio
 
     public function validarRespuesta($array_param_respuestas, $id, $token, $callback_id)
     {
-        var_dump($callback_id);
+/*         var_dump($callback_id);
         file_put_contents('callback_id', ob_get_flush());
-
+ */
 
         $bot = new Bot();
         $f = new EjerciciosModel();
