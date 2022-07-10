@@ -259,8 +259,8 @@ class Ejercicio
     public function puntuaRespuesta($id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas)
 {
     $f = new EjerciciosModel();
-    $count = 0;
-    file_put_contents('puntuaRespuesta' . ($count + 1), $id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas);
+
+    file_put_contents('puntuaRespuesta', $id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas);
 
     //$f->setFallos($id_usuario, $pregunta_id, $intentos_fallidos);
     $puntuacion = ($numero_respuestas - $intentos_fallidos)/$numero_respuestas;
