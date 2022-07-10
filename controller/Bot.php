@@ -166,6 +166,9 @@ class Bot{
         $this->sendMessage($id, $respuesta, $token, $k);
     }
 
+
+
+
     
 
 }
