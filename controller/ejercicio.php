@@ -97,6 +97,7 @@ class Ejercicio
     public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
 
+        file_put_contents('flagparam', $array_param_preguntas);
         
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
@@ -105,7 +106,6 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
-        file_put_contents('flag1', $array_param_preguntas[2]);
         
         if ($flag === 1) {
             $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
