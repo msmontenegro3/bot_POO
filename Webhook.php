@@ -13,6 +13,7 @@ class Webhook{
     private $message; //filtra el json con la información del usuario
     private $update_id; //número de actualización
     //PARA EL INLINEKEYBOARD 
+    private $id_callback;
     private $callback_query;
     private $button_pressed;
     //DATOS DEL USUARIO
@@ -49,7 +50,7 @@ class Webhook{
             $this->id = $this->callback_query["from"]["id"]; //id del chat
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             
-            //$id_callback = $callback_query['id']; //reconoce el callbackdata del teclado
+            $this->id_callback = $this->callback_query['id']; //reconoce el callbackdata del teclado
         }
 
     }

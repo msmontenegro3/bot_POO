@@ -53,7 +53,7 @@ class Ejercicio
         $bot->start($id, $respuesta, $token);
     }
 
-    public function presentarEnunciado($ejercicio_id, $id, $token)
+    public function presentarEnunciado($ejercicio_id, $id, $token, $callback_id)
     {
        
         $bot = new Bot();
@@ -94,7 +94,7 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function presentarPreguntas($array_param_preguntas, $id, $token)
+    public function presentarPreguntas($array_param_preguntas, $id, $token, $callback_id)
     {
 
         file_put_contents('flagparam', $array_param_preguntas);
@@ -180,7 +180,7 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function validarRespuesta($array_param_respuestas, $id, $token)
+    public function validarRespuesta($array_param_respuestas, $id, $token, $callback_id)
     {
         
 
