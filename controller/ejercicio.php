@@ -154,6 +154,12 @@ class Ejercicio
 
     public function presentarRespuestas($pregunta_id, $intentos_fallidos, $contador, $ejercicio_id, $id, $token)
     {
+
+        var_dump($intentos_fallidos);
+
+
+        file_put_contents('intentosFallidos3', ob_get_flush());
+
         $bot = new Bot();
         foreach ($this->armarRespuestas($pregunta_id) as $key => $value) {
             $json_array['inline_keyboard'][$key][0]['text'] = $this->armarRespuestas($pregunta_id)[$key]['respuesta'];
@@ -179,10 +185,7 @@ class Ejercicio
     public function validarRespuesta($array_param_respuestas, $id, $token)
     {
         
-        var_dump($array_param_respuestas);
 
-
-        file_put_contents('intentosFallidos3', ob_get_flush());
 
         $bot = new Bot();
         $f = new EjerciciosModel();
