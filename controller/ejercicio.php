@@ -178,6 +178,11 @@ class Ejercicio
 
     public function validarRespuesta($array_param_respuestas, $id, $token)
     {
+        
+        var_dump($array_param_respuestas);
+
+
+        file_put_contents('intentosFallidos3', ob_get_flush());
 
         $bot = new Bot();
         $f = new EjerciciosModel();
@@ -194,7 +199,6 @@ class Ejercicio
         
         $intentos_fallidos = $array_param_respuestas[5];
 
-        file_put_contents('intentosFallidos2', json_decode($array_param_respuestas[5]));
 
 
         
