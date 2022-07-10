@@ -214,6 +214,8 @@ class Ejercicio
             $respuesta = 'Vamos con la siguiente pregunta...';
             $bot->sendMessage($id, $respuesta, $token);
 
+            $array_show_preguntas[2] = 0;
+
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
             
@@ -231,7 +233,7 @@ class Ejercicio
             $respuesta = 'Ups te equivocaste. Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
 
-
+            $array_show_preguntas[2] = 0;
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
         }elseif ($intentos_fallidos = ($numero_respuestas - 1)) {
@@ -243,7 +245,8 @@ class Ejercicio
 
             $respuesta = 'Se te acabaron los intentos, vamos con la siguiente pregunta...';
             $bot->sendMessage($id, $respuesta, $token);
-
+            
+            $array_show_preguntas[2] = 0;
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
         }
 
