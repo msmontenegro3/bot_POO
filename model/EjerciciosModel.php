@@ -44,4 +44,17 @@ class EjerciciosModel{
         $dt = $this->conexion->query('SELECT feedback FROM preguntas WHERE id = ' . $pregunta_id);
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function setPuntuacion($pregunta_id, $puntuacion)
+    {
+        $dt = $this->conexion->query('UPDATE preguntas SET score_pregunta = ' . $puntuacion  . ' WHERE id = ' . $pregunta_id);
+        return $puntuacion;
+    }
+
+    public function setFallos($pregunta_id, $try_number)
+    {
+        $dt = $this->conexion->query('UPDATE preguntas SET intentos_fallidos = ' . $try_number  . ' WHERE id = ' . $pregunta_id);
+        return $try_number;
+    }
+
 }
