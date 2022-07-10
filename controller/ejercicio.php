@@ -79,7 +79,7 @@ class Ejercicio
                 [
                     [
                         "text" => "✅ Sí",
-                        "callback_data" => "presentarPreguntas(". $array_param_preguntas[0] .","  . $array_param_preguntas[1]  .  "," . $array_param_preguntas[2]  . ")"
+                        "callback_data" => "presentarPreguntas(". $array_param_preguntas[0] .","  . $array_param_preguntas[1]  .  "," . $array_param_preguntas[2] .")"
                     ],
                     [
                         "text" => "❌ No",
