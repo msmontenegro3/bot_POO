@@ -119,7 +119,9 @@ class Ejercicio
 
             }
 
-            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $arreglo_preguntas[$contador]['intentos_fallidos'], $contador, $ejercicio_id, $id, $token);
+            $intentos_fallidos = $this->ejercicio->getIntentosFallidos($id, $arreglo_preguntas[$contador]['id'])[0]['intentos_fallidos'];
+
+            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $intentos_fallidos, $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }else {
             $print = 'Has resuelto el estudio de caso. 

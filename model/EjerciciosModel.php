@@ -66,6 +66,15 @@ class EjerciciosModel{
 
     }
 
+    public function getIntentosFallidos($id_usuario, $pregunta_id)
+    {
+        $dt = $this->conexion->query('SELECT intentos_fallidos FROM score_preguntas_usuarios 
+        WHERE id_usuario = ' . $id_usuario  . ' AND id_pregunta = ' . $pregunta_id);
+        return $dt->fetch_all(MYSQLI_ASSOC);
+
+    }
+
 
 
 }
+
