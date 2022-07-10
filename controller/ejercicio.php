@@ -68,7 +68,7 @@ class Ejercicio
 
         $array_param_preguntas[0] =  $ejercicio_id;
         $array_param_preguntas[1] =  0;
-        $array_param_preguntas[2] = true;
+        $array_param_preguntas[2] = 1;
 
         $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩 ...';
         $keyboard = [
@@ -104,9 +104,9 @@ class Ejercicio
         $numero_preguntas = count($arreglo_preguntas);
         file_put_contents('flag1', $flag);
         
-        if ($flag == true) {
+        if ($flag === 1) {
             $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
-            $flag = false;
+            $flag = 0;
         }
         file_put_contents('flag2', $flag);
         
