@@ -103,10 +103,9 @@ class Bot{
 
             $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación. Tenemos 2 estudios de caso para que puedas practicar los pilares fundamentales de POO (programación orientada a objetos) 😄 \n\n
             A continuación tienes los comandos que puedes utilizar:
-            \n /help
-            \n /recursos
-            \n /seleccionar_ejercicio
-            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionar_ejercicio y para una mejor experiencia con el teclado por favor utiliza Telegram Web (algunos teclados son muy grandes y los puedes visualizar posando el mouse sobre ellos 😉)";
+            \n /recursos - Links a páginas que pueden ayudarte a estudiar.
+            \n /seleccionar_ejercicio - Resuelve los ejercicios.
+            \n Recuerda que para empezar a resolver los ejercicios debes seleccionar el comando /seleccionar_ejercicio y <u><b> para una mejor experiencia con el teclado por favor utiliza Telegram Web </b></u> (algunos teclados son muy grandes y los puedes visualizar posando el mouse sobre ellos 😉)";
         
             $this->sendMessage($id, $respuesta, $token);
         
