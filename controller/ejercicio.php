@@ -193,6 +193,10 @@ class Ejercicio
         $numero_respuestas = count($array_preguntas);
         
         $intentos_fallidos = $array_param_respuestas[5];
+
+        file_put_contents('intentosFallidos2', $intentos_fallidos);
+
+
         
         
         
