@@ -179,7 +179,7 @@ class Ejercicio
         
         
         
-        if ($intentos_fallidos < $numero_respuestas || $respuesta_enviada == $respuesta_correcta  || $intentos_fallidos == NULL){
+        if ($intentos_fallidos != $numero_respuestas && $respuesta_enviada == $respuesta_correcta){
 
             $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
@@ -199,7 +199,7 @@ class Ejercicio
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
             
-        }elseif($intentos_fallidos < $numero_respuestas || $respuesta_enviada != $respuesta_correcta || $intentos_fallidos == NULL){
+        }elseif($intentos_fallidos != $numero_respuestas && $respuesta_enviada != $respuesta_correcta){
             $intentos_fallidos = $intentos_fallidos + 1;
             $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
 
