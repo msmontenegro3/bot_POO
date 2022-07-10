@@ -70,6 +70,9 @@ class Ejercicio
         $array_param_preguntas[1] =  0;
         $array_param_preguntas[2] = 1;
 
+        file_put_contents('flagprevio', $array_param_preguntas[2]);
+
+
         $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩 ...';
         $keyboard = [
             "inline_keyboard" => [
