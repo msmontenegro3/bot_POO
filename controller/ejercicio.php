@@ -123,7 +123,7 @@ class Ejercicio
 
             file_put_contents('intentosFallidos', $intentos_fallidos[0]);
 
-            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $intentos_fallidos, $contador, $ejercicio_id, $id, $token);
+            $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $intentos_fallidos[0], $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
         }else {
             $print = 'Has resuelto el estudio de caso. 
