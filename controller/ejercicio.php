@@ -172,7 +172,7 @@ class Ejercicio
         $ejercicio_id = $array_param_respuestas[4];
         
         $f = new EjerciciosModel();
-        $numero_respuestas = count($f->getRespuestasPorPregunta($id_pregunta));
+        $numero_respuestas = count($f->getRespuestasPorPregunta($pregunta_id));
         $intentos_fallidos = 0;
         if ($respuesta_enviada == $respuesta_correcta){
 
