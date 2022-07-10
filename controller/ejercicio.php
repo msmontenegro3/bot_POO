@@ -102,11 +102,13 @@ class Ejercicio
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
+        file_put_contents('flag1', $flag);
         
         if ($flag == true) {
             $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
             $flag = false;
         }
+        file_put_contents('flag2', $flag);
         
         if ($contador < $numero_preguntas) {
             $uno = 1;
