@@ -68,7 +68,7 @@ class Ejercicio
 
         $array_param_preguntas[0] =  $ejercicio_id;
         $array_param_preguntas[1] =  0;
-        $array_param_preguntas[3] = true;
+        $array_param_preguntas[2] = true;
 
         $respuesta = '¿Estás listo? Comencemos con el ejercicio 🤩 ...';
         $keyboard = [
@@ -76,7 +76,7 @@ class Ejercicio
                 [
                     [
                         "text" => "✅ Sí",
-                        "callback_data" => "presentarPreguntas(". $array_param_preguntas[0] .","  . $array_param_preguntas[1]  .  ")"
+                        "callback_data" => "presentarPreguntas(". $array_param_preguntas[0] .","  . $array_param_preguntas[1]  .  "," . $array_param_preguntas[2]  . ")"
                     ],
                     [
                         "text" => "❌ No",
@@ -97,7 +97,7 @@ class Ejercicio
         
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
-        $flag = $array_param_preguntas[3];
+        $flag = $array_param_preguntas[2];
         
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
