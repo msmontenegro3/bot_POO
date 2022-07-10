@@ -179,7 +179,7 @@ class Ejercicio
         
         
         
-        if ($intentos_fallidos > $numero_respuestas && $respuesta_enviada == $respuesta_correcta ){
+        if ($intentos_fallidos < $numero_respuestas && $respuesta_enviada == $respuesta_correcta ){
 
             $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
@@ -199,7 +199,7 @@ class Ejercicio
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
             
-        }else {
+        }elseif($intentos_fallidos < $numero_respuestas && $respuesta_enviada != $respuesta_correcta ){
             $intentos_fallidos = $intentos_fallidos + 1;
             $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
 
@@ -209,12 +209,20 @@ class Ejercicio
             $emoji = '🙊';
             $bot->sendMessage($id, $emoji, $token);
             
-            $respuesta = 'Tienes una nueva oportunidad!!';
+            $respuesta = 'Ups te equivocaste. Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
 
 
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
+        }elseif ($intentos_fallidos = $numero_respuestas) {
+            $array_show_preguntas[0] = $ejercicio_id;
+            $array_show_preguntas[1] = $contador + 1;
+
+            $respuesta = 'Se te acabaron los intentos, vamos con la siguiente pregunta...';
+            $bot->sendMessage($id, $respuesta, $token);
+
+            $this->presentarPreguntas($array_show_preguntas, $id, $token);
         }
 
 
