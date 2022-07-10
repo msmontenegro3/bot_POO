@@ -78,3 +78,6 @@ class EjerciciosModel{
 
 }
 
+/* $i = new EjerciciosModel();
+print_r($i->getIntentosFallidos()); */
+
