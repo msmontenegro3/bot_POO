@@ -121,7 +121,7 @@ class Ejercicio
 
             $intentos_fallidos = $this->ejercicio->getIntentosFallidos($id, $arreglo_preguntas[$contador]['id']);
 
-            file_put_contents('intentosFallidos', $intentos_fallidos);
+            file_put_contents('intentosFallidos', $intentos_fallidos[$contador]['id']);
 
             $this->presentarRespuestas($arreglo_preguntas[$contador]['id'], $intentos_fallidos, $contador, $ejercicio_id, $id, $token);
             /* file_put_contents('imprimirArchivo', $imprimir); */
