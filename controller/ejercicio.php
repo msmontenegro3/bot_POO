@@ -170,10 +170,13 @@ class Ejercicio
         $respuesta_correcta = $array_param_respuestas[2];
         $contador = $array_param_respuestas[3];
         $ejercicio_id = $array_param_respuestas[4];
-
+        
+        $f = new EjerciciosModel();
+        $numero_respuestas = count($f->getRespuestasPorPregunta($id_pregunta));
+        $intentos_fallidos = 0;
         if ($respuesta_enviada == $respuesta_correcta){
-            $f = new EjerciciosModel();
 
+            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
@@ -192,6 +195,9 @@ class Ejercicio
 
             
         }else {
+            $intentos_fallidos = $intentos_fallidos + 1;
+            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
+
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
 
@@ -227,6 +233,16 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token); */
     
     }
+
+    public function puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas)
+{
+    $f = new EjerciciosModel();
+
+    $f->setFallos($pregunta_id, $intentos_fallidos);
+    $puntuacion = ($numero_respuestas - $intentos_fallidos)/$numero_respuestas;
+    $f->setPuntuacion($pregunta_id, $puntuacion);
+
+}
 
 }
 
