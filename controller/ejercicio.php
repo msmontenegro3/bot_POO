@@ -173,10 +173,12 @@ class Ejercicio
         
         $f = new EjerciciosModel();
         $numero_respuestas = count($f->getRespuestasPorPregunta($pregunta_id));
-        $intentos_fallidos = 0;
+        
+        
+        $intentos_fallidos;
         if ($respuesta_enviada == $respuesta_correcta){
 
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
+            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos = 0, $numero_respuestas);
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
