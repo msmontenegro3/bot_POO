@@ -179,7 +179,7 @@ class Ejercicio
         
         
         
-        if ($respuesta_enviada == $respuesta_correcta && $intentos_fallidos > $numero_respuestas){
+        if ($intentos_fallidos > $numero_respuestas && $respuesta_enviada == $respuesta_correcta ){
 
             $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
