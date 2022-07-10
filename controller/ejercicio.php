@@ -93,14 +93,15 @@ class Ejercicio
     public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
 
-
-
+        
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
-
+        
         $bot = new Bot();
         $arreglo_preguntas = $this->ejercicio->getPreguntasPorId($ejercicio_id);
         $numero_preguntas = count($arreglo_preguntas);
+        
+        $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
         
         if ($contador < $numero_preguntas) {
             $uno = 1;

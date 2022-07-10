@@ -58,7 +58,7 @@ class EjerciciosModel{
     public function clearScore($id_usuario)
     {
         $dt = $this->conexion->query('DELETE FROM score_preguntas_usuarios WHERE id_usuario = ' . $id_usuario );
-        return $try_number;
+  
     }
 
     public function resetScore($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos)
