@@ -101,7 +101,7 @@ class Bot{
             $usu->setUser($id, $name, $last_name, $date);
         } */
 
-            $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación. Tenemos 2 estudios de caso para que puedas practicar los pilares fundamentales de POO (programación orientada a objetos) 😄 \n\n
+            $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación. Tenemos 2 estudios de caso para que puedas practicar los pilares fundamentales de POO (programación orientada a objetos) 😄 \n
             A continuación tienes los comandos que puedes utilizar:
             \n /recursos - Links a páginas que pueden ayudarte a estudiar.
             \n /seleccionar_ejercicio - Resuelve los ejercicios.
