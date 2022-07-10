@@ -96,10 +96,8 @@ class Bot{
 
     public function start($id, $respuesta, $token)
     {
-        /* $usu = new User();
-        if (!in_array($id, $usu->getIdArray())) {
-            $usu->setUser($id, $name, $last_name, $date);
-        } */
+
+
 
             $respuesta = "Hola bienvenido al bot que va a ayudarte a mejorar tus habilidades de programación. Tenemos 2 estudios de caso para que puedas practicar los pilares fundamentales de POO (programación orientada a objetos) 😄 \n
             A continuación tienes los comandos que puedes utilizar:

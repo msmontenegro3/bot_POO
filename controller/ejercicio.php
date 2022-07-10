@@ -55,10 +55,10 @@ class Ejercicio
 
     public function presentarEnunciado($ejercicio_id, $id, $token)
     {
-        /* $this->contador = 0; */
-        /* file_put_contents('thisContadorEnEnunciado', $this->contador); */
-        
+       
         $bot = new Bot();
+
+        $this->ejercicio->clearScore($id);
 
         $sticker = $this->ejercicio->getEnunciadoPorId($ejercicio_id)[0]['sticker'];
         $bot->sendSticker($id, $sticker, $token);
@@ -92,7 +92,8 @@ class Ejercicio
 
     public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
-        file_put_contents('arrayParamPreguntas', $array_param_preguntas);
+
+
 
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
@@ -181,7 +182,7 @@ class Ejercicio
         
         if ($intentos_fallidos != ($numero_respuestas - 1) && $respuesta_enviada == $respuesta_correcta){
 
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
+            $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
@@ -201,7 +202,7 @@ class Ejercicio
             
         }elseif($intentos_fallidos != ($numero_respuestas - 1) && $respuesta_enviada != $respuesta_correcta){
             $intentos_fallidos = $intentos_fallidos + 1;
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
+            $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
 
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador;
@@ -217,8 +218,8 @@ class Ejercicio
 
         }elseif ($intentos_fallidos = ($numero_respuestas - 1)) {
             $intentos_fallidos = $intentos_fallidos + 1;
-            $this->puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas);
-            
+            $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
+
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador + 1;
 
@@ -250,13 +251,13 @@ class Ejercicio
     
     }
 
-    public function puntuaRespuesta($pregunta_id, $intentos_fallidos, $numero_respuestas)
+    public function puntuaRespuesta($id_usuario, $pregunta_id, $intentos_fallidos, $numero_respuestas)
 {
     $f = new EjerciciosModel();
 
-    $f->setFallos($pregunta_id, $intentos_fallidos);
+    //$f->setFallos($id_usuario, $pregunta_id, $intentos_fallidos);
     $puntuacion = ($numero_respuestas - $intentos_fallidos)/$numero_respuestas;
-    $f->setPuntuacion($pregunta_id, $puntuacion);
+    $f->setPuntuacion($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos);
 
 }
 

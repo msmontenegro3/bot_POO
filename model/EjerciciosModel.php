@@ -45,16 +45,29 @@ class EjerciciosModel{
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function setPuntuacion($pregunta_id, $puntuacion)
+    public function setPuntuacion($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos)
     {
-        $dt = $this->conexion->query('UPDATE preguntas SET score_pregunta = ' . $puntuacion  . ' WHERE id = ' . $pregunta_id);
-        return $puntuacion;
+        $dt = $this->conexion->query('UPDATE score_preguntas_usuarios SET
+        
+        (score_pregunta = ' . $puntuacion  . '),
+        (intentos_fallidos = ' . $intentos_fallidos  . ')
+        WHERE id_usuario = ' . $id_usuario . 'AND id_pregunta = ' . $pregunta_id);
+        
     }
 
-    public function setFallos($pregunta_id, $try_number)
+    public function clearScore($id_usuario)
     {
-        $dt = $this->conexion->query('UPDATE preguntas SET intentos_fallidos = ' . $try_number  . ' WHERE id = ' . $pregunta_id);
+        $dt = $this->conexion->query('DELETE FROM score_preguntas_usuarios WHERE id_usuario = ' . $id_usuario );
         return $try_number;
     }
+
+    public function resetScore($id_usuario, $pregunta_id, $puntuacion, $intentos_fallidos)
+    {
+        $dt = $this->conexion->query('INSERT INTO score_preguntas_usuarios (id_usuarios, id_pregunta, score_pregunta, intentos_fallidos) VALUES 
+        (' . $id_usuario  . '), (' .  $pregunta_id . '), (' . $puntuacion  . '), (' . $intentos_fallidos  . ')' );
+
+    }
+
+
 
 }
