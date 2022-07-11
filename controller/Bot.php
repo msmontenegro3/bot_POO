@@ -142,13 +142,13 @@ class Bot{
             "inline_keyboard" => [
                 [
                     [
-                        "text" => "Enunciado 1 - Practica tu abstracción y encapsulamiento",
+                        "text" => "Enunciado 1-Practica abstracción y encapsulamiento",
                         "callback_data" => "presentarEnunciado(1)"
                     ]
                     ],
                 [
                     [
-                        "text" => "Enunciado 2 - Practica herencia y polimorfismo",
+                        "text" => "Enunciado 2-Practica herencia y polimorfismo",
                         "callback_data" => "presentarEnunciado(2)"
                     ]
                 ]
