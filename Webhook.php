@@ -34,7 +34,7 @@ class Webhook{
 
         /* var_dump($update);
         file_put_contents('callback_id', ob_get_flush()); */
-        file_put_contents('info_update', $update); 
+        
 
 
 
@@ -121,6 +121,7 @@ class Webhook{
 
 }
 
+file_put_contents('info_update', file_get_contents("php://input")); 
 $wb = new Webhook(json_decode(file_get_contents("php://input"),true));
 $wb->validarUsuario();
 $wb->reciver();
