@@ -19,7 +19,6 @@ class Webhook{
     //DATOS DEL USUARIO
     private $id; //id del chat
     private $text; //mensaje del usuario
-    private $date;
     private $name;
     private $last_name;
 

@@ -5,7 +5,7 @@ require_once 'controller/User.php';
 class Bot{
 
     //UPDATES
-    public function getUpdates(){
+    /* public function getUpdates(){
         $url = "https://api.telegram.org/" . $token . "/getUpdates";
         
             $url = $url."&text=" . urlencode($messaggio);
@@ -17,14 +17,11 @@ class Bot{
         curl_setopt_array($ch, $optArray);
         $result = curl_exec($ch);
         curl_close($ch);
-    }
+    } */
 
     //ENVÍA MENSAJES Y TECLADO
     function sendMessage($chatID, $messaggio, $token, &$k = ''){
 
-
-        
-        /* file_put_contents('llegaASendMessage2', $k); */
         $url = "https://api.telegram.org/" . $token . "/sendMessage?disable_web_page_preview=false&parse_mode=HTML&chat_id=" . $chatID;
         /* $url = "https://api.telegram.org/" . $token . "/sendMessage?&chat_id=" . $chatID; */
     
@@ -32,7 +29,7 @@ class Bot{
             $url = $url . "&reply_markup=" . $k; 
             }
     
-        file_put_contents('llegaASendMessage2', $url);
+        /* file_put_contents('llegaASendMessage2', $url); */
             
             
             $url = $url . "&text=" . urlencode($messaggio);
@@ -147,13 +144,13 @@ class Bot{
             "inline_keyboard" => [
                 [
                     [
-                        "text" => "Enunciado 1 😎",
+                        "text" => "Enunciado 1 - Practica identificar atributos, métodos y encapsulamiento",
                         "callback_data" => "presentarEnunciado(1)"
                     ]
                     ],
                 [
                     [
-                        "text" => "Enunciado 2 😎",
+                        "text" => "Enunciado 2 - Practica herencia y polimorfismo",
                         "callback_data" => "presentarEnunciado(2)"
                     ]
                 ]
