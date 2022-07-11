@@ -53,6 +53,8 @@ class Webhook{
             
             $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado
             $this->text = $this->message["text"]; //mensaje del usuario
+            file_put_contents('esteEsElTexto', $this->text);
+            
         }
 
     }
