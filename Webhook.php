@@ -51,10 +51,7 @@ class Webhook{
             $this->id = $this->callback_query["from"]["id"]; //id del chat
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             
-            $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado
-            $this->text_callback = $this->callback_query['message']['reply_markup']['inline_keyboard'][1][0][1]; //mensaje del usuario
-            file_put_contents('esteEsElTexto', $this->text_callback);
-            
+            $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado            
         }
 
     }

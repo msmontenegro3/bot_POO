@@ -239,7 +239,7 @@ class Ejercicio
             $emoji = '🙊';
             $bot->sendMessage($id, $emoji, $token);
             
-            $respuesta = 'Ups te equivocaste. Tienes una nueva oportunidad!!';
+            $respuesta = 'Ups te equivocaste.' .  $respuesta_enviada . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
 
             $array_show_preguntas[2] = 0;
