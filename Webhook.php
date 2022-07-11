@@ -35,12 +35,6 @@ class Webhook{
         /* var_dump($update);
         file_put_contents('callback_id', ob_get_flush()); */
         
-
-
-
-
-
-        
         if ($this->message != "") {
             $this->id = $this->message["from"]["id"]; //id del chat
             $this->name = $this->message["from"]["first_name"]; //nombre del usuario
@@ -52,12 +46,13 @@ class Webhook{
             }
             
             $this->text = $this->message["text"]; //mensaje del usuario
-            $this->date = date("d F Y H:i:s", $this->message["date"]);//fecha
+
         }else{
             $this->id = $this->callback_query["from"]["id"]; //id del chat
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             
             $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado
+            $this->text = $this->message["text"]; //mensaje del usuario
         }
 
     }
