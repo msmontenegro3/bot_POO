@@ -41,7 +41,7 @@ class EjerciciosModel{
 
     public function getRespuestasPorId($respuesta_id)
     {
-        $dt = $this->conexion->query('SELECT respuesta FROM respuestas WHERE $respuesta_id = ' . $respuesta_id);
+        $dt = $this->conexion->query('SELECT respuesta FROM respuestas WHERE id = ' . $respuesta_id);
         return $dt->fetch_all(MYSQLI_ASSOC);
     }
 
