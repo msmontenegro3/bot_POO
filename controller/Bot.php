@@ -136,15 +136,13 @@ class Bot{
 
     public function seleccionar_ejercicio($id, $respuesta, $token){
 
-        $respuesta = "Seleccione el número del enunciado que desee.
-        \n Enunciado 1 - Practica identificar atributos, métodos y encapsulamiento
-        \n Enunciado 2 - Practica herencia y polimorfismo";
+        $respuesta = "Seleccione el número del enunciado que desee.";
 
         $keyboard = [
             "inline_keyboard" => [
                 [
                     [
-                        "text" => "Enunciado 1 - Practica identificar atributos, métodos y encapsulamiento",
+                        "text" => "Enunciado 1 - Practica tu abstracción y encapsulamiento",
                         "callback_data" => "presentarEnunciado(1)"
                     ]
                     ],
