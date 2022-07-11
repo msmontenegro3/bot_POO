@@ -52,8 +52,8 @@ class Webhook{
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             
             $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado
-            $this->text = $this->callback_query['message']['reply_markup']['inline_keyboard'][1][0]; //mensaje del usuario
-            file_put_contents('esteEsElTexto', $this->text);
+            $this->text_callback = $this->callback_query['message']['reply_markup']['inline_keyboard'][1][0]['text']; //mensaje del usuario
+            file_put_contents('esteEsElTexto', $this->text_callback);
             
         }
 
