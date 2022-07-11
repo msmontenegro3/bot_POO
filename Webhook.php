@@ -32,8 +32,10 @@ class Webhook{
         $this->message = isset($update['message']) ? $update['message'] : "";
         $this->callback_query = isset($update['callback_query']) ? $update['callback_query'] : "";
 
-        var_dump($update);
-        file_put_contents('callback_id', ob_get_flush());
+        /* var_dump($update);
+        file_put_contents('callback_id', ob_get_flush()); */
+        file_put_contents('info_update', $update); 
+
 
 
 
