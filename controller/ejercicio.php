@@ -212,7 +212,8 @@ class Ejercicio
             $emoji = '🎉';
             $bot->sendMessage($id, $emoji, $token);
 
-           $feedback = $f->getFeedbackPorPregunta($pregunta_id)[0]['feedback'];
+            $texto_respuesta = $this->ejercicio->getRespuestasPorId($respuesta_enviada)[0]['respuesta'];
+           $feedback = $texto_respuesta . ' es la respuesta correcta!' .  $f->getFeedbackPorPregunta($pregunta_id)[0]['feedback'];
 
 
             $bot->sendMessage($id, $feedback, $token);
@@ -241,7 +242,7 @@ class Ejercicio
             
             $texto_respuesta = $this->ejercicio->getRespuestasPorId($respuesta_enviada)[0]['respuesta'];
 
-            $respuesta = 'Ups te equivocaste.' .  $texto_respuesta . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!';
+            $respuesta = 'Ups te equivocaste. ' .  $texto_respuesta . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
 
             $array_show_preguntas[2] = 0;
