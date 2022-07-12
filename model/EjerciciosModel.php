@@ -84,6 +84,6 @@ class EjerciciosModel{
 
 }
 
-$i = new EjerciciosModel();
+/* $i = new EjerciciosModel();
 print_r($i->getRespuestasPorId(4));
-
+ */

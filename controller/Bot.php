@@ -76,6 +76,28 @@ class Bot{
         curl_close($ch);
     }
 
+    //ELIMINA UN TELCADO
+
+    function editMessageReplyMarkup($chatID, $message_id, $token){
+
+        //NECESITO EL MESSAGE_ID
+        $reply_markup = 'keyboard';
+
+        $url = "https://api.telegram.org/" . $token . "/editMessageReplyMarkup?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&reply_markup=".$reply_markup;
+    
+        $url = $url."&text=" . urlencode($sticker);
+        $ch = curl_init();
+        $optArray = array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true
+        );
+        curl_setopt_array($ch, $optArray);
+        $result = curl_exec($ch);
+        curl_close($ch);
+    }
+
+
+
     //ENVÍA POLLS
    /*  public function sendPoll($chatID, $question, $options, $token){
         $url = "https://api.telegram.org/" . $token . "/sendPoll?question=" . $question;

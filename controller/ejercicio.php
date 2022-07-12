@@ -200,11 +200,6 @@ class Ejercicio
         
         $intentos_fallidos = $array_param_respuestas[5];
 
-
-
-        
-        
-        
         if ($intentos_fallidos != ($numero_respuestas - 1) && $respuesta_enviada == $respuesta_correcta){
 
             $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);

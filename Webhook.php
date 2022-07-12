@@ -52,7 +52,11 @@ class Webhook{
             $this->button_pressed = $this->callback_query['data']; //reconoce el callbackdata del teclado
             
             $this->id_callback = $this->callback_query['id']; //reconoce el id callbackdata del teclado            
+            $this->message_id = $this->callback_query['message']['message_id']; //reconoce el id callbackdata del teclado            
         }
+
+        file_put_contents('message_id', $this->message_id);
+        
 
     }
 
