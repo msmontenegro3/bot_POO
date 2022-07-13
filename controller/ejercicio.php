@@ -115,8 +115,8 @@ class Ejercicio
         
         if ($contador < $numero_preguntas) {
 
-            $line('-----------------------------------------');
-            $bot->sendMessage($id, $line, $token);
+            $line2('-----------------------------------------');
+            $bot->sendMessage($id, $line2, $token);
 
             $uno = 1;
             $imprimir = '<b><i>Pregunta ' . ($contador + $uno) . ':</i></b> ' .$arreglo_preguntas[$contador]['pregunta'];
