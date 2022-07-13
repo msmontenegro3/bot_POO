@@ -246,7 +246,7 @@ class Ejercicio
             
             $texto_respuesta = $this->ejercicio->getRespuestasPorId($respuesta_enviada)[0]['respuesta'];
             
-            $respuesta = '❌❌❌ Ups te equivocaste. ' .  $texto_respuesta . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!';
+            $respuesta = '❌❌❌ Ups te equivocaste. ' .  $texto_respuesta . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!❌❌❌';
             $bot->sendMessage($id, $respuesta, $token);
             
             $bot->deleteKeyboard($id, $message_id, $token);
