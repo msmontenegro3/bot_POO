@@ -116,7 +116,7 @@ class Ejercicio
         if ($contador < $numero_preguntas) {
 
             $uno = 1;
-            $line = '____________<b><i>PREGUNTA ' . ($contador + $uno) .  '</i></b>________________';
+            $line = '____________ <b><i>PREGUNTA ' . ($contador + $uno) .  '</i></b> ________________';
             $bot->sendMessage($id, $line, $token);
 
             
@@ -125,7 +125,7 @@ class Ejercicio
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
            // $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
             $bot->sendMessage($id, $imprimir, $token);
-            $line2 = '____________fin pregunta '  . ($contador + $uno) .  '________________';
+            $line2 = '____________ <b><i>fin pregunta '  . ($contador + $uno) .  '</i></b> ________________';
            $bot->sendMessage($id, $line2, $token);
 
             if ($arreglo_preguntas[$contador]['image_link'] != NULL) {
