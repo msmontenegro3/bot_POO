@@ -78,19 +78,11 @@ class Bot{
 
     //ELIMINA UN TELCADO
 
-    function editMessageReplyMarkup($chatID, $message_id, $token){
+    function deleteKeyboard($chatID, $message_id, $token){
 
         //NECESITO EL MESSAGE_ID
-        $reply_markup = '"inline_keyboard": [
-            [
-              {
-                "text": "",
-                "callback_data": ""
-              }
-            ]
-          ]';
 
-        $url = "https://api.telegram.org/" . $token . "/editMessageReplyMarkup?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&reply_markup=".$reply_markup;
+        $url = "https://api.telegram.org/" . $token . "/editMessageReplyMarkup?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&deleteMessage";
     
         /* $url = $url."&text=" . urlencode($sticker); */
         $ch = curl_init();

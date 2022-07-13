@@ -97,7 +97,7 @@ class Webhook{
 
             file_put_contents('metodo', $metodo);
             file_put_contents('parametro', $parametro);
-            $this->eje->$metodo($parametro, $this->id, $this->token, $this->id_callback);
+            $this->eje->$metodo($parametro, $this->id, $this->token, $this->id_callback, $this->message_id);
 
         }else{
 

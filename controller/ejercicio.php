@@ -53,7 +53,7 @@ class Ejercicio
         $bot->start($id, $respuesta, $token);
     }
 
-    public function presentarEnunciado($ejercicio_id, $id, $token, $callback_id)
+    public function presentarEnunciado($ejercicio_id, $id, $token, $callback_id, $message_id)
     {
        
         $bot = new Bot();
@@ -97,7 +97,7 @@ class Ejercicio
     public function presentarPreguntas($array_param_preguntas, $id, $token)
     {
 
-        file_put_contents('flagparam', $array_param_preguntas);
+        //file_put_contents('flagparam', $array_param_preguntas);
         
         $ejercicio_id = $array_param_preguntas[0];
         $contador = $array_param_preguntas[1];
@@ -111,7 +111,7 @@ class Ejercicio
             $this->ejercicio->resetScore($id, $arreglo_preguntas[$contador]['id'], 0, 0);
             $flag = 0;
         }
-        file_put_contents('flag2', $array_param_preguntas[2]);
+        //file_put_contents('flag2', $array_param_preguntas[2]);
         
         if ($contador < $numero_preguntas) {
             $uno = 1;
@@ -179,7 +179,7 @@ class Ejercicio
         $bot->sendMessage($id, $respuesta, $token, $k);
     }
 
-    public function validarRespuesta($array_param_respuestas, $id, $token, $callback_id)
+    public function validarRespuesta($array_param_respuestas, $id, $token, $callback_id, $message_id)
     {
 /*         var_dump($callback_id);
         file_put_contents('callback_id', ob_get_flush());
