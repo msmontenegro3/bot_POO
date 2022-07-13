@@ -1,6 +1,7 @@
 <?php
 
-require_once 'controller/User.php';
+/* require_once 'controller/User.php'; */
+/* require_once '../controller/User.php'; */
 
 class Bot{
 
@@ -80,6 +81,7 @@ class Bot{
 
     function deleteKeyboard($chatID, $message_id, $token){
 
+        file_put_contents('tresVariablesParaBorrar', array($chatID, $message_id, $token));
         //NECESITO EL MESSAGE_ID
 
         $url = "https://api.telegram.org/" . $token . "/editMessageReplyMarkup?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&deleteMessage";
@@ -188,3 +190,7 @@ class Bot{
     
 
 }
+
+$bot = new Bot();
+
+$bot->deleteKeyboard(5334366629, 6670, 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4');
