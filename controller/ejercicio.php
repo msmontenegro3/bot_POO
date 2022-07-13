@@ -123,10 +123,9 @@ class Ejercicio
 
             $this->respuesta_correcta = $arreglo_preguntas[$contador]['id_respuesta_correcta'];
            // $this->feedback_pregunta = $arreglo_preguntas[$contador]['feedback'];
-           $line2 = '-----------------------------------------';
-           $bot->sendMessage($id, $line2, $token);
-
             $bot->sendMessage($id, $imprimir, $token);
+            $line2 = '-----------------------------------------';
+           $bot->sendMessage($id, $line2, $token);
 
             if ($arreglo_preguntas[$contador]['image_link'] != NULL) {
                 $image_link = $arreglo_preguntas[$contador]['image_link'];
