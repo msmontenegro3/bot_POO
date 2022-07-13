@@ -191,6 +191,6 @@ class Bot{
 
 }
 
-$bot = new Bot();
+/* $bot = new Bot();
 
-$bot->deleteKeyboard(5334366629, 6670, 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4');
+$bot->deleteKeyboard(5334366629, 6670, 'bot5334366629:AAEFOK9CnKLe3e2xStyI_QnFOai8jAMb0c4'); */
