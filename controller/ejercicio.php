@@ -220,6 +220,8 @@ class Ejercicio
             $bot->sendMessage($id, $respuesta, $token);
 
             $array_show_preguntas[2] = 1;
+            
+            $bot->deleteKeyboard($id, $message_id, $token);
 
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
 
