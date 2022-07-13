@@ -16,6 +16,8 @@ class Webhook{
     private $id_callback;
     private $callback_query;
     private $button_pressed;
+    private $message_id;
+
     //DATOS DEL USUARIO
     private $id; //id del chat
     private $text; //mensaje del usuario
