@@ -242,27 +242,27 @@ class Ejercicio
             $respuesta = 'Ups te equivocaste. ' .  $texto_respuesta . ' no es la respuesta correcta' . ' Tienes una nueva oportunidad!!';
             $bot->sendMessage($id, $respuesta, $token);
             
-            $bot->deleteKeyboard($id, $message_id, $token);
             
             $array_show_preguntas[2] = 0;
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
-
+            
         }elseif ($intentos_fallidos = ($numero_respuestas - 1)) {
-
-
+            
+            
             $intentos_fallidos = $intentos_fallidos + 1;
             $this->puntuaRespuesta($id, $pregunta_id, $intentos_fallidos, $numero_respuestas);
-
+            
             $array_show_preguntas[0] = $ejercicio_id;
             $array_show_preguntas[1] = $contador + 1;
-
+            
             $respuesta = 'Se te acabaron los intentos, vamos con la siguiente pregunta...';
             $bot->sendMessage($id, $respuesta, $token);
             
             $array_show_preguntas[2] = 1;
             $this->presentarPreguntas($array_show_preguntas, $id, $token);
         }
-
+        
+        $bot->deleteKeyboard($id, $message_id, $token);
 
 
 
