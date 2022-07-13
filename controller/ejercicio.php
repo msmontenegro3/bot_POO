@@ -184,6 +184,7 @@ class Ejercicio
 /*         var_dump($callback_id);
         file_put_contents('callback_id', ob_get_flush());
  */
+        file_put_contents('message_id_en_validarRespuesta', $message_id);
 
         $bot = new Bot();
         $f = new EjerciciosModel();
