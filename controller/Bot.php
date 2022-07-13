@@ -84,7 +84,7 @@ class Bot{
         file_put_contents('tresVariablesParaBorrar', array($chatID, $message_id, $token));
         //NECESITO EL MESSAGE_ID
 
-        $url = "https://api.telegram.org/" . $token . "/editMessageReplyMarkup?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&deleteMessage";
+        $url = "https://api.telegram.org/" . $token . "/deleteMessage?" . "&chat_id=" . $chatID . "&message_id=" . $message_id . "&deleteMessage";
     
         /* $url = $url."&text=" . urlencode($sticker); */
         $ch = curl_init();
