@@ -7,7 +7,7 @@ class EjerciciosModel{
     public function __construct(){
         $user="pelon196_chichi";
         $pass="CHICHORITO1999.";
-        $server="mysql1007.mochahost.com";
+        $server="mocha3037.mochahost.com";
         $db= "pelon196_bot_tel";
 
         $this->conexion = new mysqli($server, $user, $pass, $db);
